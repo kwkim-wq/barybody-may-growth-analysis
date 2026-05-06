@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/Users/kwkim/Desktop/barybody/260429_데이터 AI_ver_2/5월 매출 상승세 원인 분석/.claude/hooks/inject-issues.sh\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/Users/kwkim/Desktop/barybody/260429_데이터 AI_ver_2/5월 매출 상승세 원인 분석/.claude/hooks/post-bash-deploy.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
