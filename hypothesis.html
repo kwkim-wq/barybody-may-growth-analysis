@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바리바디 5월 매출 분석 — 가설 검증</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f5f6fa;
+    color: #1a1a2e;
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    padding: 28px 24px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 32px;
+  }
+
+  /* 가설 섹션 공통 */
+  .hypothesis-section {
+    margin-bottom: 32px;
+  }
+  .hypothesis-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .hypothesis-badge {
+    background: #e8eaf6;
+    color: #1a1a2e;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .hypothesis-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  /* 빈 자리 섹션 */
+  .placeholder-box {
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 36px 24px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    background: #ffffff;
+  }
+  .placeholder-box .placeholder-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  /* 가설 3 */
+  .hypo3-wrap {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .hypo-desc {
+    background: #eef4ff;
+    border-left: 4px solid #4fc3f7;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    color: #1a1a2e;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .section-label {
+    font-size: 0.82rem;
+    color: #1976d2;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  /* 검증 결과 1 — 키워드 평균 */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .kpi-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    border-top: 3px solid;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .kpi-card.neutral { border-color: #888; }
+  .kpi-card.up      { border-color: #43a047; }
+  .kpi-card.flat    { border-color: #1976d2; }
+  .kpi-card .kpi-label { font-size: 0.75rem; color: #555; margin-bottom: 6px; line-height: 1.4; }
+  .kpi-card .kpi-value { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; }
+  .kpi-card .kpi-sub   { font-size: 0.75rem; color: #777; margin-top: 4px; }
+
+  .finding-box {
+    background: #f9f9fb;
+    border-left: 4px solid #888;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .finding-box strong { color: #1a1a2e; }
+
+  /* 차트 */
+  .chart-wrap {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px 16px 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .chart-title {
+    font-size: 0.88rem;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  canvas { width: 100% !important; }
+  .legend-note {
+    font-size: 0.76rem;
+    color: #888;
+    margin-top: 8px;
+    text-align: right;
+  }
+
+  /* 구간별 표 */
+  .period-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+  .period-table th {
+    background: #e8eaf6;
+    color: #1a1a2e;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .period-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e8eaf6;
+    color: #333;
+  }
+  .period-table tr:last-child td { border-bottom: none; }
+  .period-table tr:nth-child(even) td { background: #f5f6fa; }
+  .val-highlight { color: #f57f17; font-weight: 700; }
+  .val-up   { color: #2e7d32; font-weight: 700; }
+  .val-down { color: #c62828; font-weight: 700; }
+
+  /* 결론 카드 */
+  .conclusion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 4px;
+  }
+  .conclusion-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 16px;
+    border-left: 4px solid;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .conclusion-card.blue   { border-color: #1976d2; }
+  .conclusion-card.orange { border-color: #f57c00; }
+  .conclusion-card.green  { border-color: #388e3c; }
+  .conclusion-card .cc-title { font-size: 0.78rem; color: #555; margin-bottom: 6px; }
+  .conclusion-card .cc-body  { font-size: 0.88rem; color: #333; line-height: 1.6; }
+  .conclusion-card .cc-body strong { color: #1a1a2e; }
+</style>
+</head>
+<body>
+
+<h1>바리바디 5월 매출 분석 — 가설 검증</h1>
+<p class="subtitle">2026년 4월~5월 · 브랜딩 활동이 매출 상승에 미친 영향 검증</p>
+
+<!-- ========== 가설 1 ========== -->
+<div class="hypothesis-section">
+  <div class="hypothesis-header">
+    <span class="hypothesis-badge">가설1 - 퍼포먼스</span>
+    <span class="hypothesis-title">브랜딩 활동 이후 퍼포먼스 마케팅 효율이 올라갔는가?</span>
+  </div>
+  <div class="hypo3-wrap">
+    <div class="hypo-desc">
+      모든 브랜딩 활동(홈쇼핑·인플루언서·채널 입점)을 진행하는 동안 및 이후, 메타·GFA·Advoost·검색광고의
+      <strong>CPM·CPC·ROAS 등 퍼포먼스 효율이 달라졌는지</strong> 일별로 확인한다. (4/1~5/10)
+    </div>
+
+    <!-- 채널 탭 -->
+    <div style="display:flex;gap:8px;margin-bottom:20px;">
+      <button onclick="showTab('meta')" id="tab-meta" style="padding:6px 16px;border-radius:6px;border:1px solid #1976d2;background:#1976d2;color:#fff;cursor:pointer;font-size:0.82rem;">메타</button>
+      <button onclick="showTab('gfa')" id="tab-gfa" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">GFA</button>
+      <button onclick="showTab('advoost')" id="tab-advoost" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">Advoost</button>
+      <button onclick="showTab('searchad')" id="tab-searchad" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">검색광고</button>
+      <button onclick="showTab('total')" id="tab-total" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">합계</button>
+    </div>
+
+    <!-- 채널별 차트 -->
+    <div id="panel-meta">
+      <div class="section-label">메타 — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">메타 광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartMeta" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-gfa" style="display:none;">
+      <div class="section-label">GFA — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">GFA 광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartGfa" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-advoost" style="display:none;">
+      <div class="section-label">Advoost — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">Advoost 광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartAdvoost" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-searchad" style="display:none;">
+      <div class="section-label">검색광고 — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">검색광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartSearchad" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-total" style="display:none;">
+      <div class="section-label">합계 — 4채널 합산 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">전체 채널(메타+GFA+Advoost+검색광고) 합산 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartTotal" height="300"></canvas>
+      </div>
+    </div>
+
+    <!-- 채널별 일별 테이블 (메타 기본 표시) -->
+    <div class="section-label" style="margin-top:24px;">일별 상세 — <span id="tableLabel">메타</span></div>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+    <table class="period-table" id="perfTable" style="min-width:800px;font-size:0.8rem;">
+      <thead>
+        <tr>
+          <th>날짜</th><th>이벤트</th><th>비용(원)</th><th>노출</th><th>CPM(원)</th>
+          <th>클릭</th><th>CPC(원)</th><th>CTR(%)</th><th>구매수</th><th>매출(원)</th><th>ROAS</th>
+        </tr>
+      </thead>
+      <tbody id="perfTableBody"></tbody>
+    </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== 가설 2 ========== -->
+<div class="hypothesis-section">
+  <div class="hypothesis-header">
+    <span class="hypothesis-badge">가설2 - 트래픽</span>
+    <span class="hypothesis-title">이벤트별로 유입 1명당 얼마를 사는지가 달라졌는가?</span>
+  </div>
+
+  <div class="hypo3-wrap">
+
+    <!-- 가설 설명 -->
+    <div class="hypo-desc">
+      단순히 방문자 수가 늘어난 게 아니라, <strong>들어오는 사람 자체가 더 많이 사는 사람</strong>으로 바뀌었다면
+      브랜딩이 구매 의도를 높인 것으로 볼 수 있다.<br>
+      이벤트 구간별로 <strong>유입 1명당 평균 매출(원)</strong>이 어떻게 달라졌는지를 확인했다.
+      (4/1~5/5, cafe24 + 스마트스토어 합산)
+    </div>
+
+    <!-- 데일리 추이 차트 -->
+    <div class="section-label">일별 추이 — 매출 · 유입 · 구매자 · 전환율 · 유입당 매출</div>
+    <div class="chart-wrap">
+      <div class="chart-title">일별 통합 추이 (4/1~5/5, cafe24+스마트스토어 합산)</div>
+      <canvas id="chartH2Daily" height="320"></canvas>
+      <p class="legend-note">
+        <span style="color:#e67e22;">■</span> 홈쇼핑/라이브 &nbsp;
+        <span style="color:#27ae60;">■</span> 인플루언서 &nbsp;
+        <span style="color:#8e44ad;">■</span> 채널 입점
+      </p>
+    </div>
+
+    <div class="section-label">일별 — 매출 · 유입 · 구매자 · 전환율 · 유입당 매출</div>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+    <table class="period-table" style="min-width:700px;font-size:0.82rem;">
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>이벤트</th>
+          <th>매출(만원)</th>
+          <th>유입수</th>
+          <th>구매자수</th>
+          <th>전환율</th>
+          <th>유입당 매출</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>4/1</td><td></td><td>1,146</td><td>7,705</td><td>217</td><td>2.82%</td><td>1,487원</td></tr>
+        <tr><td>4/2</td><td></td><td>1,005</td><td>6,732</td><td>176</td><td>2.61%</td><td>1,492원</td></tr>
+        <tr><td>4/3</td><td>면세점 입점</td><td>802</td><td>7,088</td><td>165</td><td>2.33%</td><td>1,131원</td></tr>
+        <tr><td>4/4</td><td></td><td>949</td><td>7,178</td><td>140</td><td>1.95%</td><td>1,322원</td></tr>
+        <tr><td>4/5</td><td></td><td>697</td><td>8,474</td><td>143</td><td>1.69%</td><td>822원</td></tr>
+        <tr><td>4/6</td><td></td><td>1,141</td><td>7,952</td><td>229</td><td>2.88%</td><td>1,434원</td></tr>
+        <tr><td>4/7</td><td></td><td>1,054</td><td>5,680</td><td>217</td><td>3.82%</td><td>1,855원</td></tr>
+        <tr><td>4/8</td><td></td><td>1,257</td><td>7,043</td><td>246</td><td>3.49%</td><td>1,784원</td></tr>
+        <tr><td>4/9</td><td></td><td>1,011</td><td>8,976</td><td>226</td><td>2.52%</td><td>1,126원</td></tr>
+        <tr><td>4/10</td><td></td><td>1,212</td><td>8,875</td><td>252</td><td>2.84%</td><td>1,365원</td></tr>
+        <tr><td>4/11</td><td></td><td>955</td><td>7,158</td><td>197</td><td>2.75%</td><td>1,334원</td></tr>
+        <tr><td>4/12</td><td></td><td>1,122</td><td>8,695</td><td>245</td><td>2.82%</td><td>1,290원</td></tr>
+        <tr><td>4/13</td><td></td><td>1,129</td><td>7,919</td><td>228</td><td>2.88%</td><td>1,425원</td></tr>
+        <tr><td>4/14</td><td>거누파파</td><td>1,158</td><td>7,928</td><td>244</td><td>3.08%</td><td>1,460원</td></tr>
+        <tr><td>4/15</td><td></td><td>1,042</td><td>7,386</td><td>236</td><td>3.20%</td><td>1,410원</td></tr>
+        <tr><td>4/16</td><td>깐돌네 인스타</td><td>1,105</td><td>7,656</td><td>219</td><td>2.86%</td><td>1,443원</td></tr>
+        <tr style="background:#fff8e1;"><td>4/17</td><td><strong>현대홈쇼핑</strong></td><td>1,759</td><td>9,015</td><td>316</td><td>3.51%</td><td>1,951원</td></tr>
+        <tr><td>4/18</td><td></td><td>991</td><td>6,917</td><td>207</td><td>2.99%</td><td>1,432원</td></tr>
+        <tr><td>4/19</td><td></td><td>1,141</td><td>7,497</td><td>244</td><td>3.25%</td><td>1,521원</td></tr>
+        <tr><td>4/20</td><td>그립 방송</td><td>994</td><td>6,476</td><td>201</td><td>3.10%</td><td>1,534원</td></tr>
+        <tr><td>4/21</td><td></td><td>1,022</td><td>6,882</td><td>223</td><td>3.24%</td><td>1,485원</td></tr>
+        <tr><td>4/22</td><td></td><td>910</td><td>6,167</td><td>201</td><td>3.26%</td><td>1,475원</td></tr>
+        <tr><td>4/23</td><td></td><td>959</td><td>5,696</td><td>217</td><td>3.81%</td><td>1,683원</td></tr>
+        <tr><td>4/24</td><td>강예찬/강현이어라</td><td>980</td><td>5,849</td><td>217</td><td>3.71%</td><td>1,675원</td></tr>
+        <tr><td>4/25</td><td></td><td>969</td><td>5,965</td><td>228</td><td>3.82%</td><td>1,624원</td></tr>
+        <tr><td>4/26</td><td></td><td>1,322</td><td>8,551</td><td>298</td><td>3.48%</td><td>1,546원</td></tr>
+        <tr><td>4/27</td><td>트렌드쇼퍼</td><td>1,107</td><td>5,733</td><td>233</td><td>4.06%</td><td>1,930원</td></tr>
+        <tr><td>4/28</td><td></td><td>1,003</td><td>5,762</td><td>213</td><td>3.70%</td><td>1,740원</td></tr>
+        <tr><td>4/29</td><td></td><td>989</td><td>6,873</td><td>210</td><td>3.06%</td><td>1,438원</td></tr>
+        <tr style="background:#f0fff4;"><td>4/30</td><td><strong>쇼핑라이브</strong></td><td>1,531</td><td>7,808</td><td>336</td><td>4.30%</td><td>1,960원</td></tr>
+        <tr><td>5/1</td><td></td><td>1,024</td><td>6,754</td><td>236</td><td>3.49%</td><td>1,516원</td></tr>
+        <tr><td>5/2</td><td></td><td>1,045</td><td>6,476</td><td>239</td><td>3.69%</td><td>1,613원</td></tr>
+        <tr><td>5/3</td><td></td><td>1,427</td><td>7,402</td><td>302</td><td>4.08%</td><td>1,927원</td></tr>
+        <tr><td>5/4</td><td></td><td>1,450</td><td>9,325</td><td>294</td><td>3.15%</td><td>1,554원</td></tr>
+        <tr><td>5/5</td><td></td><td>1,573</td><td>12,757</td><td>352</td><td>2.76%</td><td>1,233원</td></tr>
+        <tr><td>5/6</td><td></td><td>1,316</td><td>6,744</td><td>266</td><td>3.95%</td><td>1,952원</td></tr>
+        <tr><td>5/7</td><td></td><td>1,040</td><td>6,589</td><td>215</td><td>3.26%</td><td>1,579원</td></tr>
+        <tr><td>5/8</td><td></td><td>945</td><td>6,854</td><td>187</td><td>2.73%</td><td>1,379원</td></tr>
+        <tr><td>5/9</td><td></td><td>773</td><td>6,793</td><td>168</td><td>2.47%</td><td>1,138원</td></tr>
+        <tr><td>5/10</td><td></td><td>930</td><td>11,115</td><td>195</td><td>1.75%</td><td>836원</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 유입당 매출 꺾은선 차트 -->
+    <div class="section-label">유입 1명당 평균 매출 — 구간별 변화</div>
+    <div class="chart-wrap">
+      <div class="chart-title">구간별 유입당 매출(원) — 이벤트 전 대비 흐름</div>
+      <canvas id="chartH2" height="280"></canvas>
+      <p class="legend-note">
+        <span style="color:#e67e22;">■</span> 홈쇼핑/라이브 &nbsp;
+        <span style="color:#27ae60;">■</span> 인플루언서 &nbsp;
+        <span style="color:#8e44ad;">■</span> 채널 입점
+      </p>
+    </div>
+
+    <!-- 전환율 차트 -->
+    <div class="section-label" style="margin-top:28px;">유입 대비 실구매 전환율 — 구간별 변화</div>
+    <div class="chart-wrap">
+      <div class="chart-title">구간별 전환율(%) — 카페24 구매자수 ÷ 전체 유입수</div>
+      <canvas id="chartH2Conv" height="260"></canvas>
+      <p class="legend-note">
+        <span style="color:#e67e22;">■</span> 홈쇼핑/라이브 &nbsp;
+        <span style="color:#27ae60;">■</span> 인플루언서 &nbsp;
+        <span style="color:#8e44ad;">■</span> 채널 입점 &nbsp;
+        | 카페24 shop_no=2 기준
+      </p>
+    </div>
+
+  </div><!-- /hypo3-wrap -->
+</div>
+
+<!-- ========== 가설 3 ========== -->
+<div class="hypothesis-section">
+  <div class="hypothesis-header">
+    <span class="hypothesis-badge">가설3 - 키워드</span>
+    <span class="hypothesis-title">브랜딩 활동 → 검색 파이 확대 vs 브랜드 인지 비율 상승</span>
+  </div>
+
+  <div class="hypo3-wrap">
+
+    <!-- 가설 설명 -->
+    <div class="hypo-desc">
+      브랜딩 활동으로 인해 단기적으로 키워드 검색량(절대량)은 크게 변화하지 않는다.<br>
+      단, 스마트스토어 유입 중 <strong>브랜드 키워드로 유입되는 비율</strong>은 달라질 수 있다.
+    </div>
+
+    <!-- 검증 1: 평균 검색량 -->
+    <div class="section-label">검증 결과 1 — 네이버 키워드 평소 검색량</div>
+    <div class="kpi-row">
+      <div class="kpi-card neutral">
+        <div class="kpi-label">4/1~4/16<br>홈쇼핑 이전 전체 평균</div>
+        <div class="kpi-value">57.0</div>
+        <div class="kpi-sub">네이버 데이터랩 상대지수</div>
+      </div>
+      <div class="kpi-card up">
+        <div class="kpi-label">4/17~5/5<br>전체 평균 (스파이크 포함)</div>
+        <div class="kpi-value">62.2</div>
+        <div class="kpi-sub">+9% ↑ (스파이크 포함)</div>
+      </div>
+      <div class="kpi-card flat">
+        <div class="kpi-label">4/17~5/5<br>스파이크 2일 제외 평균</div>
+        <div class="kpi-value">57.9</div>
+        <div class="kpi-sub">평소와 거의 동일 수준</div>
+      </div>
+    </div>
+    <div class="finding-box">
+      홈쇼핑(4/17, 지수 97.6)과 그립라이브(4/20, 지수 100.0) 당일 <strong>스파이크</strong>는 있었지만,
+      해당 2일을 제외하면 평소 검색량은 <strong>57.0 vs 57.9로 전후 동일 수준</strong>.
+      브랜딩 활동이 네이버 전체 검색 파이를 키우지는 않았다.
+    </div>
+
+    <!-- 검증 2: 브랜드 키워드 비율 차트 -->
+    <div class="section-label">검증 결과 2 — 스마트스토어 브랜드 키워드 유입 비율 (일별)</div>
+    <div class="chart-wrap">
+      <div class="chart-title">브랜드 유입 비율(%) · 브랜드유입당결제(원) — 4/1~5/5</div>
+      <canvas id="chartBrand" height="360"></canvas>
+      <p class="legend-note">
+        <span style="color:#27ae60;">■</span> 인플루언서 &nbsp;
+        <span style="color:#e67e22;">■</span> 홈쇼핑/라이브 &nbsp;
+        <span style="color:#8e44ad;">■</span> 채널입점 &nbsp;
+        <span style="color:#27ae60;">■</span> 브랜드 결제자수 &nbsp;
+        <span style="color:#8e44ad;">■</span> 브랜드 유입수 &nbsp; | 브랜드 키워드 356개 기준
+      </p>
+    </div>
+
+    <!-- 4/16 전후 전체 평균 비교 -->
+    <div class="section-label">4/16(깐돌네 인스타) 전후 — 전체 평균 비교</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
+      <div style="background:#eef4ff;border-radius:10px;padding:18px;text-align:center;border-top:3px solid #1976d2;">
+        <div style="font-size:0.75rem;color:#555;margin-bottom:8px;line-height:1.5;">브랜드 키워드로 들어온 비율<br><span style="color:#1976d2;font-weight:700;">4/1~4/15</span> vs <span style="color:#27ae60;font-weight:700;">4/17~5/5</span></div>
+        <div style="display:flex;justify-content:center;align-items:center;gap:16px;">
+          <div>
+            <div style="font-size:1.5rem;font-weight:700;color:#1976d2;">18.1%</div>
+            <div style="font-size:0.72rem;color:#888;margin-top:2px;">4/16 이전 평균</div>
+          </div>
+          <div style="font-size:1.4rem;color:#aaa;">→</div>
+          <div>
+            <div style="font-size:1.5rem;font-weight:700;color:#27ae60;">22.1%</div>
+            <div style="font-size:0.72rem;color:#888;margin-top:2px;">4/16 이후 평균</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;background:#dceefb;border-radius:6px;padding:7px 10px;font-size:0.82rem;color:#1a5276;line-height:1.5;">
+          <strong>+4.0%p 상승</strong> — 브랜드를 검색해서 들어오는 고객 비중이 구조적으로 늘었음
+        </div>
+      </div>
+      <div style="background:#fff8e8;border-radius:10px;padding:18px;text-align:center;border-top:3px solid #f57c00;">
+        <div style="font-size:0.75rem;color:#555;margin-bottom:8px;line-height:1.5;">브랜드 유입 고객 1인당 결제금액<br><span style="color:#1976d2;font-weight:700;">4/1~4/15</span> vs <span style="color:#f57c00;font-weight:700;">4/17~5/5</span></div>
+        <div style="display:flex;justify-content:center;align-items:center;gap:16px;">
+          <div>
+            <div style="font-size:1.5rem;font-weight:700;color:#1976d2;">7,238원</div>
+            <div style="font-size:0.72rem;color:#888;margin-top:2px;">4/16 이전 평균</div>
+          </div>
+          <div style="font-size:1.4rem;color:#aaa;">→</div>
+          <div>
+            <div style="font-size:1.5rem;font-weight:700;color:#f57c00;">5,483원</div>
+            <div style="font-size:0.72rem;color:#888;margin-top:2px;">4/16 이후 평균</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;background:#fdebd0;border-radius:6px;padding:7px 10px;font-size:0.82rem;color:#784212;line-height:1.5;">
+          <strong>-1,755원 감소</strong> — 1인당 결제금액은 낮아졌지만, 브랜드 검색으로 들어오는 사람 수가 늘면서 총 매출은 증가했음. 한 사람이 더 많이 사는 게 아니라 더 많은 사람이 들어오는 방식으로 브랜딩이 작동한 것.
+        </div>
+      </div>
+    </div>
+
+    <!-- 일별 브랜드 유입 현황 -->
+    <div class="section-label">일별 — 브랜드 검색 유입 비율 · 결제 현황</div>
+    <div style="overflow-x:auto;margin-bottom:28px;">
+    <table class="period-table" style="min-width:620px;font-size:0.82rem;">
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>이벤트</th>
+          <th>브랜드 유입수</th>
+          <th>브랜드 비율</th>
+          <th>결제수</th>
+          <th>브랜드유입당결제</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>4/1</td><td></td><td>219</td><td>14.3%</td><td>16</td><td>5,343원</td></tr>
+        <tr><td>4/2</td><td></td><td>287</td><td>20.7%</td><td>28</td><td>9,002원</td></tr>
+        <tr><td>4/3</td><td>면세점 입점</td><td>181</td><td>17.4%</td><td>13</td><td>5,422원</td></tr>
+        <tr><td>4/4</td><td></td><td>267</td><td>24.5%</td><td>15</td><td>4,836원</td></tr>
+        <tr><td>4/5</td><td></td><td>237</td><td>18.5%</td><td>18</td><td>2,427원</td></tr>
+        <tr><td>4/6</td><td></td><td>443</td><td>17.9%</td><td>61</td><td>9,587원</td></tr>
+        <tr><td>4/7</td><td></td><td>509</td><td>18.6%</td><td>62</td><td>8,340원</td></tr>
+        <tr><td>4/8</td><td></td><td>557</td><td>17.9%</td><td>77</td><td>12,922원</td></tr>
+        <tr><td>4/9</td><td></td><td>553</td><td>16.9%</td><td>51</td><td>5,757원</td></tr>
+        <tr><td>4/10</td><td></td><td>456</td><td>17.6%</td><td>66</td><td>11,265원</td></tr>
+        <tr><td>4/11</td><td></td><td>467</td><td>17.0%</td><td>43</td><td>6,815원</td></tr>
+        <tr><td>4/12</td><td></td><td>564</td><td>20.6%</td><td>70</td><td>8,752원</td></tr>
+        <tr><td>4/13</td><td></td><td>454</td><td>14.8%</td><td>50</td><td>7,298원</td></tr>
+        <tr><td>4/14</td><td>거누파파</td><td>489</td><td>18.3%</td><td>45</td><td>4,271원</td></tr>
+        <tr><td>4/15</td><td></td><td>422</td><td>17.2%</td><td>49</td><td>6,536원</td></tr>
+        <tr><td>4/16</td><td>깐돌네 인스타</td><td>412</td><td>18.7%</td><td>36</td><td>9,728원</td></tr>
+        <tr style="background:#fff8e1;"><td>4/17</td><td><strong>현대홈쇼핑</strong></td><td>672</td><td>28.4%</td><td>49</td><td>16,257원</td></tr>
+        <tr><td>4/18</td><td></td><td>541</td><td>21.1%</td><td>49</td><td>6,723원</td></tr>
+        <tr><td>4/19</td><td></td><td>584</td><td>19.3%</td><td>63</td><td>10,290원</td></tr>
+        <tr><td>4/20</td><td>그립 방송</td><td>730</td><td>20.3%</td><td>44</td><td>3,985원</td></tr>
+        <tr><td>4/21</td><td></td><td>567</td><td>20.5%</td><td>46</td><td>5,181원</td></tr>
+        <tr><td>4/22</td><td></td><td>506</td><td>23.5%</td><td>34</td><td>6,331원</td></tr>
+        <tr><td>4/23</td><td></td><td>507</td><td>22.5%</td><td>47</td><td>6,822원</td></tr>
+        <tr><td>4/24</td><td>강예찬/강현이어라</td><td>603</td><td>24.2%</td><td>32</td><td>2,715원</td></tr>
+        <tr><td>4/25</td><td></td><td>557</td><td>25.3%</td><td>34</td><td>4,182원</td></tr>
+        <tr><td>4/26</td><td></td><td>692</td><td>26.0%</td><td>31</td><td>3,438원</td></tr>
+        <tr><td>4/27</td><td>트렌드쇼퍼</td><td>549</td><td>24.5%</td><td>41</td><td>6,309원</td></tr>
+        <tr><td>4/28</td><td></td><td>468</td><td>20.4%</td><td>29</td><td>2,353원</td></tr>
+        <tr><td>4/29</td><td></td><td>440</td><td>18.0%</td><td>25</td><td>4,861원</td></tr>
+        <tr style="background:#f0fff4;"><td>4/30</td><td><strong>쇼핑라이브</strong></td><td>476</td><td>18.6%</td><td>33</td><td>4,501원</td></tr>
+        <tr><td>5/1</td><td></td><td>519</td><td>21.6%</td><td>44</td><td>5,166원</td></tr>
+        <tr><td>5/2</td><td></td><td>484</td><td>22.6%</td><td>33</td><td>4,009원</td></tr>
+        <tr><td>5/3</td><td></td><td>489</td><td>20.4%</td><td>42</td><td>6,457원</td></tr>
+        <tr><td>5/4</td><td></td><td>438</td><td>22.9%</td><td>32</td><td>4,854원</td></tr>
+        <tr><td>5/5</td><td></td><td>556</td><td>20.4%</td><td>38</td><td>4,748원</td></tr>
+        <tr><td>5/6</td><td></td><td>572</td><td>—</td><td>41</td><td>4,580원</td></tr>
+        <tr><td>5/7</td><td></td><td>557</td><td>—</td><td>38</td><td>3,229원</td></tr>
+        <tr><td>5/8</td><td></td><td>467</td><td>—</td><td>27</td><td>2,995원</td></tr>
+        <tr><td>5/9</td><td></td><td>492</td><td>—</td><td>32</td><td>2,939원</td></tr>
+        <tr><td>5/10</td><td></td><td>563</td><td>—</td><td>32</td><td>3,116원</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div><!-- /hypo3-wrap -->
+</div><!-- /hypothesis-section -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ========== 가설 1 퍼포먼스 차트 ==========
+  const perfDates = ["4/1","4/2","4/3","4/4","4/5","4/6","4/7","4/8","4/9","4/10","4/11","4/12","4/13","4/14","4/15","4/16","4/17","4/18","4/19","4/20","4/21","4/22","4/23","4/24","4/25","4/26","4/27","4/28","4/29","4/30","5/1","5/2","5/3","5/4","5/5","5/6","5/7","5/8","5/9","5/10"];
+  const perfEvents = {
+    '4/3':'면세점','4/14':'거누파파','4/16':'깐돌네','4/17':'현대홈쇼핑',
+    '4/20':'그립','4/24':'강예찬 등','4/27':'트렌드쇼퍼','4/30':'쇼핑라이브'
+  };
+
+  // 채널별 데이터 (BigQuery 실제 수집 데이터)
+  const perfData = {
+    meta: {
+      cost: [1442272.0, 1140157.0, 1304834.0, 1377723.0, 1495834.0, 1636655.0, 1475754.0, 1258301.0, 1504817.0, 1432098.0, 1388803.0, 1549457.0, 1366901.0, 1282766.0, 1136562.0, 1294596.0, 1067644.0, 697531.0, 937657.0, 774718.0, 1103262.0, 1318626.0, 1296383.0, 1384526.0, 1396951.0, 1442319.0, 987389.0, 1090536.0, 1813475.0, 2159479.0, 1608713.0, 1498509.0, 1751785.0, 2197533.0, 2453651.0, 1891323.0, 1901318.0, 2215447.0, 1854898.0, 2279924.0],
+      impressions: [104599.0, 79439.0, 98346.0, 110823.0, 121931.0, 110335.0, 94756.0, 89499.0, 118370.0, 125172.0, 99707.0, 131728.0, 94074.0, 90394.0, 75448.0, 80673.0, 51916.0, 41759.0, 81874.0, 56604.0, 73234.0, 86487.0, 88123.0, 85689.0, 86000.0, 94023.0, 62720.0, 65884.0, 120536.0, 132528.0, 96914.0, 107085.0, 136044.0, 232202.0, 207596.0, 158265.0, 159852.0, 193154.0, 144474.0, 176782.0],
+      clicks: [1826.0, 1215.0, 1496.0, 1971.0, 2162.0, 1806.0, 1283.0, 1503.0, 1936.0, 1887.0, 1986.0, 1954.0, 1751.0, 1725.0, 1723.0, 1658.0, 1556.0, 1301.0, 1759.0, 1434.0, 1965.0, 2157.0, 2144.0, 1916.0, 2031.0, 2358.0, 1581.0, 2353.0, 3677.0, 3835.0, 2753.0, 2791.0, 3346.0, 4067.0, 5829.0, 3685.0, 3160.0, 3341.0, 3440.0, 3906.0],
+      purchase: [86.0, 34.0, 48.0, 38.0, 50.0, 42.0, 31.0, 26.0, 40.0, 38.0, 28.0, 32.0, 29.0, 28.0, 25.0, 44.0, 35.0, 34.0, 50.0, 26.0, 26.0, 38.0, 39.0, 33.0, 44.0, 33.0, 13.0, 16.0, 34.0, 54.0, 46.0, 48.0, 62.0, 48.0, 65.0, 47.0, 50.0, 40.0, 44.0, 52.0],
+      sales: [3356600.0, 1519800.0, 2105500.0, 1779400.0, 2617500.0, 2090900.0, 1742400.0, 1511500.0, 1929400.0, 1622900.0, 1058190.0, 1483900.0, 1307600.0, 1173800.0, 1106200.0, 2022701.0, 1370800.0, 1738500.0, 1900200.0, 1078400.0, 1016400.0, 1698000.0, 1498500.0, 1378200.0, 1939900.0, 1279500.0, 683900.0, 1396400.0, 2360700.0, 2997400.0, 2481300.0, 2590300.0, 3441500.0, 3017800.0, 4332400.0, 2558100.0, 2702000.0, 2144800.0, 2017800.0, 2906100.0],
+    },
+    gfa: {
+      cost: [743304.0, 722256.0, 668090.0, 634740.0, 621459.0, 747306.0, 616075.0, 762387.0, 1327500.0, 1489802.0, 1143752.0, 879869.0, 845158.0, 892261.0, 768211.0, 476793.0, 383593.0, 409642.0, 426707.0, 598683.0, 962725.0, 566053.0, 419392.0, 389630.0, 507905.0, 426847.0, 388820.0, 331465.0, 327012.0, 387066.0, 464562.0, 502889.0, 430837.0, 394811.0, 364221.0, 280887.0, 293888.0, 270486.0, 385037.0, 313075.0],
+      impressions: [57593.0, 64890.0, 62896.0, 61113.0, 57721.0, 86196.0, 53574.0, 63558.0, 148648.0, 173683.0, 130448.0, 117118.0, 120116.0, 124318.0, 95910.0, 69528.0, 74508.0, 78804.0, 63849.0, 80968.0, 99663.0, 87208.0, 66185.0, 48833.0, 71435.0, 60365.0, 60550.0, 44026.0, 41759.0, 57724.0, 52812.0, 68737.0, 54154.0, 57512.0, 46531.0, 38577.0, 38514.0, 36992.0, 68346.0, 47435.0],
+      clicks: [694.0, 646.0, 594.0, 578.0, 563.0, 731.0, 535.0, 642.0, 1098.0, 1368.0, 1151.0, 940.0, 922.0, 993.0, 846.0, 532.0, 450.0, 513.0, 562.0, 813.0, 1284.0, 738.0, 524.0, 469.0, 647.0, 591.0, 510.0, 474.0, 503.0, 517.0, 638.0, 713.0, 643.0, 560.0, 544.0, 418.0, 414.0, 369.0, 554.0, 468.0],
+      purchase: [12.0, 11.0, 12.0, 3.0, 8.0, 16.0, 10.0, 11.0, 17.0, 24.0, 13.0, 21.0, 24.0, 16.0, 11.0, 8.0, 10.0, 5.0, 7.0, 13.0, 20.0, 9.0, 16.0, 7.0, 9.0, 13.0, 11.0, 2.0, 1.0, 12.0, 11.0, 8.0, 12.0, 8.0, 5.0, 5.0, 4.0, 8.0, 4.0, 4.0],
+      sales: [641329.0, 622245.0, 785355.0, 225891.0, 440210.0, 816544.0, 508166.0, 728041.0, 834371.0, 1255926.0, 704768.0, 1108200.0, 1497145.0, 819245.0, 507050.0, 357610.0, 495527.0, 247918.0, 435131.0, 746993.0, 1237085.0, 488199.0, 985818.0, 413538.0, 443473.0, 658943.0, 528045.0, 149735.0, 77383.0, 731615.0, 764311.0, 563669.0, 720075.0, 400638.0, 285678.0, 356240.0, 236001.0, 404292.0, 231879.0, 255957.0],
+    },
+    advoost: {
+      cost: [1073245.0, 888968.0, 1177753.0, 729463.0, 1256320.0, 1079612.0, 770451.0, 320411.0, 195942.0, 295020.0, 212920.0, 278724.0, 374867.0, 919556.0, 588292.0, 283162.0, 425817.0, 245417.0, 404879.0, 365771.0, 506958.0, 526426.0, 443024.0, 659942.0, 526900.0, 734607.0, 672498.0, 523880.0, 385004.0, 408436.0, 724544.0, 968467.0, 980313.0, 903700.0, 958415.0, 982741.0, 940993.0, 733784.0, 652894.0, 793685.0],
+      impressions: [259914.0, 226447.0, 267537.0, 145094.0, 248076.0, 220933.0, 149502.0, 33487.0, 19392.0, 19109.0, 19167.0, 20618.0, 52397.0, 161702.0, 106886.0, 24120.0, 28126.0, 30559.0, 36595.0, 41945.0, 71498.0, 83826.0, 73807.0, 64235.0, 37473.0, 49023.0, 54242.0, 46496.0, 42345.0, 49425.0, 56349.0, 68564.0, 72211.0, 82994.0, 72493.0, 100449.0, 100713.0, 74895.0, 53053.0, 71006.0],
+      clicks: [2970.0, 1931.0, 2797.0, 989.0, 3202.0, 2402.0, 1154.0, 194.0, 143.0, 135.0, 122.0, 183.0, 633.0, 1799.0, 967.0, 169.0, 226.0, 173.0, 243.0, 248.0, 282.0, 260.0, 292.0, 468.0, 364.0, 473.0, 347.0, 302.0, 232.0, 220.0, 342.0, 388.0, 438.0, 330.0, 398.0, 366.0, 384.0, 323.0, 320.0, 393.0],
+      purchase: [15.0, 12.0, 9.0, 14.0, 14.0, 22.0, 21.0, 26.0, 16.0, 9.0, 9.0, 19.0, 14.0, 15.0, 19.0, 18.0, 14.0, 10.0, 19.0, 20.0, 19.0, 15.0, 22.0, 22.0, 16.0, 36.0, 25.0, 18.0, 14.0, 25.0, 13.0, 29.0, 29.0, 26.0, 31.0, 21.0, 24.0, 15.0, 15.0, 16.0],
+      sales: [957876.0, 715452.0, 638264.0, 869471.0, 922561.0, 961129.0, 1191025.0, 1313342.0, 854658.0, 563130.0, 504191.0, 1056901.0, 787604.0, 849554.0, 1008455.0, 1200197.0, 871198.0, 684149.0, 994665.0, 1121833.0, 1019246.0, 771489.0, 1227305.0, 1262159.0, 887588.0, 2245748.0, 1366572.0, 1198849.0, 864804.0, 1472285.0, 804438.0, 1602347.0, 1585363.0, 1543985.0, 1680751.0, 1035358.0, 1279368.0, 828569.0, 802767.0, 915889.0],
+    },
+    searchad: {
+      cost: [971659.0, 964241.0, 902626.0, 1011334.0, 1043311.0, 1201195.0, 1354572.0, 1043971.0, 1042377.0, 914642.0, 855313.0, 944587.0, 986437.0, 971506.0, 1049016.0, 859821.0, 800661.0, 632653.0, 675976.0, 737356.0, 704673.0, 673221.0, 725550.0, 714804.0, 913365.0, 923283.0, 1085002.0, 1110785.0, 1113162.0, 1172793.0, 956692.0, 961801.0, 1113560.0, 878813.0, 1116102.0, 1021317.0, 1174557.0, 925680.0, 1019027.0, 1115934.0],
+      impressions: [159810.0, 171561.0, 135278.0, 116180.0, 118434.0, 191273.0, 174980.0, 104150.0, 157854.0, 121149.0, 85254.0, 67531.0, 125327.0, 129528.0, 110846.0, 97247.0, 86263.0, 38038.0, 39949.0, 57236.0, 43362.0, 22039.0, 24005.0, 26988.0, 33553.0, 27075.0, 44021.0, 51830.0, 58303.0, 45117.0, 34242.0, 38679.0, 43493.0, 45989.0, 38740.0, 46914.0, 45342.0, 52328.0, 43991.0, 51413.0],
+      clicks: [588.0, 607.0, 557.0, 589.0, 593.0, 767.0, 801.0, 782.0, 802.0, 694.0, 660.0, 728.0, 728.0, 765.0, 780.0, 793.0, 882.0, 669.0, 710.0, 838.0, 692.0, 595.0, 602.0, 662.0, 649.0, 758.0, 719.0, 678.0, 684.0, 708.0, 670.0, 642.0, 694.0, 572.0, 749.0, 742.0, 767.0, 680.0, 699.0, 755.0],
+      purchase: [34.0, 43.0, 29.0, 30.0, 28.0, 66.0, 70.0, 73.0, 64.0, 74.0, 69.0, 71.0, 65.0, 56.0, 72.0, 48.0, 54.0, 53.0, 54.0, 58.0, 61.0, 35.0, 53.0, 43.0, 45.0, 34.0, 46.0, 50.0, 37.0, 68.0, 50.0, 45.0, 54.0, 49.0, 48.0, 48.0, 50.0, 47.0, 36.0, 63.0],
+      sales: [2201126.0, 2969593.0, 1799503.0, 2049581.0, 1621097.0, 3867426.0, 3872269.0, 4167526.0, 3159115.0, 4475848.0, 3746435.0, 3575948.0, 3340577.0, 3106749.0, 3979522.0, 2588123.0, 6103277.0, 2663581.0, 2913478.0, 3081909.0, 3442972.0, 2147452.0, 2714583.0, 2423572.0, 2390169.0, 1841360.0, 2779060.0, 2749825.0, 2184478.0, 3855890.0, 2653765.0, 2734504.0, 3352565.0, 2684940.0, 2792344.0, 2676936.0, 2390989.0, 2414242.0, 1883260.0, 3169988.0],
+    },
+  };
+
+  // 합계(total) 채널 계산 — 4채널 합산
+  perfData.total = {
+    cost:        perfDates.map((_, i) => ['meta','gfa','advoost','searchad'].reduce((s, ch) => s + (perfData[ch].cost[i] || 0), 0)),
+    impressions: perfDates.map((_, i) => ['meta','gfa','advoost','searchad'].reduce((s, ch) => s + (perfData[ch].impressions[i] || 0), 0)),
+    clicks:      perfDates.map((_, i) => ['meta','gfa','advoost','searchad'].reduce((s, ch) => s + (perfData[ch].clicks[i] || 0), 0)),
+    purchase:    perfDates.map((_, i) => ['meta','gfa','advoost','searchad'].reduce((s, ch) => s + (perfData[ch].purchase[i] || 0), 0)),
+    sales:       perfDates.map((_, i) => ['meta','gfa','advoost','searchad'].reduce((s, ch) => s + (perfData[ch].sales[i] || 0), 0)),
+  };
+
+  function calcMetrics(d) {
+    return perfDates.map((_, i) => ({
+      cpm: d.impressions[i] > 0 ? Math.round(d.cost[i] / d.impressions[i] * 1000) : 0,
+      cpc: d.clicks[i] > 0 ? Math.round(d.cost[i] / d.clicks[i]) : 0,
+      ctr: d.impressions[i] > 0 ? (d.clicks[i] / d.impressions[i] * 100).toFixed(2) : 0,
+      roas: d.cost[i] > 0 ? (d.sales[i] / d.cost[i]).toFixed(2) : 0,
+    }));
+  }
+
+  function showTab(ch) {
+    ['meta','gfa','advoost','searchad','total'].forEach(c => {
+      document.getElementById('panel-'+c).style.display = c===ch?'block':'none';
+      const btn = document.getElementById('tab-'+c);
+      btn.style.background = c===ch?'#1976d2':'#fff';
+      btn.style.color = c===ch?'#fff':'#555';
+      btn.style.borderColor = c===ch?'#1976d2':'#ccc';
+    });
+    document.getElementById('tableLabel').textContent = {meta:'메타',gfa:'GFA',advoost:'Advoost',searchad:'검색광고',total:'합계(4채널)'}[ch];
+    renderTable(ch);
+  }
+  window.showTab = showTab;
+
+  function renderTable(ch) {
+    const d = perfData[ch];
+    const m = calcMetrics(d);
+    const tbody = document.getElementById('perfTableBody');
+    tbody.innerHTML = perfDates.map((dt, i) => {
+      const ev = perfEvents[dt] || '';
+      const highlight = ev ? (ev==='현대홈쇼핑'?'background:#fff8e1;':ev==='쇼핑라이브'?'background:#f0fff4;':'') : '';
+      return `<tr style="${highlight}">
+        <td>${dt}</td><td>${ev}</td>
+        <td>${Math.round(d.cost[i]).toLocaleString()}</td>
+        <td>${Math.round(d.impressions[i]).toLocaleString()}</td>
+        <td>${m[i].cpm.toLocaleString()}</td>
+        <td>${Math.round(d.clicks[i]).toLocaleString()}</td>
+        <td>${m[i].cpc.toLocaleString()}</td>
+        <td>${m[i].ctr}%</td>
+        <td>${Math.round(d.purchase[i])}</td>
+        <td>${Math.round(d.sales[i]).toLocaleString()}</td>
+        <td>${m[i].roas}</td>
+      </tr>`;
+    }).join('');
+  }
+
+
+  // ========== 가설 1 퍼포먼스 차트용 이벤트 수직선 플러그인 ==========
+  const perfChartIds = ['chartMeta','chartGfa','chartAdvoost','chartSearchad','chartTotal'];
+
+  const verticalLinePluginPerf = {
+    id: 'verticalLinePerf',
+    afterDraw(chart) {
+      if (!perfChartIds.includes(chart.canvas.id)) return;
+      const ctx = chart.ctx;
+      const xAxis = chart.scales.x;
+      const yAxis = chart.scales.yLeft || chart.scales.y;
+      if (!xAxis || !yAxis) return;
+
+      const perfEventList = [
+        { date: '4/3',  label: '면세점 입점',   color: 'rgba(142,68,173,0.7)' },
+        { date: '4/14', label: '거누파파',      color: 'rgba(39,174,96,0.7)'  },
+        { date: '4/16', label: '깐돌네',        color: 'rgba(39,174,96,0.7)'  },
+        { date: '4/17', label: '현대홈쇼핑',    color: 'rgba(230,126,34,0.8)' },
+        { date: '4/20', label: '그립 방송',     color: 'rgba(230,126,34,0.7)' },
+        { date: '4/24', label: '강예찬 등',     color: 'rgba(39,174,96,0.7)'  },
+        { date: '4/27', label: '트렌드쇼퍼',   color: 'rgba(39,174,96,0.7)'  },
+        { date: '4/30', label: '쇼핑라이브',   color: 'rgba(230,126,34,0.8)' },
+      ];
+
+      perfEventList.forEach(ev => {
+        const idx = perfDates.indexOf(ev.date);
+        if (idx < 0) return;
+        const xPos = xAxis.getPixelForValue(idx);
+        ctx.save();
+        ctx.beginPath();
+        ctx.setLineDash([4, 3]);
+        ctx.strokeStyle = ev.color;
+        ctx.lineWidth = 1.5;
+        ctx.moveTo(xPos, yAxis.top);
+        ctx.lineTo(xPos, yAxis.bottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = ev.color.replace(/[\d.]+\)$/, '1)');
+        ctx.font = 'bold 9px "Apple SD Gothic Neo", sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText(ev.label, xPos + 3, yAxis.top + 12);
+        ctx.restore();
+      });
+    }
+  };
+  Chart.register(verticalLinePluginPerf);
+
+  function makeChart(canvasId, ch) {
+    const d = perfData[ch];
+    const m = calcMetrics(d);
+    const cpm  = d.impressions.map((imp, i) => imp ? Math.round(d.cost[i] / imp * 1000) : null);
+    const cpc  = d.clicks.map((clk, i) => clk ? Math.round(d.cost[i] / clk) : null);
+    const ctr  = d.impressions.map((imp, i) => imp ? +(d.clicks[i] / imp * 100).toFixed(2) : null);
+    const roas = d.cost.map((c, i) => c ? +(d.sales[i] / c).toFixed(2) : null);
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: perfDates,
+        datasets: [
+          { label:'비용(원)',    data: d.cost,        borderColor:'#c62828', borderWidth:1.5, pointRadius:1.5, tension:0.3, fill:false, yAxisID:'yLeft',  hidden:true, borderDash:[4,3] },
+          { label:'노출',       data: d.impressions, borderColor:'#546e7a', borderWidth:1.5, pointRadius:1.5, tension:0.3, fill:false, yAxisID:'yLeft',  hidden:true, borderDash:[6,3] },
+          { label:'CPM(원)',    data: cpm,            borderColor:'#1976d2', borderWidth:2,   pointRadius:2,   tension:0.3, fill:false, yAxisID:'yLeft',  hidden:true },
+          { label:'클릭',       data: d.clicks,      borderColor:'#00838f', borderWidth:1.5, pointRadius:1.5, tension:0.3, fill:false, yAxisID:'yLeft',  hidden:true, borderDash:[3,2] },
+          { label:'CPC(원)',    data: cpc,            borderColor:'#7b1fa2', borderWidth:2,   pointRadius:2,   tension:0.3, fill:false, yAxisID:'yLeft',  hidden:true },
+          { label:'CTR(%)',     data: ctr,            borderColor:'#388e3c', borderWidth:2,   pointRadius:2,   tension:0.3, fill:false, yAxisID:'yRight', hidden:true },
+          { label:'구매수',     data: d.purchase,    borderColor:'#f57c00', borderWidth:1.5, pointRadius:2,   tension:0.3, fill:false, yAxisID:'yRight', hidden:true, borderDash:[4,2] },
+          { label:'매출(원)',   data: d.sales,       borderColor:'#1565c0', borderWidth:2,   pointRadius:2,   tension:0.3, fill:false, yAxisID:'yLeft',  hidden:true },
+          { label:'ROAS',       data: roas,           borderColor:'#e65100', borderWidth:2,   pointRadius:2,   tension:0.3, fill:false, yAxisID:'yRight', hidden:true },
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode:'index', intersect:false },
+        layout: { padding: { top: 60 } },
+        plugins: {
+          legend: { position:'top', labels:{ color:'#333', font:{size:11}, padding:10 } },
+          tooltip: {
+            backgroundColor:'#fff', titleColor:'#1a1a2e', bodyColor:'#333', borderColor:'#ddd', borderWidth:1,
+          }
+        },
+        scales: {
+          x: { ticks:{ color:'#555', font:{size:9}, maxRotation:0, autoSkip:true, maxTicksLimit:20 } },
+          yLeft:  { type:'linear', position:'left',  title:{display:true, text:'금액/노출/클릭', color:'#555', font:{size:10}}, ticks:{color:'#555', callback:v=>v.toLocaleString()} },
+          yRight: { type:'linear', position:'right', title:{display:true, text:'CTR(%) / 구매수 / ROAS', color:'#388e3c', font:{size:10}}, ticks:{color:'#388e3c'}, grid:{drawOnChartArea:false} },
+        }
+      }
+    });
+  }
+
+  // 초기화
+  renderTable('meta');
+  makeChart('chartMeta','meta');
+  makeChart('chartGfa','gfa');
+  makeChart('chartAdvoost','advoost');
+  makeChart('chartSearchad','searchad');
+  makeChart('chartTotal','total');
+
+  // ========== 가설 2 데일리 차트 ==========
+  (function() {
+    const dailyDates = ["4/1","4/2","4/3","4/4","4/5","4/6","4/7","4/8","4/9","4/10","4/11","4/12","4/13","4/14","4/15","4/16","4/17","4/18","4/19","4/20","4/21","4/22","4/23","4/24","4/25","4/26","4/27","4/28","4/29","4/30","5/1","5/2","5/3","5/4","5/5","5/6","5/7","5/8","5/9","5/10"];
+    const totalSales       = [1146,1005,802,949,697,1141,1054,1257,1011,1212,955,1122,1129,1158,1042,1105,1759,991,1141,994,1022,910,959,980,969,1322,1107,1003,989,1531,1024,1045,1427,1450,1573,1316,1040,945,773,930];
+    const totalVisits      = [7705,6732,7088,7178,8474,7952,5680,7043,8976,8875,7158,8695,7919,7928,7386,7656,9015,6917,7497,6476,6882,6167,5696,5849,5965,8551,5733,5762,6873,7808,6754,6476,7402,9325,12757,6744,6589,6854,6793,11115];
+    const totalBuyers      = [217,176,165,140,143,229,217,246,226,252,197,245,228,244,236,219,316,207,244,201,223,201,217,217,228,298,233,213,210,336,236,239,302,294,352,266,215,187,168,195];
+    const convRate         = [2.82,2.61,2.33,1.95,1.69,2.88,3.82,3.49,2.52,2.84,2.75,2.82,2.88,3.08,3.2,2.86,3.51,2.99,3.25,3.1,3.24,3.26,3.81,3.71,3.82,3.48,4.06,3.7,3.06,4.3,3.49,3.69,4.08,3.15,2.76,3.95,3.26,2.73,2.47,1.75];
+    const revPerVisit      = [1487,1492,1131,1322,822,1434,1855,1784,1126,1365,1334,1290,1425,1460,1410,1443,1951,1432,1521,1534,1485,1475,1683,1675,1624,1546,1930,1740,1438,1960,1516,1613,1927,1554,1233,1952,1579,1379,1138,836];
+
+    // 이벤트 마커 (phase1_traffic.html과 동일한 9개)
+    const dailyEvents = [
+      { date: '4/3',  label: '면세점 입점', color: 'rgba(142,68,173,0.7)' },
+      { date: '4/14', label: '거누파파',   color: 'rgba(39,174,96,0.7)' },
+      { date: '4/16', label: '깐돌네',     color: 'rgba(39,174,96,0.7)' },
+      { date: '4/17', label: '현대홈쇼핑', color: 'rgba(230,126,34,0.8)' },
+      { date: '4/20', label: '그립 방송',  color: 'rgba(230,126,34,0.7)' },
+      { date: '4/24', label: '강예찬 등',  color: 'rgba(39,174,96,0.7)' },
+      { date: '4/27', label: '트렌드쇼퍼', color: 'rgba(39,174,96,0.7)' },
+      { date: '4/30', label: '쇼핑라이브', color: 'rgba(230,126,34,0.8)' },
+    ];
+
+    const verticalLinePluginDaily = {
+      id: 'verticalLineDaily',
+      afterDraw(chart) {
+        if (chart.canvas.id !== 'chartH2Daily') return;
+        const { ctx, scales: { x, yLeft } } = chart;
+        if (!x || !yLeft) return;
+        dailyEvents.forEach((ev, i) => {
+          const idx = dailyDates.indexOf(ev.date);
+          if (idx < 0) return;
+          const xPos = x.getPixelForValue(idx);
+          ctx.save();
+          ctx.strokeStyle = ev.color;
+          ctx.lineWidth = 1.5;
+          ctx.setLineDash([4, 3]);
+          ctx.beginPath();
+          ctx.moveTo(xPos, yLeft.top);
+          ctx.lineTo(xPos, yLeft.bottom);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          // 레이블 텍스트
+          ctx.font = 'bold 9px "Apple SD Gothic Neo", sans-serif';
+          ctx.fillStyle = ev.color.replace(/[\d.]+\)$/, '1)');
+          ctx.textAlign = 'center';
+          ctx.fillText(ev.label, xPos, yLeft.top - 4);
+          ctx.restore();
+        });
+      }
+    };
+    Chart.register(verticalLinePluginDaily);
+
+    const ctxDaily = document.getElementById('chartH2Daily').getContext('2d');
+    new Chart(ctxDaily, {
+      type: 'line',
+      data: {
+        labels: dailyDates,
+        datasets: [
+          {
+            label: '일매출(만원)',
+            data: totalSales,
+            hidden: true,
+            borderColor: '#1976d2',
+            backgroundColor: 'rgba(25,118,210,0.08)',
+            borderWidth: 2,
+            pointRadius: 2,
+            tension: 0.3,
+            fill: false,
+            yAxisID: 'yLeft',
+          },
+          {
+            label: '일유입수(명)',
+            data: totalVisits,
+            hidden: true,
+            borderColor: '#7b1fa2',
+            borderWidth: 1.5,
+            pointRadius: 1.5,
+            tension: 0.3,
+            fill: false,
+            borderDash: [4,3],
+            yAxisID: 'yVisits',
+          },
+          {
+            label: '구매자수(명)',
+            data: totalBuyers,
+            hidden: true,
+            borderColor: '#388e3c',
+            borderWidth: 2,
+            pointRadius: 2,
+            tension: 0.3,
+            fill: false,
+            yAxisID: 'yBuyers',
+          },
+          {
+            label: '전환율(%)',
+            data: convRate,
+            hidden: true,
+            borderColor: '#f57c00',
+            borderWidth: 2,
+            pointRadius: 2,
+            tension: 0.3,
+            fill: false,
+            yAxisID: 'yRate',
+          },
+          {
+            label: '유입당 매출(원)',
+            data: revPerVisit,
+            hidden: true,
+            borderColor: '#c62828',
+            borderWidth: 1.5,
+            pointRadius: 1.5,
+            tension: 0.3,
+            fill: false,
+            borderDash: [6,3],
+            yAxisID: 'yRPV',
+          },
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        layout: { padding: { top: 80, right: 10 } },
+        plugins: {
+          legend: { position: 'top', labels: { color: '#333', font: { size: 11 }, padding: 10 } },
+          tooltip: {
+            backgroundColor: '#fff',
+            titleColor: '#1a1a2e',
+            bodyColor: '#333',
+            borderColor: '#ddd',
+            borderWidth: 1,
+            callbacks: {
+              label(ctx) {
+                const v = ctx.parsed.y;
+                if (ctx.dataset.label === '일매출(만원)') return ` 매출: ${v.toLocaleString()}만원`;
+                if (ctx.dataset.label === '일유입수(명)') return ` 유입: ${v.toLocaleString()}명`;
+                if (ctx.dataset.label === '구매자수(명)') return ` 구매자: ${v.toLocaleString()}명`;
+                if (ctx.dataset.label === '전환율(%)') return ` 전환율: ${v.toFixed(2)}%`;
+                if (ctx.dataset.label === '유입당 매출(원)') return ` 유입당 매출: ${v.toLocaleString()}원`;
+                return ` ${v}`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#555', font: { size: 9 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 18 },
+            grid: { color: 'rgba(0,0,0,0.04)' }
+          },
+          yLeft: {
+            type: 'linear',
+            position: 'left',
+            title: { display: true, text: '매출(만원)', color: '#1976d2', font: { size: 10 } },
+            ticks: { color: '#1976d2', callback: v => v.toLocaleString() },
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            min: 0,
+          },
+          yVisits: {
+            type: 'linear',
+            position: 'right',
+            display: false,
+            min: 0,
+            max: 20000,
+            grid: { drawOnChartArea: false }
+          },
+          yBuyers: {
+            type: 'linear',
+            position: 'right',
+            display: false,
+            min: 0,
+            max: 500,
+            grid: { drawOnChartArea: false }
+          },
+          yRate: {
+            type: 'linear',
+            position: 'right',
+            title: { display: true, text: '전환율(%)', color: '#f57c00', font: { size: 10 } },
+            ticks: { color: '#f57c00', callback: v => v.toFixed(1) + '%' },
+            grid: { drawOnChartArea: false },
+            min: 0,
+            max: 6,
+          },
+          yRPV: {
+            type: 'linear',
+            position: 'right',
+            display: false,
+            min: 0,
+            max: 3000,
+            grid: { drawOnChartArea: false }
+          },
+        }
+      }
+    });
+  })();
+
+  // ========== 가설 2 차트 ==========
+  (function() {
+    const h2Labels = [
+      '4/1~4/2\n이벤트 전',
+      '4/3~4/13\n면세점 입점',
+      '4/14~4/15\n거누파파',
+      '4/16\n깐돌네',
+      '4/17~4/19\n현대홈쇼핑',
+      '4/20~4/23\n그립 방송',
+      '4/24~4/26\n강예찬 등',
+      '4/27~4/29\n트렌드쇼퍼',
+      '4/30~5/5\n쇼핑라이브'
+    ];
+    const h2Values = [1489, 1332, 1437, 1443, 1661, 1541, 1606, 1687, 1593];
+    // 구간 유형: channel=보라, influencer=초록, live=주황, baseline=회색
+    const barColors = [
+      'rgba(136,136,136,0.75)',   // 이벤트 전
+      'rgba(142,68,173,0.75)',    // 면세점
+      'rgba(39,174,96,0.75)',     // 거누파파
+      'rgba(39,174,96,0.75)',     // 깐돌네
+      'rgba(230,126,34,0.85)',    // 홈쇼핑
+      'rgba(230,126,34,0.75)',    // 그립
+      'rgba(39,174,96,0.75)',     // 강예찬
+      'rgba(39,174,96,0.75)',     // 트렌드쇼퍼
+      'rgba(230,126,34,0.85)',    // 쇼핑라이브
+    ];
+    const borderColors = barColors.map(c => c.replace('0.75', '1').replace('0.85', '1'));
+
+    const ctx2 = document.getElementById('chartH2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: h2Labels,
+        datasets: [
+          {
+            label: '유입당 매출(원)',
+            data: h2Values,
+            hidden: true,
+            backgroundColor: barColors,
+            borderColor: borderColors,
+            borderWidth: 2,
+            borderRadius: 6,
+          },
+          {
+            // 기준선(이벤트 전, 1489원) — 라인으로 표시
+            label: '이벤트 전 기준선 (1,489원)',
+            data: Array(h2Labels.length).fill(1489),
+            hidden: true,
+            type: 'line',
+            borderColor: 'rgba(136,136,136,0.6)',
+            borderWidth: 1.5,
+            borderDash: [6, 4],
+            pointRadius: 0,
+            fill: false,
+            tension: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: { color: '#333', font: { size: 12 }, padding: 12 }
+          },
+          tooltip: {
+            backgroundColor: '#ffffff',
+            titleColor: '#1a1a2e',
+            bodyColor: '#333',
+            borderColor: '#ddd',
+            borderWidth: 1,
+            callbacks: {
+              label(ctx) {
+                if (ctx.dataset.type === 'line') return ` ${ctx.dataset.label}`;
+                return ` 유입당 매출: ${ctx.parsed.y.toLocaleString()}원`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: '#555',
+              font: { size: 10 },
+              maxRotation: 0,
+            },
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          },
+          y: {
+            title: { display: true, text: '유입당 매출(원)', color: '#555', font: { size: 11 } },
+            ticks: {
+              color: '#666',
+              callback: v => v.toLocaleString() + '원'
+            },
+            grid: { color: 'rgba(0,0,0,0.06)' },
+            min: 1100,
+            max: 1900
+          }
+        }
+      }
+    });
+  })();
+
+  // ========== 가설 2 전환율 차트 ==========
+  (function() {
+    const convLabels = [
+      '4/1~4/2\n이벤트 전',
+      '4/3~4/13\n면세점 입점',
+      '4/14~4/15\n거누파파',
+      '4/16\n깐돌네',
+      '4/17~4/19\n현대홈쇼핑',
+      '4/20~4/23\n그립 방송',
+      '4/24~4/26\n강예찬 등',
+      '4/27~4/29\n트렌드쇼퍼',
+      '4/30~5/5\n쇼핑라이브'
+    ];
+    const convValues = [1.90, 1.89, 2.23, 3.12, 2.17, 1.26, 1.51, 1.06, 1.94];
+    const convColors = [
+      'rgba(136,136,136,0.75)',
+      'rgba(142,68,173,0.75)',
+      'rgba(39,174,96,0.75)',
+      'rgba(39,174,96,0.85)',
+      'rgba(230,126,34,0.85)',
+      'rgba(230,126,34,0.75)',
+      'rgba(39,174,96,0.75)',
+      'rgba(39,174,96,0.75)',
+      'rgba(230,126,34,0.85)',
+    ];
+    const convBorder = convColors.map(c => c.replace('0.75','1').replace('0.85','1'));
+
+    const ctxConv = document.getElementById('chartH2Conv').getContext('2d');
+    new Chart(ctxConv, {
+      type: 'bar',
+      data: {
+        labels: convLabels,
+        datasets: [
+          {
+            label: '전환율(%)',
+            data: convValues,
+            hidden: true,
+            backgroundColor: convColors,
+            borderColor: convBorder,
+            borderWidth: 2,
+            borderRadius: 6,
+          },
+          {
+            label: '이벤트 전 기준선 (1.90%)',
+            data: Array(convLabels.length).fill(1.90),
+            hidden: true,
+            type: 'line',
+            borderColor: 'rgba(136,136,136,0.6)',
+            borderWidth: 1.5,
+            borderDash: [6,4],
+            pointRadius: 0,
+            fill: false,
+            tension: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top', labels: { color: '#333', font: { size: 12 }, padding: 12 } },
+          tooltip: {
+            backgroundColor: '#ffffff',
+            titleColor: '#1a1a2e',
+            bodyColor: '#333',
+            borderColor: '#ddd',
+            borderWidth: 1,
+            callbacks: {
+              label(ctx) {
+                if (ctx.dataset.type === 'line') return ` ${ctx.dataset.label}`;
+                return ` 전환율: ${ctx.parsed.y.toFixed(2)}%`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#555', font: { size: 10 }, maxRotation: 0 },
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          },
+          y: {
+            title: { display: true, text: '전환율(%)', color: '#555', font: { size: 11 } },
+            ticks: { color: '#666', callback: v => v.toFixed(1) + '%' },
+            grid: { color: 'rgba(0,0,0,0.06)' },
+            min: 0,
+            max: 4.0
+          }
+        }
+      }
+    });
+  })();
+
+  // ========== 가설 3 차트 ==========
+  const labels = [
+    '4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9','4/10',
+    '4/11','4/12','4/13','4/14','4/15','4/16',
+    '4/17','4/18','4/19','4/20','4/21','4/22','4/23','4/24','4/25','4/26','4/27','4/28','4/29',
+    '4/30','5/1','5/2','5/3','5/4','5/5','5/6','5/7','5/8','5/9','5/10'
+  ];
+
+  const brandRatio = [
+    14.3,20.7,17.4,24.5,18.5,17.9,18.6,17.9,16.9,17.6,
+    17.0,20.6,14.8,18.3,17.2,18.7,
+    28.4,21.1,19.3,20.3,20.5,23.5,22.5,24.2,25.3,26.0,24.5,20.4,18.0,
+    18.6,21.6,22.6,20.4,22.9,20.4,
+    null,null,null,null,null
+  ];
+
+  const brandPayment = [
+    5343,9002,5422,4836,2427,9587,8340,12922,5757,11265,
+    6815,8752,7298,4271,6536,9728,
+    16257,6723,10290,3985,5181,6331,6822,2715,4182,3438,6309,2353,4861,
+    4501,5166,4009,6457,4854,4748,
+    4580,3229,2995,2939,3116
+  ];
+
+  const brandBuyers = [16,28,13,15,18,61,62,77,51,66,43,70,50,45,49,36,49,49,63,44,46,34,47,32,34,31,41,29,25,33,44,33,42,32,38,41,38,27,32,32];
+  const brandVisits = [219,287,181,267,237,443,509,557,553,456,467,564,454,489,422,412,672,541,584,730,567,506,507,603,557,692,549,468,440,476,519,484,489,438,556,572,557,467,492,563];
+
+  // 이벤트 목록 (유형: influencer=초록, live=주황, channel=보라)
+  const events = [
+    { date: '4/3',  label: '4/3 면세점',        color: '#8e44ad', type: 'channel',    labelOffset: 0  },
+    { date: '4/14', label: '4/14 거누파파YT',    color: '#27ae60', type: 'influencer', labelOffset: 0  },
+    { date: '4/15', label: '4/15 거누파파IG',    color: '#27ae60', type: 'influencer', labelOffset: 12 },
+    { date: '4/16', label: '4/16 깐돌네IG',      color: '#27ae60', type: 'influencer', labelOffset: 24 },
+    { date: '4/17', label: '4/17 홈쇼핑',        color: '#e67e22', type: 'live',       labelOffset: 0  },
+    { date: '4/20', label: '4/20 그립방송',       color: '#e67e22', type: 'live',       labelOffset: 0  },
+    { date: '4/24', label: '4/24 강예찬',         color: '#27ae60', type: 'influencer', labelOffset: 0  },
+    { date: '4/27', label: '4/27 트렌드쇼퍼',    color: '#27ae60', type: 'influencer', labelOffset: 0  },
+    { date: '4/30', label: '4/30 쇼핑라이브',    color: '#e67e22', type: 'live',       labelOffset: 0  },
+  ].map(e => ({ ...e, idx: labels.indexOf(e.date) }));
+
+  // Plugin: 세로 점선
+  const verticalLinePlugin = {
+    id: 'verticalLines',
+    afterDraw(chart) {
+      if (chart.canvas.id !== 'chartBrand') return;
+      const ctx = chart.ctx;
+      const xAxis = chart.scales.x;
+      const yAxis = chart.scales.yLeft;
+      if (!xAxis || !yAxis) return;
+
+      events.forEach(({ idx, color, label, labelOffset }) => {
+        if (idx < 0) return;
+        const x = xAxis.getPixelForValue(idx);
+        ctx.save();
+        ctx.setLineDash([5, 4]);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.5;
+        ctx.globalAlpha = 0.7;
+        ctx.beginPath();
+        ctx.moveTo(x, yAxis.top);
+        ctx.lineTo(x, yAxis.bottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = color;
+        ctx.font = '10px "Apple SD Gothic Neo", sans-serif';
+        ctx.textAlign = 'center';
+        // labelOffset: 날짜 밀집 구간에서 레이블 높이를 분산
+        ctx.fillText(label, x, yAxis.top - 32 - labelOffset);
+        ctx.restore();
+      });
+    }
+  };
+
+  Chart.register(verticalLinePlugin);
+
+  const ctx = document.getElementById('chartBrand').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '브랜드 유입 비율(%)',
+          data: brandRatio,
+          hidden: true,
+          yAxisID: 'yLeft',
+          borderColor: '#1976d2',
+          backgroundColor: 'rgba(25,118,210,0.08)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointStyle: 'circle',
+          pointHoverRadius: 5,
+          fill: true,
+          tension: 0.3
+        },
+        {
+          label: '브랜드유입당결제(원)',
+          data: brandPayment,
+          hidden: true,
+          yAxisID: 'yRight',
+          borderColor: '#f57c00',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointStyle: 'circle',
+          pointHoverRadius: 5,
+          fill: false,
+          tension: 0.3
+        },
+        {
+          label: '브랜드 결제자수(건)',
+          data: brandBuyers,
+          hidden: true,
+          type: 'line',
+          borderColor: 'rgba(39,174,96,0.9)',
+          borderWidth: 2,
+          pointRadius: 2,
+          tension: 0.3,
+          fill: false,
+          yAxisID: 'yBuyers',
+          order: 3,
+        },
+        {
+          label: '브랜드 유입수(명)',
+          data: brandVisits,
+          type: 'line',
+          borderColor: 'rgba(142,68,173,0.9)',
+          borderWidth: 2,
+          pointRadius: 2,
+          tension: 0.3,
+          fill: false,
+          hidden: true,
+          yAxisID: 'yBrandVisits',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      layout: {
+        padding: { top: 80 }
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+          align: 'center',
+          labels: { color: '#333', font: { size: 12 }, padding: 12 }
+        },
+        tooltip: {
+          backgroundColor: '#ffffff',
+          titleColor: '#1a1a2e',
+          bodyColor: '#333',
+          borderColor: '#ddd',
+          borderWidth: 1,
+          callbacks: {
+            label(ctx) {
+              const v = ctx.parsed.y;
+              const lbl = ctx.dataset.label;
+              if (lbl === '브랜드 유입 비율(%)') return ` 브랜드 비율: ${v.toFixed(1)}%`;
+              if (lbl === '브랜드유입당결제(원)') return ` 유입당결제: ${Math.round(v).toLocaleString()}원`;
+              if (lbl === '브랜드 결제자수(건)') return ` 결제자수: ${v}건`;
+              if (lbl === '브랜드 유입수(명)') return ` 브랜드 유입수: ${Math.round(v).toLocaleString()}명`;
+              return ` ${v}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#666',
+            font: { size: 11 },
+            maxRotation: 45,
+            autoSkip: true,
+            maxTicksLimit: 18
+          },
+          grid: { color: 'rgba(0,0,0,0.06)' }
+        },
+        yLeft: {
+          position: 'left',
+          title: { display: true, text: '브랜드 유입 비율(%)', color: '#1976d2', font: { size: 11 } },
+          ticks: {
+            color: '#666',
+            callback: v => v + '%'
+          },
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          min: 10,
+          max: 32
+        },
+        yRight: {
+          position: 'right',
+          title: { display: true, text: '브랜드유입당결제(원)', color: '#f57c00', font: { size: 11 } },
+          ticks: {
+            color: '#666',
+            callback: v => v.toLocaleString() + '원'
+          },
+          grid: { drawOnChartArea: false },
+          min: 0,
+          max: 18000
+        },
+        yBuyers: {
+          position: 'right',
+          display: false,
+          min: 0,
+          max: 120,
+          grid: { drawOnChartArea: false }
+        },
+        yBrandVisits: {
+          type: 'linear',
+          position: 'right',
+          display: false,
+          min: 0,
+          max: 1200,
+          grid: { drawOnChartArea: false }
+        },
+      }
+    }
+  });
+
+});
+
+</script>
+</body>
+</html>

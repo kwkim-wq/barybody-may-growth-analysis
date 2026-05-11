@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바리바디 5월 매출 상승세 원인 분석 — Phase 1 타임라인</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    padding: 24px;
+    min-height: 100vh;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #7f8fa6;
+    margin-bottom: 28px;
+  }
+  .card {
+    background: #16213e;
+    border: 1px solid #0f3460;
+    border-radius: 12px;
+    padding: 20px 20px 16px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #7f8fa6;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+  .chart-wrap {
+    position: relative;
+    height: 220px;
+  }
+  /* 이벤트 범례 */
+  .event-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #0f3460;
+  }
+  .event-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #a0aec0;
+  }
+  .event-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #f6ad55;
+    flex-shrink: 0;
+  }
+  /* 요약 섹션 */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .summary-item {
+    background: #0f3460;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .summary-date {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #f6ad55;
+    margin-bottom: 5px;
+  }
+  .summary-text {
+    font-size: 0.8rem;
+    color: #cbd5e0;
+    line-height: 1.6;
+  }
+  .summary-tag {
+    display: inline-block;
+    margin-top: 6px;
+    background: #e53e3e22;
+    color: #fc8181;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #e53e3e44;
+  }
+</style>
+</head>
+<body>
+
+<h1>바리바디 5월 매출 상승세 원인 분석 — Phase 1 타임라인</h1>
+<p class="subtitle">2025년 4월 1일 ~ 5월 5일 · 매출 / 세션 / 광고 / 검색량 추이 + 마케팅 이벤트 오버레이</p>
+
+<!-- Chart 1: 매출 -->
+<div class="card">
+  <div class="card-title">Chart 1 — 채널별 매출 (만원)</div>
+  <div class="chart-wrap">
+    <canvas id="chartSales"></canvas>
+  </div>
+  <div class="event-legend" id="legend1"></div>
+</div>
+
+<!-- Chart 2: 세션 + 노출 -->
+<div class="card">
+  <div class="card-title">Chart 2 — GA4 세션 수 &amp; 광고 노출수</div>
+  <div class="chart-wrap">
+    <canvas id="chartSession"></canvas>
+  </div>
+  <div class="event-legend" id="legend2"></div>
+</div>
+
+<!-- Chart 3: 키워드 -->
+<div class="card">
+  <div class="card-title">Chart 3 — 네이버 키워드 검색량 (상대지수)</div>
+  <div class="chart-wrap">
+    <canvas id="chartKeyword"></canvas>
+  </div>
+  <div class="event-legend" id="legend3"></div>
+</div>
+
+<!-- 요약 -->
+<div class="card">
+  <div class="card-title">주요 피크 요약</div>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <div class="summary-date">4/17 (목) — 현대홈쇼핑 방영일</div>
+      <div class="summary-text">
+        합계 매출 <strong>17.6M</strong> · cafe24 <strong>6.9M</strong><br>
+        GA4 세션 <strong>6,087</strong> · 키워드 검색량 <strong>97.6</strong>
+      </div>
+      <span class="summary-tag">4월 최고 매출일</span>
+    </div>
+    <div class="summary-item">
+      <div class="summary-date">4/20 (일) — 그립 라이브</div>
+      <div class="summary-text">
+        키워드 검색량 <strong>100.0</strong> (전 기간 최고점)<br>
+        세션 3,430 · 합계 매출 9.9M — 직접 매출 전환은 평범
+      </div>
+      <span class="summary-tag">검색 최고점 / 매출 미반영</span>
+    </div>
+    <div class="summary-item">
+      <div class="summary-date">4/30 (수) — 네이버 쇼핑라이브</div>
+      <div class="summary-text">
+        합계 매출 <strong>15.3M</strong> · smartstore <strong>10.9M</strong><br>
+        GA4 세션 4,437 · 검색량 54.7
+      </div>
+      <span class="summary-tag">스마트스토어 스파이크</span>
+    </div>
+    <div class="summary-item">
+      <div class="summary-date">5/5 (월) — 어린이날 연휴</div>
+      <div class="summary-text">
+        GA4 세션 <strong>9,499</strong> (전 기간 최고점)<br>
+        합계 매출 <strong>15.7M</strong> · 메타 Paid Social <strong>79%</strong> 집중
+      </div>
+      <span class="summary-tag">세션 최고점 / 메타 광고 주도</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── 데이터 ───────────────────────────────────────────────────────
+const dates = ['4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9','4/10','4/11','4/12','4/13','4/14','4/15','4/16','4/17','4/18','4/19','4/20','4/21','4/22','4/23','4/24','4/25','4/26','4/27','4/28','4/29','4/30','5/1','5/2','5/3','5/4','5/5'];
+
+const sales        = [1150,1004,802,949,696,1141,1055,1256,1011,1212,955,1122,1129,1159,1042,1105,1759,991,1140,994,1022,911,959,980,969,1322,1106,1003,989,1531,1024,1045,1427,1450,1572];
+const salesCafe24  = [468,277,255,449,298,309,252,213,220,261,254,256,279,375,315,406,686,369,394,249,224,251,209,304,324,584,307,266,405,446,355,345,555,593,636];
+const salesSmart   = [678,728,547,500,399,832,802,1044,791,951,701,866,850,783,727,699,1073,622,747,745,798,659,750,676,645,738,800,737,584,1085,669,700,872,857,937];
+const sessions     = [3006,3057,3017,4572,4244,3679,2519,4460,5947,5546,4226,5714,4732,4266,4181,5145,6087,4528,4901,3430,3525,3569,3168,3167,3040,5341,2898,3000,4031,4437,3867,3711,4443,6571,9499];
+const impressions  = [58.2,54.2,56.4,43.3,54.6,60.9,47.3,29.1,44.4,43.9,33.5,33.7,39.2,50.6,38.9,27.2,24.1,18.9,22.2,23.7,28.8,28.0,25.2,22.6,22.8,23.0,22.2,20.8,26.3,28.5,24.0,28.3,30.6,41.9,36.5];
+const keyword      = [50.8,47.7,45.6,41.7,42.2,57.6,59.5,64.5,65.0,61.2,54.2,65.5,59.7,71.5,62.6,62.8,97.6,58.5,64.7,100.0,69.1,62.8,55.6,60.2,59.0,67.6,56.8,57.1,48.2,54.7,55.6,49.6,57.1,46.8,60.7];
+
+const events = [
+  { idx: 2,  label: '4/3 면세점 입점' },
+  { idx: 13, label: '4/14 거누파파 유튜브' },
+  { idx: 14, label: '4/15 거누파파 인스타' },
+  { idx: 15, label: '4/16 깐돌네 인스타' },
+  { idx: 16, label: '4/17 현대홈쇼핑' },
+  { idx: 19, label: '4/20 그립 라이브' },
+  { idx: 23, label: '4/24 강현이어라·강예찬' },
+  { idx: 26, label: '4/27 트렌드쇼퍼' },
+  { idx: 29, label: '4/30 네이버 쇼핑라이브' },
+];
+
+// 피크 날짜 (배경 음영)
+const peakIndices = [16, 29, 34]; // 4/17, 4/30, 5/5
+
+// 이벤트 컬러 팔레트
+const evtColors = [
+  '#f6ad55','#68d391','#76e4f7','#b794f4',
+  '#f687b3','#faf089','#fc8181','#4fd1c7','#a3bffa'
+];
+
+// ─── 커스텀 플러그인: 세로 점선 + 라벨 + 피크 음영 ──────────────
+function makeOverlayPlugin(evts, peaks) {
+  return {
+    id: 'overlayPlugin',
+    beforeDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      if (!chartArea) return;
+      const xScale = scales.x;
+      ctx.save();
+
+      // 피크 배경 음영
+      peaks.forEach(pi => {
+        const x = xScale.getPixelForValue(pi);
+        const bw = xScale.width / dates.length;
+        ctx.fillStyle = 'rgba(246,173,85,0.10)';
+        ctx.fillRect(x - bw/2, chartArea.top, bw, chartArea.bottom - chartArea.top);
+      });
+
+      // 이벤트 세로 점선 + 상단 라벨
+      evts.forEach((ev, i) => {
+        const x = xScale.getPixelForValue(ev.idx);
+        const color = evtColors[i % evtColors.length];
+
+        ctx.beginPath();
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.2;
+        ctx.moveTo(x, chartArea.top);
+        ctx.lineTo(x, chartArea.bottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // 라벨 — 짧은 이름만 (날짜 부분 제거)
+        const shortLabel = ev.label.replace(/^\d+\/\d+\s/, '');
+        ctx.save();
+        ctx.translate(x + 4, chartArea.top + 6);
+        ctx.rotate(-Math.PI / 2);
+        ctx.font = '10px Segoe UI, sans-serif';
+        ctx.fillStyle = color;
+        ctx.textAlign = 'left';
+        ctx.fillText(shortLabel, 0, 0);
+        ctx.restore();
+      });
+
+      ctx.restore();
+    }
+  };
+}
+
+// ─── 공통 옵션 ───────────────────────────────────────────────────
+const commonOptions = (yAxes) => ({
+  responsive: true,
+  maintainAspectRatio: false,
+  animation: { duration: 600 },
+  interaction: { mode: 'index', intersect: false },
+  plugins: {
+    legend: {
+      labels: { color: '#cbd5e0', boxWidth: 12, font: { size: 11 } }
+    },
+    tooltip: {
+      backgroundColor: '#0f3460',
+      titleColor: '#e2e8f0',
+      bodyColor: '#a0aec0',
+      borderColor: '#2d4a8a',
+      borderWidth: 1,
+    }
+  },
+  scales: {
+    x: {
+      ticks: {
+        color: '#7f8fa6',
+        font: { size: 10 },
+        maxRotation: 0,
+        autoSkip: true,
+        maxTicksLimit: 18,
+      },
+      grid: { color: 'rgba(255,255,255,0.05)' }
+    },
+    ...yAxes
+  }
+});
+
+const overlayPlugin = makeOverlayPlugin(events, peakIndices);
+
+// ─── Chart 1: 매출 ───────────────────────────────────────────────
+new Chart(document.getElementById('chartSales'), {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [
+      {
+        label: '합계',
+        data: sales,
+        borderColor: 'rgba(200,200,200,0.9)',
+        backgroundColor: 'transparent',
+        borderWidth: 2.5,
+        pointRadius: 2,
+        tension: 0.3,
+        order: 1,
+      },
+      {
+        label: 'cafe24',
+        data: salesCafe24,
+        borderColor: '#63b3ed',
+        backgroundColor: 'rgba(99,179,237,0.08)',
+        borderWidth: 1.5,
+        pointRadius: 1.5,
+        tension: 0.3,
+        fill: true,
+        order: 2,
+      },
+      {
+        label: 'smartstore',
+        data: salesSmart,
+        borderColor: '#68d391',
+        backgroundColor: 'rgba(104,211,145,0.08)',
+        borderWidth: 1.5,
+        pointRadius: 1.5,
+        tension: 0.3,
+        fill: true,
+        order: 3,
+      },
+    ]
+  },
+  options: commonOptions({
+    y: {
+      ticks: { color: '#7f8fa6', font: { size: 10 },
+               callback: v => v >= 1000 ? (v/100).toFixed(0)+'M' : v+'만' },
+      grid: { color: 'rgba(255,255,255,0.05)' }
+    }
+  }),
+  plugins: [overlayPlugin]
+});
+
+// ─── Chart 2: 세션 + 노출 ────────────────────────────────────────
+new Chart(document.getElementById('chartSession'), {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [
+      {
+        label: 'GA4 세션',
+        data: sessions,
+        borderColor: '#b794f4',
+        backgroundColor: 'rgba(183,148,244,0.08)',
+        borderWidth: 2,
+        pointRadius: 2,
+        tension: 0.3,
+        yAxisID: 'ySession',
+      },
+      {
+        label: '광고 노출수 (만회)',
+        data: impressions,
+        borderColor: '#f6ad55',
+        backgroundColor: 'transparent',
+        borderWidth: 1.8,
+        pointRadius: 1.5,
+        borderDash: [6, 3],
+        tension: 0.3,
+        yAxisID: 'yImp',
+      },
+    ]
+  },
+  options: commonOptions({
+    ySession: {
+      position: 'left',
+      ticks: { color: '#b794f4', font: { size: 10 },
+               callback: v => v >= 1000 ? (v/1000).toFixed(1)+'K' : v },
+      grid: { color: 'rgba(255,255,255,0.05)' }
+    },
+    yImp: {
+      position: 'right',
+      ticks: { color: '#f6ad55', font: { size: 10 },
+               callback: v => v+'만' },
+      grid: { drawOnChartArea: false }
+    }
+  }),
+  plugins: [overlayPlugin]
+});
+
+// ─── Chart 3: 키워드 ─────────────────────────────────────────────
+new Chart(document.getElementById('chartKeyword'), {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [
+      {
+        label: '키워드 검색량 (상대지수)',
+        data: keyword,
+        borderColor: '#fc8181',
+        backgroundColor: 'rgba(252,129,129,0.10)',
+        borderWidth: 2,
+        pointRadius: 2,
+        tension: 0.3,
+        fill: true,
+      },
+    ]
+  },
+  options: commonOptions({
+    y: {
+      ticks: { color: '#fc8181', font: { size: 10 },
+               callback: v => v },
+      grid: { color: 'rgba(255,255,255,0.05)' },
+      max: 110,
+    }
+  }),
+  plugins: [overlayPlugin]
+});
+
+// ─── 이벤트 범례 렌더 ────────────────────────────────────────────
+['legend1','legend2','legend3'].forEach(id => {
+  const el = document.getElementById(id);
+  events.forEach((ev, i) => {
+    const item = document.createElement('div');
+    item.className = 'event-item';
+    item.innerHTML = `<span class="event-dot" style="background:${evtColors[i % evtColors.length]}"></span>${ev.label}`;
+    el.appendChild(item);
+  });
+});
+</script>
+</body>
+</html>
