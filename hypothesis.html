@@ -653,6 +653,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.getElementById('tableLabel').textContent = {meta:'메타',gfa:'GFA',advoost:'Advoost',searchad:'검색광고',total:'합계(4채널)'}[ch];
     renderTable(ch);
+    // 패널이 보인 후 차트 크기 재계산
+    if (perfCharts && perfCharts[ch]) {
+      setTimeout(() => perfCharts[ch].resize(), 10);
+    }
   }
   window.showTab = showTab;
 
@@ -733,7 +737,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctr  = d.impressions.map((imp, i) => imp ? +(d.clicks[i] / imp * 100).toFixed(2) : null);
     const roas = d.cost.map((c, i) => c ? +(d.sales[i] / c).toFixed(2) : null);
     const ctx = document.getElementById(canvasId).getContext('2d');
-    new Chart(ctx, {
+    return new Chart(ctx, {
       type: 'line',
       data: {
         labels: perfDates,
@@ -770,11 +774,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 초기화
   renderTable('meta');
-  makeChart('chartMeta','meta');
-  makeChart('chartGfa','gfa');
-  makeChart('chartAdvoost','advoost');
-  makeChart('chartSearchad','searchad');
-  makeChart('chartTotal','total');
+  const perfCharts = {};
+  perfCharts.meta = makeChart('chartMeta','meta');
+  perfCharts.gfa = makeChart('chartGfa','gfa');
+  perfCharts.advoost = makeChart('chartAdvoost','advoost');
+  perfCharts.searchad = makeChart('chartSearchad','searchad');
+  perfCharts.total = makeChart('chartTotal','total');
 
   // ========== 가설 2 데일리 차트 ==========
   (function() {
