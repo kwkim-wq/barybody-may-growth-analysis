@@ -480,28 +480,6 @@
     </table>
     </div>
 
-    <!-- 캠페인 Top10 (공유) -->
-    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — <span id="campLabel">메타</span> / 날짜별 비용 순위</div>
-    <div class="chart-wrap" style="padding:16px;">
-      <div id="dateBar-camp" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;"></div>
-      <div style="overflow-x:auto;">
-      <table class="period-table" id="campTable-camp" style="min-width:560px;font-size:0.8rem;">
-        <thead>
-          <tr>
-            <th style="width:36px;">순위</th>
-            <th>캠페인명</th>
-            <th style="text-align:right;">비용(원)</th>
-            <th style="text-align:right;">노출</th>
-            <th style="text-align:right;">클릭</th>
-            <th style="text-align:right;">CTR</th>
-            <th style="text-align:right;">구매수</th>
-          </tr>
-        </thead>
-        <tbody id="campBody-camp"></tbody>
-      </table>
-      </div>
-    </div>
-
     <!-- 결론 -->
     <div style="margin-top:28px;background:#eef4ff;border-left:4px solid #1976d2;border-radius:0 10px 10px 0;padding:18px 20px;">
       <div style="font-size:0.78rem;color:#1976d2;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">결론</div>
@@ -587,6 +565,28 @@
       </thead>
       <tbody id="perfTableBody"></tbody>
     </table>
+    </div>
+
+    <!-- 캠페인 Top10 (공유) -->
+    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — <span id="campLabel">메타</span> / 날짜별 비용 순위 <span id="campEventLabel" style="color:#e67e22;font-weight:700;"></span></div>
+    <div class="chart-wrap" style="padding:16px;">
+      <div id="dateBar-camp" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;"></div>
+      <div style="overflow-x:auto;">
+      <table class="period-table" id="campTable-camp" style="min-width:560px;font-size:0.8rem;">
+        <thead>
+          <tr>
+            <th style="width:36px;">순위</th>
+            <th>캠페인명</th>
+            <th style="text-align:right;">비용(원)</th>
+            <th style="text-align:right;">노출</th>
+            <th style="text-align:right;">클릭</th>
+            <th style="text-align:right;">CTR</th>
+            <th style="text-align:right;">구매수</th>
+          </tr>
+        </thead>
+        <tbody id="campBody-camp"></tbody>
+      </table>
+      </div>
     </div>
 
     <!-- 결론 -->
@@ -3201,7 +3201,14 @@ const campaignData = {
       const btn = document.createElement('button');
       btn.textContent = campDateLabels[i];
       btn.dataset.date = d;
-      btn.style.cssText = 'padding:4px 8px;border-radius:4px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.75rem;';
+      // 이벤트 있는 날짜 버튼 색상
+      const parts = d.split('-');
+      const shortD = parseInt(parts[1]) + '/' + parseInt(parts[2]);
+      const hasEvent = !!perfEvents[shortD];
+      btn.style.cssText = hasEvent
+        ? 'padding:4px 8px;border-radius:4px;border:1px solid #f0a500;background:#fff8e1;color:#7a5200;cursor:pointer;font-size:0.75rem;font-weight:600;'
+        : 'padding:4px 8px;border-radius:4px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.75rem;';
+      btn.dataset.hasEvent = hasEvent ? '1' : '';
       btn.onclick = () => selectCampDate(ch, d, btn);
       bar.appendChild(btn);
     });
@@ -3215,14 +3222,29 @@ const campaignData = {
     const bar = document.getElementById('dateBar-camp');
     if (!bar) return;
     Array.from(bar.children).forEach(b => {
-      b.style.background = '#fff';
-      b.style.color = '#555';
-      b.style.borderColor = '#ccc';
+      if (b.dataset.hasEvent) {
+        b.style.background = '#fff8e1';
+        b.style.color = '#7a5200';
+        b.style.borderColor = '#f0a500';
+      } else {
+        b.style.background = '#fff';
+        b.style.color = '#555';
+        b.style.borderColor = '#ccc';
+      }
     });
     btn.style.background = '#1976d2';
     btn.style.color = '#fff';
     btn.style.borderColor = '#1976d2';
     renderCampTable(ch, date);
+    // 이벤트 레이블 표시
+    const campEvtEl = document.getElementById('campEventLabel');
+    if (campEvtEl) {
+      // "2026-04-17" → "4/17" 변환
+      const parts = date.split('-');
+      const shortDate = (parseInt(parts[1])) + '/' + parseInt(parts[2]);
+      const evtName = perfEvents[shortDate];
+      campEvtEl.textContent = evtName ? '(' + evtName + ')' : '';
+    }
   }
 
   function renderCampTable(ch, date) {
