@@ -653,9 +653,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.getElementById('tableLabel').textContent = {meta:'메타',gfa:'GFA',advoost:'Advoost',searchad:'검색광고',total:'합계(4채널)'}[ch];
     renderTable(ch);
-    // 패널이 보인 후 차트 크기 재계산
-    if (perfCharts && perfCharts[ch]) {
-      setTimeout(() => perfCharts[ch].resize(), 10);
+    // 처음 클릭 시 해당 차트 초기화 (lazy init)
+    if (!perfCharts[ch]) {
+      const canvasMap = { meta:'chartMeta', gfa:'chartGfa', advoost:'chartAdvoost', searchad:'chartSearchad', total:'chartTotal' };
+      perfCharts[ch] = makeChart(canvasMap[ch], ch);
     }
   }
   window.showTab = showTab;
@@ -775,11 +776,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // 초기화
   renderTable('meta');
   const perfCharts = {};
-  perfCharts.meta = makeChart('chartMeta','meta');
-  perfCharts.gfa = makeChart('chartGfa','gfa');
-  perfCharts.advoost = makeChart('chartAdvoost','advoost');
-  perfCharts.searchad = makeChart('chartSearchad','searchad');
-  perfCharts.total = makeChart('chartTotal','total');
+  perfCharts.meta = makeChart('chartMeta','meta');  // 메타만 즉시 초기화 (처음부터 보임)
+  // 나머지는 lazy init — showTab()에서 처음 클릭 시 초기화
 
   // ========== 가설 2 데일리 차트 ==========
   (function() {
