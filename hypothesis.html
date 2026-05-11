@@ -2569,6 +2569,7 @@ const campaignData = {
 
   // 초기화
   renderTable('meta');
+  setTimeout(() => initDateBar('meta'), 50);  // 초기 메타 캠페인 날짜바
   const perfCharts = {};
   perfCharts.meta = makeChart('chartMeta','meta');  // 메타만 즉시 초기화 (처음부터 보임)
   // 나머지는 lazy init — showTab()에서 처음 클릭 시 초기화
