@@ -480,6 +480,28 @@
     </table>
     </div>
 
+    <!-- 캠페인 Top10 (공유) -->
+    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — <span id="campLabel">메타</span> / 날짜별 비용 순위</div>
+    <div class="chart-wrap" style="padding:16px;">
+      <div id="dateBar-camp" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;"></div>
+      <div style="overflow-x:auto;">
+      <table class="period-table" id="campTable-camp" style="min-width:560px;font-size:0.8rem;">
+        <thead>
+          <tr>
+            <th style="width:36px;">순위</th>
+            <th>캠페인명</th>
+            <th style="text-align:right;">비용(원)</th>
+            <th style="text-align:right;">노출</th>
+            <th style="text-align:right;">클릭</th>
+            <th style="text-align:right;">CTR</th>
+            <th style="text-align:right;">구매수</th>
+          </tr>
+        </thead>
+        <tbody id="campBody-camp"></tbody>
+      </table>
+      </div>
+    </div>
+
     <!-- 결론 -->
     <div style="margin-top:28px;background:#eef4ff;border-left:4px solid #1976d2;border-radius:0 10px 10px 0;padding:18px 20px;">
       <div style="font-size:0.78rem;color:#1976d2;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">결론</div>
@@ -523,32 +545,6 @@
         <div class="chart-title">메타 광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartMeta" height="300"></canvas>
       </div>
-
-    <!-- 캠페인 Top10 -->
-    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
-    <div class="chart-wrap" style="padding:16px;">
-      <!-- 날짜 선택바 -->
-      <div id="dateBar-meta" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
-        <!-- JS로 채움 -->
-      </div>
-      <!-- 캠페인 테이블 -->
-      <div style="overflow-x:auto;">
-      <table class="period-table" id="campTable-meta" style="min-width:560px;font-size:0.8rem;">
-        <thead>
-          <tr>
-            <th style="width:36px;">순위</th>
-            <th>캠페인명</th>
-            <th style="text-align:right;">비용(원)</th>
-            <th style="text-align:right;">노출</th>
-            <th style="text-align:right;">클릭</th>
-            <th style="text-align:right;">CTR</th>
-            <th style="text-align:right;">구매수</th>
-          </tr>
-        </thead>
-        <tbody id="campBody-meta"></tbody>
-      </table>
-      </div>
-    </div>
     </div>
     <div id="panel-gfa" style="display:none;">
       <div class="section-label">GFA — 일별 CPM · CPC · ROAS</div>
@@ -556,32 +552,6 @@
         <div class="chart-title">GFA 광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartGfa" height="300"></canvas>
       </div>
-
-    <!-- 캠페인 Top10 -->
-    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
-    <div class="chart-wrap" style="padding:16px;">
-      <!-- 날짜 선택바 -->
-      <div id="dateBar-gfa" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
-        <!-- JS로 채움 -->
-      </div>
-      <!-- 캠페인 테이블 -->
-      <div style="overflow-x:auto;">
-      <table class="period-table" id="campTable-gfa" style="min-width:560px;font-size:0.8rem;">
-        <thead>
-          <tr>
-            <th style="width:36px;">순위</th>
-            <th>캠페인명</th>
-            <th style="text-align:right;">비용(원)</th>
-            <th style="text-align:right;">노출</th>
-            <th style="text-align:right;">클릭</th>
-            <th style="text-align:right;">CTR</th>
-            <th style="text-align:right;">구매수</th>
-          </tr>
-        </thead>
-        <tbody id="campBody-gfa"></tbody>
-      </table>
-      </div>
-    </div>
     </div>
     <div id="panel-advoost" style="display:none;">
       <div class="section-label">Advoost — 일별 CPM · CPC · ROAS</div>
@@ -589,32 +559,6 @@
         <div class="chart-title">Advoost 광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartAdvoost" height="300"></canvas>
       </div>
-
-    <!-- 캠페인 Top10 -->
-    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
-    <div class="chart-wrap" style="padding:16px;">
-      <!-- 날짜 선택바 -->
-      <div id="dateBar-advoost" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
-        <!-- JS로 채움 -->
-      </div>
-      <!-- 캠페인 테이블 -->
-      <div style="overflow-x:auto;">
-      <table class="period-table" id="campTable-advoost" style="min-width:560px;font-size:0.8rem;">
-        <thead>
-          <tr>
-            <th style="width:36px;">순위</th>
-            <th>캠페인명</th>
-            <th style="text-align:right;">비용(원)</th>
-            <th style="text-align:right;">노출</th>
-            <th style="text-align:right;">클릭</th>
-            <th style="text-align:right;">CTR</th>
-            <th style="text-align:right;">구매수</th>
-          </tr>
-        </thead>
-        <tbody id="campBody-advoost"></tbody>
-      </table>
-      </div>
-    </div>
     </div>
     <div id="panel-searchad" style="display:none;">
       <div class="section-label">검색광고 — 일별 CPM · CPC · ROAS</div>
@@ -622,32 +566,6 @@
         <div class="chart-title">검색광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartSearchad" height="300"></canvas>
       </div>
-
-    <!-- 캠페인 Top10 -->
-    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
-    <div class="chart-wrap" style="padding:16px;">
-      <!-- 날짜 선택바 -->
-      <div id="dateBar-searchad" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
-        <!-- JS로 채움 -->
-      </div>
-      <!-- 캠페인 테이블 -->
-      <div style="overflow-x:auto;">
-      <table class="period-table" id="campTable-searchad" style="min-width:560px;font-size:0.8rem;">
-        <thead>
-          <tr>
-            <th style="width:36px;">순위</th>
-            <th>캠페인명</th>
-            <th style="text-align:right;">비용(원)</th>
-            <th style="text-align:right;">노출</th>
-            <th style="text-align:right;">클릭</th>
-            <th style="text-align:right;">CTR</th>
-            <th style="text-align:right;">구매수</th>
-          </tr>
-        </thead>
-        <tbody id="campBody-searchad"></tbody>
-      </table>
-      </div>
-    </div>
     </div>
     <div id="panel-total" style="display:none;">
       <div class="section-label">합계 — 4채널 합산 일별 CPM · CPC · ROAS</div>
@@ -3266,11 +3184,18 @@ const campaignData = {
   // ===== 캠페인 Top10 날짜바 + 테이블 =====
   const campDates = ["2026-04-01","2026-04-02","2026-04-03","2026-04-04","2026-04-05","2026-04-06","2026-04-07","2026-04-08","2026-04-09","2026-04-10","2026-04-11","2026-04-12","2026-04-13","2026-04-14","2026-04-15","2026-04-16","2026-04-17","2026-04-18","2026-04-19","2026-04-20","2026-04-21","2026-04-22","2026-04-23","2026-04-24","2026-04-25","2026-04-26","2026-04-27","2026-04-28","2026-04-29","2026-04-30","2026-05-01","2026-05-02","2026-05-03","2026-05-04","2026-05-05","2026-05-06","2026-05-07","2026-05-08","2026-05-09","2026-05-10"];
   const campDateLabels = ["4/1","4/2","4/3","4/4","4/5","4/6","4/7","4/8","4/9","4/10","4/11","4/12","4/13","4/14","4/15","4/16","4/17","4/18","4/19","4/20","4/21","4/22","4/23","4/24","4/25","4/26","4/27","4/28","4/29","4/30","5/1","5/2","5/3","5/4","5/5","5/6","5/7","5/8","5/9","5/10"];
-  const campSelectedDate = { meta: null, gfa: null, advoost: null, searchad: null };
+  let campCurrentChannel = 'meta';
 
   function initDateBar(ch) {
-    const bar = document.getElementById('dateBar-' + ch);
-    if (!bar || bar.children.length > 0) return;
+    campCurrentChannel = ch;
+    // campLabel 업데이트
+    const lbl = document.getElementById('campLabel');
+    if (lbl) lbl.textContent = {meta:'메타', gfa:'GFA', advoost:'Advoost', searchad:'검색광고'}[ch] || ch;
+
+    const bar = document.getElementById('dateBar-camp');
+    if (!bar) return;
+    // 날짜바 초기화
+    bar.innerHTML = '';
     campDates.forEach((d, i) => {
       const btn = document.createElement('button');
       btn.textContent = campDateLabels[i];
@@ -3280,13 +3205,14 @@ const campaignData = {
       bar.appendChild(btn);
     });
     // 첫 번째 날짜 자동 선택
-    selectCampDate(ch, campDates[0], bar.children[0]);
+    if (bar.children.length > 0) {
+      selectCampDate(ch, campDates[0], bar.children[0]);
+    }
   }
 
   function selectCampDate(ch, date, btn) {
-    campSelectedDate[ch] = date;
-    // 버튼 스타일 초기화
-    const bar = document.getElementById('dateBar-' + ch);
+    const bar = document.getElementById('dateBar-camp');
+    if (!bar) return;
     Array.from(bar.children).forEach(b => {
       b.style.background = '#fff';
       b.style.color = '#555';
@@ -3299,7 +3225,8 @@ const campaignData = {
   }
 
   function renderCampTable(ch, date) {
-    const tbody = document.getElementById('campBody-' + ch);
+    const tbody = document.getElementById('campBody-camp');
+    if (!tbody) return;
     const rows = (campaignData[ch] && campaignData[ch][date]) ? campaignData[ch][date] : [];
     if (rows.length === 0) {
       tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#888;padding:16px;">데이터 없음</td></tr>';
