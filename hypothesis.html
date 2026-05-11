@@ -203,82 +203,7 @@
 <!-- ========== 가설 1 ========== -->
 <div class="hypothesis-section">
   <div class="hypothesis-header">
-    <span class="hypothesis-badge">가설1 - 퍼포먼스</span>
-    <span class="hypothesis-title">브랜딩 활동 이후 퍼포먼스 마케팅 효율이 올라갔는가?</span>
-  </div>
-  <div class="hypo3-wrap">
-    <div class="hypo-desc">
-      모든 브랜딩 활동(홈쇼핑·인플루언서·채널 입점)을 진행하는 동안 및 이후, 메타·GFA·Advoost·검색광고의
-      <strong>CPM·CPC·ROAS 등 퍼포먼스 효율이 달라졌는지</strong> 일별로 확인한다. (4/1~5/10)
-    </div>
-
-    <!-- 채널 탭 -->
-    <div style="display:flex;gap:8px;margin-bottom:20px;">
-      <button onclick="showTab('meta')" id="tab-meta" style="padding:6px 16px;border-radius:6px;border:1px solid #1976d2;background:#1976d2;color:#fff;cursor:pointer;font-size:0.82rem;">메타</button>
-      <button onclick="showTab('gfa')" id="tab-gfa" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">GFA</button>
-      <button onclick="showTab('advoost')" id="tab-advoost" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">Advoost</button>
-      <button onclick="showTab('searchad')" id="tab-searchad" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">검색광고</button>
-      <button onclick="showTab('total')" id="tab-total" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">합계</button>
-    </div>
-
-    <!-- 채널별 차트 -->
-    <div id="panel-meta">
-      <div class="section-label">메타 — 일별 CPM · CPC · ROAS</div>
-      <div class="chart-wrap">
-        <div class="chart-title">메타 광고 일별 효율 지표 (4/1~5/10)</div>
-        <canvas id="chartMeta" height="300"></canvas>
-      </div>
-    </div>
-    <div id="panel-gfa" style="display:none;">
-      <div class="section-label">GFA — 일별 CPM · CPC · ROAS</div>
-      <div class="chart-wrap">
-        <div class="chart-title">GFA 광고 일별 효율 지표 (4/1~5/10)</div>
-        <canvas id="chartGfa" height="300"></canvas>
-      </div>
-    </div>
-    <div id="panel-advoost" style="display:none;">
-      <div class="section-label">Advoost — 일별 CPM · CPC · ROAS</div>
-      <div class="chart-wrap">
-        <div class="chart-title">Advoost 광고 일별 효율 지표 (4/1~5/10)</div>
-        <canvas id="chartAdvoost" height="300"></canvas>
-      </div>
-    </div>
-    <div id="panel-searchad" style="display:none;">
-      <div class="section-label">검색광고 — 일별 CPM · CPC · ROAS</div>
-      <div class="chart-wrap">
-        <div class="chart-title">검색광고 일별 효율 지표 (4/1~5/10)</div>
-        <canvas id="chartSearchad" height="300"></canvas>
-      </div>
-    </div>
-    <div id="panel-total" style="display:none;">
-      <div class="section-label">합계 — 4채널 합산 일별 CPM · CPC · ROAS</div>
-      <div class="chart-wrap">
-        <div class="chart-title">전체 채널(메타+GFA+Advoost+검색광고) 합산 일별 효율 지표 (4/1~5/10)</div>
-        <canvas id="chartTotal" height="300"></canvas>
-      </div>
-    </div>
-
-    <!-- 채널별 일별 테이블 (메타 기본 표시) -->
-    <div class="section-label" style="margin-top:24px;">일별 상세 — <span id="tableLabel">메타</span></div>
-    <div style="overflow-x:auto;margin-bottom:24px;">
-    <table class="period-table" id="perfTable" style="min-width:800px;font-size:0.8rem;">
-      <thead>
-        <tr>
-          <th>날짜</th><th>이벤트</th><th>비용(원)</th><th>노출</th><th>CPM(원)</th>
-          <th>클릭</th><th>CPC(원)</th><th>CTR(%)</th><th>구매수</th><th>매출(원)</th><th>ROAS</th>
-        </tr>
-      </thead>
-      <tbody id="perfTableBody"></tbody>
-    </table>
-    </div>
-
-  </div>
-</div>
-
-<!-- ========== 가설 2 ========== -->
-<div class="hypothesis-section">
-  <div class="hypothesis-header">
-    <span class="hypothesis-badge">가설2 - 트래픽</span>
+    <span class="hypothesis-badge">가설1 - 트래픽</span>
     <span class="hypothesis-title">이벤트별로 유입 1명당 얼마를 사는지가 달라졌는가?</span>
   </div>
 
@@ -391,10 +316,10 @@
   </div><!-- /hypo3-wrap -->
 </div>
 
-<!-- ========== 가설 3 ========== -->
+<!-- ========== 가설 2 ========== -->
 <div class="hypothesis-section">
   <div class="hypothesis-header">
-    <span class="hypothesis-badge">가설3 - 키워드</span>
+    <span class="hypothesis-badge">가설2 - 키워드</span>
     <span class="hypothesis-title">브랜딩 활동 → 검색 파이 확대 vs 브랜드 인지 비율 상승</span>
   </div>
 
@@ -544,6 +469,82 @@
     </div>
   </div><!-- /hypo3-wrap -->
 </div><!-- /hypothesis-section -->
+
+<!-- ========== 가설 3 ========== -->
+<div class="hypothesis-section">
+  <div class="hypothesis-header">
+    <span class="hypothesis-badge">가설3 - 퍼포먼스</span>
+    <span class="hypothesis-title">브랜딩 활동 이후 퍼포먼스 마케팅 효율이 올라갔는가?</span>
+  </div>
+  <div class="hypo3-wrap">
+    <div class="hypo-desc">
+      모든 브랜딩 활동(홈쇼핑·인플루언서·채널 입점)을 진행하는 동안 및 이후, 메타·GFA·Advoost·검색광고의
+      <strong>CPM·CPC·ROAS 등 퍼포먼스 효율이 달라졌는지</strong> 일별로 확인한다. (4/1~5/10)
+    </div>
+
+    <!-- 채널 탭 -->
+    <div style="display:flex;gap:8px;margin-bottom:20px;">
+      <button onclick="showTab('meta')" id="tab-meta" style="padding:6px 16px;border-radius:6px;border:1px solid #1976d2;background:#1976d2;color:#fff;cursor:pointer;font-size:0.82rem;">메타</button>
+      <button onclick="showTab('gfa')" id="tab-gfa" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">GFA</button>
+      <button onclick="showTab('advoost')" id="tab-advoost" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">Advoost</button>
+      <button onclick="showTab('searchad')" id="tab-searchad" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">검색광고</button>
+      <button onclick="showTab('total')" id="tab-total" style="padding:6px 16px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.82rem;">합계</button>
+    </div>
+
+    <!-- 채널별 차트 -->
+    <div id="panel-meta">
+      <div class="section-label">메타 — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">메타 광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartMeta" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-gfa" style="display:none;">
+      <div class="section-label">GFA — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">GFA 광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartGfa" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-advoost" style="display:none;">
+      <div class="section-label">Advoost — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">Advoost 광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartAdvoost" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-searchad" style="display:none;">
+      <div class="section-label">검색광고 — 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">검색광고 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartSearchad" height="300"></canvas>
+      </div>
+    </div>
+    <div id="panel-total" style="display:none;">
+      <div class="section-label">합계 — 4채널 합산 일별 CPM · CPC · ROAS</div>
+      <div class="chart-wrap">
+        <div class="chart-title">전체 채널(메타+GFA+Advoost+검색광고) 합산 일별 효율 지표 (4/1~5/10)</div>
+        <canvas id="chartTotal" height="300"></canvas>
+      </div>
+    </div>
+
+    <!-- 채널별 일별 테이블 (메타 기본 표시) -->
+    <div class="section-label" style="margin-top:24px;">일별 상세 — <span id="tableLabel">메타</span></div>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+    <table class="period-table" id="perfTable" style="min-width:800px;font-size:0.8rem;">
+      <thead>
+        <tr>
+          <th>날짜</th><th>이벤트</th><th>비용(원)</th><th>노출</th><th>CPM(원)</th>
+          <th>클릭</th><th>CPC(원)</th><th>CTR(%)</th><th>구매수</th><th>매출(원)</th><th>ROAS</th>
+        </tr>
+      </thead>
+      <tbody id="perfTableBody"></tbody>
+    </table>
+    </div>
+
+  </div>
+</div>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
