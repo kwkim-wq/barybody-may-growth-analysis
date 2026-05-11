@@ -523,6 +523,32 @@
         <div class="chart-title">메타 광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartMeta" height="300"></canvas>
       </div>
+
+    <!-- 캠페인 Top10 -->
+    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
+    <div class="chart-wrap" style="padding:16px;">
+      <!-- 날짜 선택바 -->
+      <div id="dateBar-meta" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+        <!-- JS로 채움 -->
+      </div>
+      <!-- 캠페인 테이블 -->
+      <div style="overflow-x:auto;">
+      <table class="period-table" id="campTable-meta" style="min-width:560px;font-size:0.8rem;">
+        <thead>
+          <tr>
+            <th style="width:36px;">순위</th>
+            <th>캠페인명</th>
+            <th style="text-align:right;">비용(원)</th>
+            <th style="text-align:right;">노출</th>
+            <th style="text-align:right;">클릭</th>
+            <th style="text-align:right;">CTR</th>
+            <th style="text-align:right;">구매수</th>
+          </tr>
+        </thead>
+        <tbody id="campBody-meta"></tbody>
+      </table>
+      </div>
+    </div>
     </div>
     <div id="panel-gfa" style="display:none;">
       <div class="section-label">GFA — 일별 CPM · CPC · ROAS</div>
@@ -530,6 +556,32 @@
         <div class="chart-title">GFA 광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartGfa" height="300"></canvas>
       </div>
+
+    <!-- 캠페인 Top10 -->
+    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
+    <div class="chart-wrap" style="padding:16px;">
+      <!-- 날짜 선택바 -->
+      <div id="dateBar-gfa" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+        <!-- JS로 채움 -->
+      </div>
+      <!-- 캠페인 테이블 -->
+      <div style="overflow-x:auto;">
+      <table class="period-table" id="campTable-gfa" style="min-width:560px;font-size:0.8rem;">
+        <thead>
+          <tr>
+            <th style="width:36px;">순위</th>
+            <th>캠페인명</th>
+            <th style="text-align:right;">비용(원)</th>
+            <th style="text-align:right;">노출</th>
+            <th style="text-align:right;">클릭</th>
+            <th style="text-align:right;">CTR</th>
+            <th style="text-align:right;">구매수</th>
+          </tr>
+        </thead>
+        <tbody id="campBody-gfa"></tbody>
+      </table>
+      </div>
+    </div>
     </div>
     <div id="panel-advoost" style="display:none;">
       <div class="section-label">Advoost — 일별 CPM · CPC · ROAS</div>
@@ -537,6 +589,32 @@
         <div class="chart-title">Advoost 광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartAdvoost" height="300"></canvas>
       </div>
+
+    <!-- 캠페인 Top10 -->
+    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
+    <div class="chart-wrap" style="padding:16px;">
+      <!-- 날짜 선택바 -->
+      <div id="dateBar-advoost" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+        <!-- JS로 채움 -->
+      </div>
+      <!-- 캠페인 테이블 -->
+      <div style="overflow-x:auto;">
+      <table class="period-table" id="campTable-advoost" style="min-width:560px;font-size:0.8rem;">
+        <thead>
+          <tr>
+            <th style="width:36px;">순위</th>
+            <th>캠페인명</th>
+            <th style="text-align:right;">비용(원)</th>
+            <th style="text-align:right;">노출</th>
+            <th style="text-align:right;">클릭</th>
+            <th style="text-align:right;">CTR</th>
+            <th style="text-align:right;">구매수</th>
+          </tr>
+        </thead>
+        <tbody id="campBody-advoost"></tbody>
+      </table>
+      </div>
+    </div>
     </div>
     <div id="panel-searchad" style="display:none;">
       <div class="section-label">검색광고 — 일별 CPM · CPC · ROAS</div>
@@ -544,6 +622,32 @@
         <div class="chart-title">검색광고 일별 효율 지표 (4/1~5/10)</div>
         <canvas id="chartSearchad" height="300"></canvas>
       </div>
+
+    <!-- 캠페인 Top10 -->
+    <div class="section-label" style="margin-top:28px;">캠페인 Top10 — 날짜별 비용 순위</div>
+    <div class="chart-wrap" style="padding:16px;">
+      <!-- 날짜 선택바 -->
+      <div id="dateBar-searchad" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+        <!-- JS로 채움 -->
+      </div>
+      <!-- 캠페인 테이블 -->
+      <div style="overflow-x:auto;">
+      <table class="period-table" id="campTable-searchad" style="min-width:560px;font-size:0.8rem;">
+        <thead>
+          <tr>
+            <th style="width:36px;">순위</th>
+            <th>캠페인명</th>
+            <th style="text-align:right;">비용(원)</th>
+            <th style="text-align:right;">노출</th>
+            <th style="text-align:right;">클릭</th>
+            <th style="text-align:right;">CTR</th>
+            <th style="text-align:right;">구매수</th>
+          </tr>
+        </thead>
+        <tbody id="campBody-searchad"></tbody>
+      </table>
+      </div>
+    </div>
     </div>
     <div id="panel-total" style="display:none;">
       <div class="section-label">합계 — 4채널 합산 일별 CPM · CPC · ROAS</div>
@@ -585,6 +689,1774 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+const campaignData = {
+  meta: {
+    "2026-04-01": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 718130, impressions: 58253, clicks: 1008, purchases: 45},
+      {campaign: "260327_판매_캠페인_숙면마사지기_올인원마사지기", cost: 246152, impressions: 19217, clicks: 298, purchases: 9},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 99055, impressions: 5979, clicks: 108, purchases: 4},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 67093, impressions: 2851, clicks: 141, purchases: 0},
+      {campaign: "260327_판매_캠페인_타임딜특가_올인원마사지기", cost: 54651, impressions: 3258, clicks: 36, purchases: 4},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 52247, impressions: 3108, clicks: 61, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 49584, impressions: 3214, clicks: 49, purchases: 0},
+      {campaign: "260327_판매_캠페인_타겟형_목_올인원마사지기", cost: 36673, impressions: 2289, clicks: 36, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 30114, impressions: 1347, clicks: 19, purchases: 0},
+      {campaign: "260327_판매_캠페인_아버지 단독_EMS허리마사지기", cost: 20359, impressions: 1481, clicks: 12, purchases: 0}
+    ],
+    "2026-04-02": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 474892, impressions: 36000, clicks: 540, purchases: 24},
+      {campaign: "260327_판매_캠페인_숙면마사지기_올인원마사지기", cost: 154527, impressions: 12235, clicks: 196, purchases: 4},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 102487, impressions: 6444, clicks: 85, purchases: 2},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 79613, impressions: 4509, clicks: 126, purchases: 0},
+      {campaign: "260327_판매_캠페인_타임딜특가_올인원마사지기", cost: 54770, impressions: 4529, clicks: 36, purchases: 2},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 52073, impressions: 3090, clicks: 59, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 49217, impressions: 3192, clicks: 43, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 35997, impressions: 1892, clicks: 18, purchases: 1},
+      {campaign: "260327_판매_캠페인_아버지 단독_EMS허리마사지기", cost: 22525, impressions: 1552, clicks: 14, purchases: 0},
+      {campaign: "260330_판매_캠페인_비포애프터_브이페이스", cost: 22418, impressions: 1422, clicks: 10, purchases: 0}
+    ],
+    "2026-04-03": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 516025, impressions: 40720, clicks: 638, purchases: 34},
+      {campaign: "260327_판매_캠페인_숙면마사지기_올인원마사지기", cost: 110110, impressions: 9340, clicks: 111, purchases: 3},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 91937, impressions: 6750, clicks: 103, purchases: 3},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 89385, impressions: 5953, clicks: 152, purchases: 2},
+      {campaign: "260403_트래픽_캠페인_엘리핏_슬림벨트v2", cost: 55464, impressions: 5469, clicks: 175, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 54350, impressions: 3952, clicks: 75, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 46806, impressions: 2376, clicks: 14, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 43891, impressions: 3303, clicks: 38, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 43107, impressions: 2783, clicks: 49, purchases: 0},
+      {campaign: "260330_판매_캠페인_비포애프터_브이페이스", cost: 37535, impressions: 2437, clicks: 12, purchases: 1}
+    ],
+    "2026-04-04": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 543245, impressions: 48491, clicks: 826, purchases: 24},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 96289, impressions: 6144, clicks: 82, purchases: 0},
+      {campaign: "260327_판매_캠페인_숙면마사지기_올인원마사지기", cost: 87525, impressions: 7419, clicks: 129, purchases: 5},
+      {campaign: "260403_트래픽_캠페인_엘리핏_슬림벨트v2", cost: 85782, impressions: 9571, clicks: 390, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 71123, impressions: 4514, clicks: 40, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 52501, impressions: 3344, clicks: 106, purchases: 3},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 51669, impressions: 3773, clicks: 48, purchases: 0},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 49011, impressions: 2763, clicks: 36, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 48330, impressions: 3961, clicks: 52, purchases: 0},
+      {campaign: "260330_판매_캠페인_비포애프터_브이페이스", cost: 47177, impressions: 2861, clicks: 30, purchases: 0}
+    ],
+    "2026-04-05": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 552262, impressions: 47689, clicks: 805, purchases: 29},
+      {campaign: "260327_판매_캠페인_숙면마사지기_올인원마사지기", cost: 105620, impressions: 9000, clicks: 190, purchases: 2},
+      {campaign: "260403_트래픽_캠페인_엘리핏_슬림벨트v2", cost: 100754, impressions: 15434, clicks: 393, purchases: 0},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 89783, impressions: 4888, clicks: 79, purchases: 3},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 72923, impressions: 5780, clicks: 46, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 60330, impressions: 4506, clicks: 126, purchases: 3},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 52760, impressions: 3307, clicks: 40, purchases: 0},
+      {campaign: "260403_판매_캠페인_올인원타겟형_올인원마사지기", cost: 50764, impressions: 4863, clicks: 56, purchases: 4},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 48614, impressions: 3562, clicks: 53, purchases: 0},
+      {campaign: "260330_판매_캠페인_비포애프터_브이페이스", cost: 48379, impressions: 2854, clicks: 34, purchases: 0}
+    ],
+    "2026-04-06": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 602291, impressions: 46717, clicks: 826, purchases: 21},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 136263, impressions: 8078, clicks: 114, purchases: 2},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 98905, impressions: 5552, clicks: 83, purchases: 2},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 94794, impressions: 5379, clicks: 49, purchases: 1},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 83848, impressions: 5933, clicks: 143, purchases: 2},
+      {campaign: "260330_판매_캠페인_비포애프터_브이페이스", cost: 69716, impressions: 2782, clicks: 33, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 62156, impressions: 3599, clicks: 41, purchases: 2},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 58426, impressions: 2615, clicks: 30, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 57968, impressions: 3312, clicks: 42, purchases: 2},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 51144, impressions: 4226, clicks: 85, purchases: 1}
+    ],
+    "2026-04-07": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 581894, impressions: 44358, clicks: 719, purchases: 25},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 163851, impressions: 9102, clicks: 70, purchases: 6},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 89672, impressions: 4671, clicks: 63, purchases: 0},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 83672, impressions: 3824, clicks: 22, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_EMS허리마사지기", cost: 80416, impressions: 4333, clicks: 19, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 75989, impressions: 5332, clicks: 58, purchases: 2},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 65095, impressions: 6382, clicks: 144, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 59688, impressions: 3748, clicks: 46, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 58961, impressions: 2998, clicks: 45, purchases: 0},
+      {campaign: "260403_판매_캠페인_50명선착순_건초염_EMS손목마사지기", cost: 54282, impressions: 2500, clicks: 19, purchases: 0}
+    ],
+    "2026-04-08": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 603171, impressions: 53036, clicks: 738, purchases: 18},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 106937, impressions: 5467, clicks: 270, purchases: 0},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 98025, impressions: 5333, clicks: 67, purchases: 4},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 78766, impressions: 3943, clicks: 71, purchases: 2},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 59539, impressions: 3578, clicks: 86, purchases: 1},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 44875, impressions: 2607, clicks: 29, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 41794, impressions: 2316, clicks: 41, purchases: 1},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 41753, impressions: 2897, clicks: 33, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 40389, impressions: 2441, clicks: 50, purchases: 0},
+      {campaign: "260403_판매_캠페인_50명선착순_건초염_EMS손목마사지기", cost: 40039, impressions: 2037, clicks: 12, purchases: 1}
+    ],
+    "2026-04-09": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 681026, impressions: 57263, clicks: 924, purchases: 23},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 107924, impressions: 8031, clicks: 64, purchases: 8},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 96262, impressions: 8050, clicks: 49, purchases: 1},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 90582, impressions: 6089, clicks: 96, purchases: 2},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 89477, impressions: 3719, clicks: 254, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 74486, impressions: 5556, clicks: 124, purchases: 2},
+      {campaign: "260403_판매_캠페인_50명선착순_건초염_EMS손목마사지기", cost: 52139, impressions: 2907, clicks: 11, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 51729, impressions: 4040, clicks: 41, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 49937, impressions: 4782, clicks: 55, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 45501, impressions: 4780, clicks: 41, purchases: 2}
+    ],
+    "2026-04-10": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 610622, impressions: 48003, clicks: 786, purchases: 33},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 98036, impressions: 8831, clicks: 77, purchases: 1},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 89127, impressions: 9590, clicks: 70, purchases: 0},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 87556, impressions: 9178, clicks: 32, purchases: 0},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 86280, impressions: 3009, clicks: 232, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 72646, impressions: 7193, clicks: 106, purchases: 3},
+      {campaign: "260403_판매_캠페인_50명선착순_건초염_EMS손목마사지기", cost: 49232, impressions: 4391, clicks: 27, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 48652, impressions: 4197, clicks: 67, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 48617, impressions: 5664, clicks: 50, purchases: 1},
+      {campaign: "260408_트래픽_캠페인_4주년_릴렉스틱", cost: 47367, impressions: 5663, clicks: 262, purchases: 1}
+    ],
+    "2026-04-11": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 632081, impressions: 44902, clicks: 857, purchases: 24},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 87552, impressions: 4911, clicks: 65, purchases: 1},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 84116, impressions: 5509, clicks: 288, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 80038, impressions: 5025, clicks: 101, purchases: 0},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 76814, impressions: 5580, clicks: 50, purchases: 1},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 63016, impressions: 5104, clicks: 67, purchases: 1},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 48155, impressions: 4224, clicks: 57, purchases: 0},
+      {campaign: "260408_트래픽_캠페인_4주년_릴렉스틱", cost: 47033, impressions: 6546, clicks: 261, purchases: 1},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 44571, impressions: 3291, clicks: 52, purchases: 0},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 43493, impressions: 2549, clicks: 28, purchases: 0}
+    ],
+    "2026-04-12": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 653360, impressions: 53410, clicks: 682, purchases: 26},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 108917, impressions: 12747, clicks: 342, purchases: 0},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 107575, impressions: 6977, clicks: 68, purchases: 2},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 87257, impressions: 7617, clicks: 74, purchases: 1},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 85070, impressions: 7055, clicks: 25, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 72702, impressions: 7578, clicks: 53, purchases: 0},
+      {campaign: "260408_트래픽_캠페인_4주년_릴렉스틱", cost: 60729, impressions: 7041, clicks: 392, purchases: 0},
+      {campaign: "260403_판매_캠페인_50명선착순_건초염_EMS손목마사지기", cost: 52042, impressions: 3324, clicks: 23, purchases: 2},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 51248, impressions: 4363, clicks: 47, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 50796, impressions: 4338, clicks: 59, purchases: 0}
+    ],
+    "2026-04-13": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 549594, impressions: 35999, clicks: 585, purchases: 24},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 103743, impressions: 7700, clicks: 334, purchases: 0},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 102730, impressions: 6984, clicks: 79, purchases: 2},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 73369, impressions: 4533, clicks: 35, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 71605, impressions: 5256, clicks: 85, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 60592, impressions: 4300, clicks: 53, purchases: 0},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 59028, impressions: 3205, clicks: 31, purchases: 1},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 52209, impressions: 3721, clicks: 33, purchases: 0},
+      {campaign: "260408_트래픽_캠페인_4주년_릴렉스틱", cost: 50409, impressions: 5785, clicks: 301, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 45878, impressions: 3678, clicks: 48, purchases: 1}
+    ],
+    "2026-04-14": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 389257, impressions: 31606, clicks: 553, purchases: 20},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 114920, impressions: 6276, clicks: 73, purchases: 2},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 105335, impressions: 5771, clicks: 323, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 83411, impressions: 5622, clicks: 95, purchases: 0},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 61902, impressions: 3278, clicks: 18, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 60292, impressions: 3490, clicks: 52, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 59102, impressions: 4217, clicks: 45, purchases: 0},
+      {campaign: "260403_판매_캠페인_비포애프터_슬림벨트v2", cost: 58681, impressions: 3310, clicks: 24, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 56265, impressions: 3634, clicks: 66, purchases: 3},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 50490, impressions: 3867, clicks: 35, purchases: 3}
+    ],
+    "2026-04-15": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 353789, impressions: 24747, clicks: 513, purchases: 21},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 98567, impressions: 8176, clicks: 305, purchases: 0},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 81834, impressions: 3983, clicks: 63, purchases: 2},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 81216, impressions: 4178, clicks: 70, purchases: 0},
+      {campaign: "260414_판매_캠페인_바로랩카피_EMS손목마사지기", cost: 72960, impressions: 4921, clicks: 38, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 61864, impressions: 2966, clicks: 72, purchases: 1},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 59525, impressions: 3674, clicks: 89, purchases: 2},
+      {campaign: "260408_트래픽_캠페인_4주년_릴렉스틱", cost: 44357, impressions: 5128, clicks: 289, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 41444, impressions: 2815, clicks: 30, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝10km_릴렉스틱", cost: 41244, impressions: 3385, clicks: 30, purchases: 0}
+    ],
+    "2026-04-16": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 445424, impressions: 30802, clicks: 588, purchases: 31},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 95859, impressions: 6068, clicks: 259, purchases: 0},
+      {campaign: "260414_판매_캠페인_바로랩카피_EMS손목마사지기", cost: 85429, impressions: 5783, clicks: 32, purchases: 0},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 84973, impressions: 3188, clicks: 69, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 84581, impressions: 3935, clicks: 77, purchases: 4},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 68412, impressions: 4362, clicks: 81, purchases: 2},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 54802, impressions: 2516, clicks: 36, purchases: 1},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 52463, impressions: 2718, clicks: 34, purchases: 1},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 50491, impressions: 2307, clicks: 15, purchases: 0},
+      {campaign: "260408_트래픽_캠페인_4주년_릴렉스틱", cost: 47520, impressions: 5056, clicks: 268, purchases: 0}
+    ],
+    "2026-04-17": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 392775, impressions: 22374, clicks: 495, purchases: 27},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 92800, impressions: 4814, clicks: 223, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 73704, impressions: 2346, clicks: 122, purchases: 1},
+      {campaign: "260414_판매_캠페인_바로랩카피_EMS손목마사지기", cost: 50343, impressions: 3275, clicks: 16, purchases: 1},
+      {campaign: "260327_판매_캠페인_저릿손목_EMS손목마사지기", cost: 49115, impressions: 1924, clicks: 41, purchases: 0},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 45915, impressions: 1461, clicks: 66, purchases: 3},
+      {campaign: "260408_판매_세트_4주년특가_EMS손목마사지기", cost: 42781, impressions: 1397, clicks: 19, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 41125, impressions: 1785, clicks: 27, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 40151, impressions: 1568, clicks: 54, purchases: 1},
+      {campaign: "260408_판매_캠페인_위너_릴렉스틱", cost: 38172, impressions: 1676, clicks: 74, purchases: 1}
+    ],
+    "2026-04-18": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 372518, impressions: 22786, clicks: 556, purchases: 26},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 91709, impressions: 5230, clicks: 295, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 58015, impressions: 3260, clicks: 153, purchases: 2},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 34256, impressions: 2066, clicks: 57, purchases: 1},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 34055, impressions: 2042, clicks: 24, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 31637, impressions: 2126, clicks: 72, purchases: 3},
+      {campaign: "260408_판매_캠페인_위너_릴렉스틱", cost: 29776, impressions: 1977, clicks: 80, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 29688, impressions: 1606, clicks: 37, purchases: 3},
+      {campaign: "260417_판매_캠페인_쇼호스트_릴렉스틱", cost: 15877, impressions: 666, clicks: 27, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-19": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 472459, impressions: 37808, clicks: 815, purchases: 40},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 110566, impressions: 6728, clicks: 284, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 88352, impressions: 7824, clicks: 230, purchases: 2},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 60859, impressions: 8018, clicks: 87, purchases: 1},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 52060, impressions: 6710, clicks: 75, purchases: 2},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 50306, impressions: 6664, clicks: 59, purchases: 0},
+      {campaign: "260408_판매_캠페인_위너_릴렉스틱", cost: 39971, impressions: 3361, clicks: 100, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 39462, impressions: 3373, clicks: 72, purchases: 4},
+      {campaign: "260417_판매_캠페인_쇼호스트_릴렉스틱", cost: 23622, impressions: 1388, clicks: 37, purchases: 0},
+      {campaign: "260327_판매_캠페인_러닝루틴_릴렉스틱", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-20": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 457715, impressions: 35998, clicks: 772, purchases: 23},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 102585, impressions: 6899, clicks: 281, purchases: 0},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 71967, impressions: 4407, clicks: 172, purchases: 2},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 48911, impressions: 2605, clicks: 85, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 41799, impressions: 2908, clicks: 74, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 34988, impressions: 3098, clicks: 27, purchases: 1},
+      {campaign: "260417_판매_캠페인_쇼호스트_릴렉스틱", cost: 16753, impressions: 689, clicks: 23, purchases: 0},
+      {campaign: "260327_판매_캠페인_아버지 단독_EMS허리마사지기", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "260408_판매_캠페인_4주년 생일파티_릴렉스틱", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-21": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 546538, impressions: 40082, clicks: 776, purchases: 21},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 220263, impressions: 13640, clicks: 403, purchases: 4},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 96384, impressions: 6451, clicks: 280, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 70294, impressions: 3436, clicks: 99, purchases: 0},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 55193, impressions: 2308, clicks: 48, purchases: 0},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 42321, impressions: 1740, clicks: 77, purchases: 1},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 33510, impressions: 1610, clicks: 21, purchases: 0},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 22710, impressions: 3485, clicks: 234, purchases: 0},
+      {campaign: "260417_판매_캠페인_쇼호스트_릴렉스틱", cost: 16050, impressions: 482, clicks: 27, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_롱버전_릴렉스틱", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-22": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 493249, impressions: 37071, clicks: 681, purchases: 23},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 384029, impressions: 24375, clicks: 569, purchases: 7},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 100493, impressions: 5700, clicks: 268, purchases: 0},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 91685, impressions: 3442, clicks: 98, purchases: 3},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 90741, impressions: 5642, clicks: 118, purchases: 1},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 42591, impressions: 2108, clicks: 59, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 37248, impressions: 1934, clicks: 46, purchases: 1},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 28930, impressions: 3954, clicks: 269, purchases: 1},
+      {campaign: "260417_판매_캠페인_쇼호스트_릴렉스틱", cost: 19133, impressions: 698, clicks: 15, purchases: 0},
+      {campaign: "260422_판매_캠페인_가정의달 페스타_릴렉스틱/릴렉스틱볼/올인원마사지기/EMS손목마사지기/EMS허리마사지기/이벤트페이지", cost: 16651, impressions: 839, clicks: 26, purchases: 0}
+    ],
+    "2026-04-23": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 517473, impressions: 36523, clicks: 654, purchases: 33},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 341503, impressions: 21246, clicks: 432, purchases: 4},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 105328, impressions: 6167, clicks: 294, purchases: 0},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 86222, impressions: 2846, clicks: 75, purchases: 0},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 47047, impressions: 3547, clicks: 73, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 42759, impressions: 4000, clicks: 61, purchases: 1},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 35358, impressions: 2829, clicks: 33, purchases: 0},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 32332, impressions: 5276, clicks: 370, purchases: 1},
+      {campaign: "260422_트래픽_캠페인_헤임타_릴렉스틱", cost: 30952, impressions: 2151, clicks: 71, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 22896, impressions: 1413, clicks: 33, purchases: 0}
+    ],
+    "2026-04-24": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 551064, impressions: 37779, clicks: 606, purchases: 22},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 405179, impressions: 23843, clicks: 502, purchases: 7},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 91478, impressions: 2901, clicks: 74, purchases: 1},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 87738, impressions: 3551, clicks: 213, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 49958, impressions: 3619, clicks: 62, purchases: 1},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 44224, impressions: 2601, clicks: 51, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 41841, impressions: 2578, clicks: 28, purchases: 0},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 25469, impressions: 3940, clicks: 253, purchases: 1},
+      {campaign: "260414_판매_캠페인_위너_남자_릴렉스틱", cost: 23226, impressions: 1615, clicks: 39, purchases: 0},
+      {campaign: "260423_판매_캠페인_점프_점핑큐브", cost: 21077, impressions: 703, clicks: 23, purchases: 0}
+    ],
+    "2026-04-25": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 516192, impressions: 34421, clicks: 630, purchases: 26},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 446480, impressions: 27900, clicks: 604, purchases: 14},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 110119, impressions: 3160, clicks: 71, purchases: 1},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 94819, impressions: 3270, clicks: 227, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 55961, impressions: 4634, clicks: 80, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 46614, impressions: 2746, clicks: 40, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 44913, impressions: 3181, clicks: 46, purchases: 1},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 28113, impressions: 4202, clicks: 268, purchases: 0},
+      {campaign: "260423_판매_캠페인_점프_점핑큐브", cost: 23161, impressions: 693, clicks: 6, purchases: 0},
+      {campaign: "260422_판매_캠페인_가정의달 페스타_릴렉스틱/릴렉스틱볼/올인원마사지기/EMS손목마사지기/EMS허리마사지기/이벤트페이지", cost: 20862, impressions: 1435, clicks: 23, purchases: 0}
+    ],
+    "2026-04-26": [
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 460871, impressions: 32854, clicks: 560, purchases: 20},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 259209, impressions: 15108, clicks: 358, purchases: 2},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 234161, impressions: 16190, clicks: 348, purchases: 3},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 114775, impressions: 4129, clicks: 124, purchases: 3},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 111878, impressions: 3803, clicks: 280, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 56943, impressions: 5273, clicks: 96, purchases: 2},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 54211, impressions: 4170, clicks: 51, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 45031, impressions: 3386, clicks: 25, purchases: 0},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 38445, impressions: 6137, clicks: 430, purchases: 2},
+      {campaign: "260422_트래픽_캠페인_헤임타_릴렉스틱", cost: 24375, impressions: 617, clicks: 56, purchases: 0}
+    ],
+    "2026-04-27": [
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 201594, impressions: 13111, clicks: 232, purchases: 4},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 189013, impressions: 13588, clicks: 248, purchases: 3},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 106299, impressions: 3513, clicks: 261, purchases: 0},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 93482, impressions: 3380, clicks: 89, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 66203, impressions: 4700, clicks: 37, purchases: 0},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱볼", cost: 54417, impressions: 3759, clicks: 26, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 51644, impressions: 4643, clicks: 69, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 50190, impressions: 3688, clicks: 58, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 45284, impressions: 1631, clicks: 29, purchases: 4},
+      {campaign: "260421_트래픽_캠페인_런닝_관심사타겟_릴렉스틱", cost: 29282, impressions: 5327, clicks: 340, purchases: 0}
+    ],
+    "2026-04-28": [
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 194499, impressions: 10870, clicks: 240, purchases: 6},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 184383, impressions: 11715, clicks: 242, purchases: 3},
+      {campaign: "260427_판매_캠페인_서지혜_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 110811, impressions: 7523, clicks: 169, purchases: 2},
+      {campaign: "260427_판매_캠페인_깐돌네_파트너십_구매30일제외_릴렉스틱/릴렉스틱볼", cost: 107464, impressions: 8013, clicks: 795, purchases: 4},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 97943, impressions: 3904, clicks: 230, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 79934, impressions: 4883, clicks: 58, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 49907, impressions: 1875, clicks: 38, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 49272, impressions: 2490, clicks: 40, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 48611, impressions: 3956, clicks: 92, purchases: 1},
+      {campaign: "260421_판매_캠페인_고조선_릴렉스틱", cost: 33208, impressions: 1024, clicks: 35, purchases: 0}
+    ],
+    "2026-04-29": [
+      {campaign: "260427_판매_캠페인_서지혜_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 212980, impressions: 15219, clicks: 388, purchases: 5},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 193635, impressions: 11044, clicks: 561, purchases: 5},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 192539, impressions: 10522, clicks: 311, purchases: 2},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 166433, impressions: 12874, clicks: 240, purchases: 6},
+      {campaign: "260429_판매_캠페인_3차리오더증액_EMS손목마사지기", cost: 126113, impressions: 8804, clicks: 66, purchases: 1},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 98881, impressions: 4565, clicks: 256, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 92555, impressions: 5521, clicks: 98, purchases: 3},
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 88891, impressions: 5833, clicks: 99, purchases: 0},
+      {campaign: "260427_판매_캠페인_소유_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 77157, impressions: 3072, clicks: 60, purchases: 3},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 71200, impressions: 3548, clicks: 54, purchases: 0}
+    ],
+    "2026-04-30": [
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 293891, impressions: 21157, clicks: 576, purchases: 14},
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 288892, impressions: 18587, clicks: 313, purchases: 7},
+      {campaign: "260429_판매_캠페인_3차리오더증액_EMS손목마사지기", cost: 206267, impressions: 12238, clicks: 111, purchases: 0},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 194038, impressions: 9650, clicks: 381, purchases: 3},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 173042, impressions: 8532, clicks: 237, purchases: 4},
+      {campaign: "260427_판매_캠페인_소유_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 129831, impressions: 5260, clicks: 74, purchases: 2},
+      {campaign: "260427_판매_캠페인_서지혜_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 122333, impressions: 7283, clicks: 169, purchases: 4},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 112912, impressions: 8780, clicks: 437, purchases: 5},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 101481, impressions: 2917, clicks: 220, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 61703, impressions: 3189, clicks: 48, purchases: 1}
+    ],
+    "2026-05-01": [
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 303880, impressions: 20779, clicks: 551, purchases: 17},
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 289896, impressions: 24347, clicks: 403, purchases: 5},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 215754, impressions: 10455, clicks: 328, purchases: 9},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 201134, impressions: 9122, clicks: 340, purchases: 7},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 99473, impressions: 5464, clicks: 266, purchases: 1},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 85877, impressions: 4352, clicks: 68, purchases: 0},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 59673, impressions: 6207, clicks: 353, purchases: 1},
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 58114, impressions: 1341, clicks: 28, purchases: 2},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 53510, impressions: 2106, clicks: 48, purchases: 2},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 53269, impressions: 3921, clicks: 87, purchases: 2}
+    ],
+    "2026-05-02": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 284338, impressions: 29080, clicks: 441, purchases: 5},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 257271, impressions: 18172, clicks: 516, purchases: 13},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 202891, impressions: 11715, clicks: 379, purchases: 5},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 193702, impressions: 11560, clicks: 286, purchases: 6},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 85258, impressions: 10416, clicks: 401, purchases: 5},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 81956, impressions: 3475, clicks: 252, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 72880, impressions: 4209, clicks: 52, purchases: 0},
+      {campaign: "260330_판매_캠페인_테스트_릴렉스틱볼", cost: 60221, impressions: 1603, clicks: 42, purchases: 1},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 50166, impressions: 3668, clicks: 72, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 49672, impressions: 2499, clicks: 32, purchases: 1}
+    ],
+    "2026-05-03": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 327786, impressions: 35203, clicks: 548, purchases: 13},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 314548, impressions: 24655, clicks: 603, purchases: 15},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 219853, impressions: 14229, clicks: 397, purchases: 7},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 213419, impressions: 13119, clicks: 297, purchases: 10},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 109439, impressions: 14477, clicks: 585, purchases: 5},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 105267, impressions: 4565, clicks: 301, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 79750, impressions: 5034, clicks: 60, purchases: 1},
+      {campaign: "260427_판매_캠페인_붓기_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 60389, impressions: 4587, clicks: 112, purchases: 3},
+      {campaign: "260427_판매_캠페인_소유_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 59705, impressions: 3013, clicks: 44, purchases: 1},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 54205, impressions: 4141, clicks: 90, purchases: 1}
+    ],
+    "2026-05-04": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 333437, impressions: 33632, clicks: 563, purchases: 8},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 277565, impressions: 24768, clicks: 456, purchases: 7},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 248896, impressions: 25862, clicks: 335, purchases: 3},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 247268, impressions: 29034, clicks: 304, purchases: 4},
+      {campaign: "260504_판매_캠페인_깐돌네_편집_재세팅_릴렉스틱/릴렉스틱볼", cost: 135045, impressions: 21389, clicks: 388, purchases: 0},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 109262, impressions: 3843, clicks: 279, purchases: 0},
+      {campaign: "260427_판매_캠페인_붓기_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 102590, impressions: 11746, clicks: 209, purchases: 2},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 102084, impressions: 9396, clicks: 61, purchases: 2},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 95441, impressions: 16168, clicks: 615, purchases: 5},
+      {campaign: "260504_판매_캠페인_잔망루피_재세팅_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 95013, impressions: 14746, clicks: 241, purchases: 2}
+    ],
+    "2026-05-05": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 324566, impressions: 26853, clicks: 636, purchases: 11},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 319056, impressions: 26693, clicks: 562, purchases: 14},
+      {campaign: "260504_판매_캠페인_깐돌네_편집_재세팅_릴렉스틱/릴렉스틱볼", cost: 313402, impressions: 36994, clicks: 1502, purchases: 4},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 213623, impressions: 15956, clicks: 295, purchases: 4},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 205618, impressions: 13763, clicks: 309, purchases: 2},
+      {campaign: "260504_판매_캠페인_잔망루피_재세팅_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 203102, impressions: 20019, clicks: 625, purchases: 11},
+      {campaign: "260427_판매_캠페인_붓기_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 110792, impressions: 10633, clicks: 246, purchases: 4},
+      {campaign: "260504_판매_캠페인_붓기_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 110292, impressions: 9721, clicks: 222, purchases: 6},
+      {campaign: "260407_트래픽_세트_파트너십_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 97499, impressions: 4380, clicks: 288, purchases: 0},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 94520, impressions: 12601, clicks: 599, purchases: 1}
+    ],
+    "2026-05-06": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 378321, impressions: 30926, clicks: 616, purchases: 13},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 316531, impressions: 23842, clicks: 463, purchases: 12},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 193591, impressions: 14511, clicks: 265, purchases: 1},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 193213, impressions: 17133, clicks: 220, purchases: 4},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 162462, impressions: 16856, clicks: 788, purchases: 4},
+      {campaign: "260504_판매_캠페인_깐돌네_편집_재세팅_릴렉스틱/릴렉스틱볼", cost: 152641, impressions: 15445, clicks: 596, purchases: 0},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 74671, impressions: 5509, clicks: 68, purchases: 3},
+      {campaign: "260504_판매_캠페인_붓기2번_일반_릴렉스틱/릴렉스틱볼", cost: 49577, impressions: 5263, clicks: 55, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 48562, impressions: 3557, clicks: 69, purchases: 3},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 45161, impressions: 3074, clicks: 56, purchases: 1}
+    ],
+    "2026-05-07": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 476019, impressions: 47245, clicks: 725, purchases: 11},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 352651, impressions: 30192, clicks: 548, purchases: 19},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 204058, impressions: 20488, clicks: 820, purchases: 1},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 175130, impressions: 11166, clicks: 224, purchases: 5},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 170375, impressions: 11304, clicks: 236, purchases: 4},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 97582, impressions: 6529, clicks: 72, purchases: 2},
+      {campaign: "260507_판매_캠페인_급찐급빠_슬림벨트v2", cost: 68270, impressions: 4485, clicks: 49, purchases: 0},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 48272, impressions: 4139, clicks: 67, purchases: 2},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 48143, impressions: 3456, clicks: 58, purchases: 1},
+      {campaign: "260507_판매_세트_테스트_EMS손목마사지기", cost: 46214, impressions: 3879, clicks: 29, purchases: 0}
+    ],
+    "2026-05-08": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 558252, impressions: 52886, clicks: 617, purchases: 6},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 441231, impressions: 36669, clicks: 637, purchases: 21},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 205352, impressions: 18498, clicks: 246, purchases: 5},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 203303, impressions: 20933, clicks: 913, purchases: 2},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 199691, impressions: 13774, clicks: 286, purchases: 4},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 111267, impressions: 8882, clicks: 60, purchases: 0},
+      {campaign: "260507_판매_캠페인_급찐급빠_슬림벨트v2", cost: 86432, impressions: 5017, clicks: 45, purchases: 0},
+      {campaign: "260507_판매_세트_테스트_EMS손목마사지기", cost: 85485, impressions: 6460, clicks: 41, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 52123, impressions: 3976, clicks: 72, purchases: 0},
+      {campaign: "260504_판매_캠페인_붓기2번_일반_릴렉스틱/릴렉스틱볼", cost: 52110, impressions: 5296, clicks: 53, purchases: 1}
+    ],
+    "2026-05-09": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 436286, impressions: 38124, clicks: 630, purchases: 5},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 396150, impressions: 31004, clicks: 595, purchases: 23},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 207040, impressions: 20376, clicks: 985, purchases: 0},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 161604, impressions: 10185, clicks: 302, purchases: 6},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 151758, impressions: 9044, clicks: 252, purchases: 3},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 114713, impressions: 9064, clicks: 80, purchases: 1},
+      {campaign: "260507_판매_캠페인_급찐급빠_슬림벨트v2", cost: 85994, impressions: 4267, clicks: 54, purchases: 0},
+      {campaign: "260507_판매_세트_테스트_EMS손목마사지기", cost: 51731, impressions: 3761, clicks: 38, purchases: 0},
+      {campaign: "260429_판매_캠페인_잔망루피_릴렉스틱오리지널-루피/릴렉스틱볼-루피", cost: 50767, impressions: 4406, clicks: 193, purchases: 2},
+      {campaign: "260403_판매_캠페인_테스트_오리지널_릴렉스틱", cost: 39116, impressions: 3052, clicks: 84, purchases: 1}
+    ],
+    "2026-05-10": [
+      {campaign: "260429_판매_캠페인_런닝타겟_릴렉스틱", cost: 544554, impressions: 44448, clicks: 737, purchases: 10},
+      {campaign: "260429_판매_캠페인_복사_재세팅_증액_릴렉스틱볼", cost: 494663, impressions: 39932, clicks: 841, purchases: 21},
+      {campaign: "260426_판매_캠페인_4월말 테스트_릴렉스틱/릴렉스틱볼", cost: 225522, impressions: 16094, clicks: 384, purchases: 6},
+      {campaign: "260402_판매_캠페인_테스트_세트_릴렉스틱/릴렉스틱볼", cost: 219049, impressions: 13374, clicks: 334, purchases: 5},
+      {campaign: "260429_판매_캠페인_깐돌네_편집_릴렉스틱/릴렉스틱볼", cost: 205534, impressions: 18977, clicks: 886, purchases: 3},
+      {campaign: "260416_판매_캠페인_테스트_EMS허리마사지기", cost: 121781, impressions: 9409, clicks: 96, purchases: 0},
+      {campaign: "260507_판매_세트_테스트_EMS손목마사지기", cost: 70498, impressions: 4597, clicks: 41, purchases: 2},
+      {campaign: "260507_판매_캠페인_급찐급빠_슬림벨트v2", cost: 54680, impressions: 2979, clicks: 37, purchases: 0},
+      {campaign: "260504_판매_캠페인_붓기2번_일반_릴렉스틱/릴렉스틱볼", cost: 54371, impressions: 3624, clicks: 68, purchases: 0},
+      {campaign: "260423_판매_캠페인_릴렉스틱_종아리_릴렉스틱", cost: 54116, impressions: 3877, clicks: 68, purchases: 0}
+    ]
+  },
+  gfa: {
+    "2026-04-01": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 295645, impressions: 13037, clicks: 309, purchases: 8},
+      {campaign: "PM_NDA(자동)", cost: 194127, impressions: 17357, clicks: 144, purchases: 3},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 38246, impressions: 1056, clicks: 23, purchases: 0},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 37616, impressions: 2050, clicks: 33, purchases: 4},
+      {campaign: "PM_NDA(수동)", cost: 29186, impressions: 8800, clicks: 42, purchases: 1},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 27946, impressions: 3519, clicks: 36, purchases: 1},
+      {campaign: "PM_상시_홈피드_(릴렉스틱볼)", cost: 27872, impressions: 1601, clicks: 48, purchases: 0},
+      {campaign: "PM_스마트채널", cost: 27696, impressions: 8027, clicks: 26, purchases: 2},
+      {campaign: "PM_영상", cost: 26816, impressions: 697, clicks: 9, purchases: 0},
+      {campaign: "PM_상시 홈피드(허리마사지기)", cost: 25681, impressions: 1237, clicks: 19, purchases: 0}
+    ],
+    "2026-04-02": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 292358, impressions: 12071, clicks: 264, purchases: 7},
+      {campaign: "PM_NDA(자동)", cost: 192000, impressions: 20031, clicks: 149, purchases: 6},
+      {campaign: "PM_NDA(수동)", cost: 39993, impressions: 8749, clicks: 54, purchases: 5},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 32047, impressions: 2326, clicks: 24, purchases: 0},
+      {campaign: "PM_상시_홈피드_(릴렉스틱볼)", cost: 29742, impressions: 1991, clicks: 48, purchases: 1},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 29027, impressions: 3204, clicks: 27, purchases: 0},
+      {campaign: "PM_상시 홈피드(허리마사지기)", cost: 24801, impressions: 4386, clicks: 20, purchases: 0},
+      {campaign: "PM_스마트채널", cost: 24391, impressions: 9606, clicks: 24, purchases: 0},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 23608, impressions: 1765, clicks: 19, purchases: 3},
+      {campaign: "PM_영상_RE", cost: 21058, impressions: 423, clicks: 7, purchases: 0}
+    ],
+    "2026-04-03": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 223671, impressions: 9890, clicks: 195, purchases: 6},
+      {campaign: "PM_NDA(자동)", cost: 194678, impressions: 20853, clicks: 146, purchases: 8},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 35577, impressions: 4749, clicks: 23, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 32907, impressions: 8728, clicks: 46, purchases: 0},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 31475, impressions: 1662, clicks: 27, purchases: 4},
+      {campaign: "PM_스마트채널", cost: 30468, impressions: 9892, clicks: 29, purchases: 1},
+      {campaign: "PM_상시_홈피드_(릴렉스틱볼)", cost: 29809, impressions: 2419, clicks: 69, purchases: 1},
+      {campaign: "PM_상시 홈피드(허리마사지기)", cost: 28346, impressions: 1039, clicks: 22, purchases: 0},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 27981, impressions: 2989, clicks: 27, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 19915, impressions: 399, clicks: 6, purchases: 1}
+    ],
+    "2026-04-04": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 193456, impressions: 9544, clicks: 174, purchases: 2},
+      {campaign: "PM_NDA(자동)", cost: 191745, impressions: 20778, clicks: 141, purchases: 4},
+      {campaign: "PM_스마트채널", cost: 37501, impressions: 10855, clicks: 33, purchases: 0},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 36430, impressions: 2520, clicks: 33, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 33220, impressions: 7643, clicks: 46, purchases: 0},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 30655, impressions: 2579, clicks: 19, purchases: 0},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 30066, impressions: 2173, clicks: 30, purchases: 0},
+      {campaign: "PM_상시 홈피드(허리마사지기)", cost: 27864, impressions: 1683, clicks: 28, purchases: 0},
+      {campaign: "PM_상시_홈피드_(릴렉스틱볼)", cost: 26855, impressions: 2776, clicks: 62, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 13542, impressions: 279, clicks: 8, purchases: 0}
+    ],
+    "2026-04-05": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 195115, impressions: 10745, clicks: 193, purchases: 2},
+      {campaign: "PM_NDA(자동)", cost: 188555, impressions: 20927, clicks: 127, purchases: 4},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 59841, impressions: 3032, clicks: 56, purchases: 3},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 31719, impressions: 3338, clicks: 18, purchases: 0},
+      {campaign: "PM_상시 홈피드(허리마사지기)", cost: 27949, impressions: 2401, clicks: 31, purchases: 0},
+      {campaign: "PM_상시_홈피드_(릴렉스틱볼)", cost: 27189, impressions: 1995, clicks: 55, purchases: 3},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 26692, impressions: 2920, clicks: 29, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 20441, impressions: 5051, clicks: 28, purchases: 0},
+      {campaign: "PM_스마트채널", cost: 17051, impressions: 6779, clicks: 15, purchases: 1},
+      {campaign: "PM_영상_RE", cost: 13743, impressions: 210, clicks: 5, purchases: 0}
+    ],
+    "2026-04-06": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 198696, impressions: 26162, clicks: 241, purchases: 7},
+      {campaign: "PM_NDA(자동)", cost: 188592, impressions: 21176, clicks: 154, purchases: 7},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 120030, impressions: 13729, clicks: 108, purchases: 1},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 48426, impressions: 3998, clicks: 44, purchases: 2},
+      {campaign: "PM_상시_홈피드_(릴렉스틱볼)", cost: 31630, impressions: 670, clicks: 31, purchases: 2},
+      {campaign: "PM_NDA(수동)", cost: 30887, impressions: 6753, clicks: 42, purchases: 3},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 29805, impressions: 2331, clicks: 36, purchases: 1},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 28562, impressions: 2133, clicks: 16, purchases: 0},
+      {campaign: "PM_스마트채널", cost: 25349, impressions: 8028, clicks: 25, purchases: 1},
+      {campaign: "PM_상시 홈피드(허리마사지기)", cost: 19229, impressions: 651, clicks: 22, purchases: 0}
+    ],
+    "2026-04-07": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 190940, impressions: 13451, clicks: 184, purchases: 2},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 120038, impressions: 6163, clicks: 107, purchases: 2},
+      {campaign: "PM_NDA(자동)", cost: 107936, impressions: 12186, clicks: 70, purchases: 4},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 53916, impressions: 2963, clicks: 47, purchases: 3},
+      {campaign: "PM_NDA(수동)", cost: 37539, impressions: 9122, clicks: 51, purchases: 1},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 27641, impressions: 2197, clicks: 24, purchases: 0},
+      {campaign: "PM_상시_홈피드(슬림벨트)", cost: 24559, impressions: 1523, clicks: 14, purchases: 1},
+      {campaign: "PM_스마트채널", cost: 21863, impressions: 4215, clicks: 19, purchases: 2},
+      {campaign: "PM_영상_RE", cost: 14473, impressions: 283, clicks: 7, purchases: 0},
+      {campaign: "PM_영상", cost: 12610, impressions: 336, clicks: 6, purchases: 0}
+    ],
+    "2026-04-08": [
+      {campaign: "PM_상시_홈피드(릴렉스틱)", cost: 297797, impressions: 20950, clicks: 234, purchases: 6},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 99510, impressions: 3219, clicks: 105, purchases: 3},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 97691, impressions: 6871, clicks: 75, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 82238, impressions: 19655, clicks: 113, purchases: 4},
+      {campaign: "PM_영상", cost: 65230, impressions: 1666, clicks: 24, purchases: 2},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 39697, impressions: 2099, clicks: 33, purchases: 2},
+      {campaign: "PM_스마트채널", cost: 34111, impressions: 7368, clicks: 33, purchases: 3},
+      {campaign: "PM_상시_릴렉스틱(ADV/건강)", cost: 31521, impressions: 1253, clicks: 21, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 12986, impressions: 229, clicks: 2, purchases: 0},
+      {campaign: "PM_NDA(수동2)", cost: 1599, impressions: 248, clicks: 2, purchases: 0}
+    ],
+    "2026-04-09": [
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 345110, impressions: 15297, clicks: 268, purchases: 11},
+      {campaign: "PM_RE 홈피드(장바구니2)", cost: 165040, impressions: 25687, clicks: 145, purchases: 0},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 142344, impressions: 5652, clicks: 91, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 136289, impressions: 6668, clicks: 141, purchases: 4},
+      {campaign: "PM_상시_홈피드(릴렉스틱2)", cost: 96316, impressions: 7526, clicks: 71, purchases: 0},
+      {campaign: "PM_상시 홈피드(릴렉스틱/맞춤)", cost: 67939, impressions: 3097, clicks: 55, purchases: 0},
+      {campaign: "PM_영상", cost: 67168, impressions: 1261, clicks: 21, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱/남)", cost: 61774, impressions: 4495, clicks: 50, purchases: 0},
+      {campaign: "PM_NDA(수동2)", cost: 60420, impressions: 8188, clicks: 76, purchases: 3},
+      {campaign: "PM_상시_홈피드(손목마사지기)", cost: 48244, impressions: 3115, clicks: 39, purchases: 3}
+    ],
+    "2026-04-10": [
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 483939, impressions: 31794, clicks: 432, purchases: 9},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 363905, impressions: 40498, clicks: 339, purchases: 2},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 100049, impressions: 4562, clicks: 123, purchases: 3},
+      {campaign: "PM_스마트채널", cost: 88058, impressions: 44887, clicks: 70, purchases: 3},
+      {campaign: "PM_NDA(수동2)", cost: 86769, impressions: 11719, clicks: 101, purchases: 6},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 76351, impressions: 3030, clicks: 66, purchases: 7},
+      {campaign: "PM_영상", cost: 63654, impressions: 1311, clicks: 22, purchases: 2},
+      {campaign: "PM_상시_홈피드(릴렉스틱2)", cost: 49497, impressions: 1696, clicks: 40, purchases: 0},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 49145, impressions: 16990, clicks: 38, purchases: 0},
+      {campaign: "PM_상시_홈피드(손목마사지기)", cost: 49074, impressions: 2135, clicks: 32, purchases: 0}
+    ],
+    "2026-04-11": [
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 271538, impressions: 20749, clicks: 293, purchases: 3},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 234543, impressions: 19030, clicks: 244, purchases: 6},
+      {campaign: "PM_스마트채널", cost: 105903, impressions: 32831, clicks: 94, purchases: 2},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 96187, impressions: 5836, clicks: 132, purchases: 2},
+      {campaign: "PM_NDA(수동2)", cost: 94103, impressions: 15550, clicks: 108, purchases: 3},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 75045, impressions: 4184, clicks: 68, purchases: 0},
+      {campaign: "PM_영상", cost: 64020, impressions: 1738, clicks: 22, purchases: 2},
+      {campaign: "PM_쇼핑프로모션(릴렉스틱)", cost: 47556, impressions: 7032, clicks: 68, purchases: 1},
+      {campaign: "PM_상시_홈피드(손목마사지기)", cost: 47414, impressions: 2353, clicks: 36, purchases: 0},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 45941, impressions: 13151, clicks: 28, purchases: 0}
+    ],
+    "2026-04-12": [
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 177383, impressions: 15069, clicks: 223, purchases: 3},
+      {campaign: "PM_스마트채널", cost: 127414, impressions: 33591, clicks: 105, purchases: 3},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 99110, impressions: 4809, clicks: 89, purchases: 2},
+      {campaign: "PM_NDA(수동2)", cost: 97763, impressions: 15468, clicks: 112, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 95387, impressions: 5349, clicks: 137, purchases: 5},
+      {campaign: "PM_영상", cost: 67836, impressions: 1533, clicks: 41, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 60016, impressions: 6344, clicks: 82, purchases: 4},
+      {campaign: "PM_상시_홈피드(릴렉스틱2)", cost: 48826, impressions: 1179, clicks: 40, purchases: 1},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 48044, impressions: 23361, clicks: 30, purchases: 0},
+      {campaign: "PM_쇼핑프로모션(릴렉스틱)", cost: 44040, impressions: 5121, clicks: 61, purchases: 1}
+    ],
+    "2026-04-13": [
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 128469, impressions: 19938, clicks: 168, purchases: 5},
+      {campaign: "PM_스마트채널", cost: 121874, impressions: 37959, clicks: 116, purchases: 7},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 118454, impressions: 6335, clicks: 139, purchases: 4},
+      {campaign: "PM_NDA(수동2)", cost: 105305, impressions: 19526, clicks: 126, purchases: 7},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 71717, impressions: 3374, clicks: 68, purchases: 4},
+      {campaign: "PM_영상", cost: 67409, impressions: 1651, clicks: 40, purchases: 1},
+      {campaign: "PM_상시_홈피드(자동 릴렉스틱2)", cost: 66719, impressions: 2000, clicks: 59, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 55102, impressions: 5862, clicks: 74, purchases: 4},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 49680, impressions: 13264, clicks: 40, purchases: 2},
+      {campaign: "PM_쇼핑프로모션(릴렉스틱)", cost: 47890, impressions: 5487, clicks: 73, purchases: 0}
+    ],
+    "2026-04-14": [
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 175368, impressions: 24426, clicks: 241, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 165176, impressions: 7425, clicks: 178, purchases: 5},
+      {campaign: "PM_스마트채널", cost: 103888, impressions: 34965, clicks: 96, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 88538, impressions: 20610, clicks: 109, purchases: 3},
+      {campaign: "PM_상시_홈피드(자동 릴렉스틱2)", cost: 67609, impressions: 1998, clicks: 55, purchases: 2},
+      {campaign: "PM_영상", cost: 67527, impressions: 1460, clicks: 36, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 67285, impressions: 5416, clicks: 89, purchases: 2},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 48217, impressions: 11733, clicks: 36, purchases: 0},
+      {campaign: "PM_쇼핑프로모션(릴렉스틱)", cost: 45168, impressions: 7654, clicks: 67, purchases: 1},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 30248, impressions: 1870, clicks: 34, purchases: 1}
+    ],
+    "2026-04-15": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 164864, impressions: 8104, clicks: 196, purchases: 0},
+      {campaign: "PM_스마트채널", cost: 96415, impressions: 23388, clicks: 83, purchases: 5},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 84565, impressions: 8843, clicks: 118, purchases: 2},
+      {campaign: "PM_NDA(수동2)", cost: 76449, impressions: 14857, clicks: 93, purchases: 1},
+      {campaign: "PM_영상", cost: 73502, impressions: 1574, clicks: 37, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 50550, impressions: 6311, clicks: 70, purchases: 2},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 48785, impressions: 17124, clicks: 36, purchases: 1},
+      {campaign: "PM_쇼핑프로모션(릴렉스틱)", cost: 46590, impressions: 6229, clicks: 60, purchases: 1},
+      {campaign: "PM_상시_홈피드(자동 릴렉스틱2)", cost: 45795, impressions: 1512, clicks: 41, purchases: 1},
+      {campaign: "PM_RE 홈피드(장바구니)", cost: 36240, impressions: 2052, clicks: 41, purchases: 2}
+    ],
+    "2026-04-16": [
+      {campaign: "PM_스마트채널", cost: 95996, impressions: 23678, clicks: 88, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 74892, impressions: 3164, clicks: 80, purchases: 2},
+      {campaign: "PM_NDA(수동2)", cost: 62782, impressions: 14300, clicks: 77, purchases: 4},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 47636, impressions: 6188, clicks: 81, purchases: 1},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 46640, impressions: 12584, clicks: 36, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 39154, impressions: 3248, clicks: 55, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱4)", cost: 35263, impressions: 2356, clicks: 58, purchases: 1},
+      {campaign: "PM_영상", cost: 26375, impressions: 528, clicks: 13, purchases: 0},
+      {campaign: "PM_상시_홈피드(자동 릴렉스틱2)", cost: 22442, impressions: 632, clicks: 16, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 9760, impressions: 124, clicks: 6, purchases: 1}
+    ],
+    "2026-04-17": [
+      {campaign: "PM_NDA(수동2)", cost: 95047, impressions: 20795, clicks: 113, purchases: 3},
+      {campaign: "PM_스마트채널", cost: 58993, impressions: 17498, clicks: 58, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 56397, impressions: 4387, clicks: 80, purchases: 4},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 48446, impressions: 5408, clicks: 71, purchases: 3},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 40678, impressions: 19121, clicks: 39, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 33903, impressions: 3370, clicks: 45, purchases: 0},
+      {campaign: "PM_영상", cost: 22625, impressions: 392, clicks: 14, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 10214, impressions: 144, clicks: 4, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱4)", cost: 9283, impressions: 850, clicks: 15, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 4091, impressions: 195, clicks: 6, purchases: 0}
+    ],
+    "2026-04-18": [
+      {campaign: "PM_NDA(수동2)", cost: 83219, impressions: 17182, clicks: 97, purchases: 2},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 73193, impressions: 6054, clicks: 106, purchases: 6},
+      {campaign: "PM_스마트채널", cost: 48599, impressions: 12466, clicks: 48, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 48589, impressions: 5750, clicks: 77, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 48163, impressions: 3373, clicks: 65, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱4)", cost: 38173, impressions: 2339, clicks: 63, purchases: 0},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 24728, impressions: 28580, clicks: 34, purchases: 0},
+      {campaign: "PM_영상", cost: 24584, impressions: 502, clicks: 7, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 9595, impressions: 145, clicks: 0, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 6963, impressions: 2048, clicks: 10, purchases: 0}
+    ],
+    "2026-04-19": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 98217, impressions: 8050, clicks: 164, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 74408, impressions: 17869, clicks: 88, purchases: 4},
+      {campaign: "PM_스마트채널", cost: 49032, impressions: 10751, clicks: 49, purchases: 4},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 48447, impressions: 3338, clicks: 76, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱4)", cost: 48411, impressions: 2580, clicks: 74, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 47709, impressions: 2384, clicks: 66, purchases: 1},
+      {campaign: "PM_영상", cost: 25122, impressions: 453, clicks: 7, purchases: 0},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 13854, impressions: 15272, clicks: 19, purchases: 0},
+      {campaign: "PM_영상_RE", cost: 9576, impressions: 136, clicks: 2, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 7187, impressions: 420, clicks: 10, purchases: 0}
+    ],
+    "2026-04-20": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 163744, impressions: 14959, clicks: 269, purchases: 6},
+      {campaign: "PM_NDA(수동2)", cost: 75404, impressions: 14526, clicks: 89, purchases: 2},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 73967, impressions: 18783, clicks: 71, purchases: 5},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 49028, impressions: 3973, clicks: 76, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 47383, impressions: 3221, clicks: 76, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 40791, impressions: 4041, clicks: 55, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱6)", cost: 28759, impressions: 3271, clicks: 39, purchases: 0},
+      {campaign: "PM_영상", cost: 25587, impressions: 413, clicks: 14, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱9)", cost: 20948, impressions: 2431, clicks: 30, purchases: 0},
+      {campaign: "PM_상시_네이티브PC(릴렉스틱)", cost: 20263, impressions: 9658, clicks: 32, purchases: 0}
+    ],
+    "2026-04-21": [
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱4)", cost: 107350, impressions: 8493, clicks: 159, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 97780, impressions: 9070, clicks: 144, purchases: 5},
+      {campaign: "PM_NDA(수동2)", cost: 82140, impressions: 16451, clicks: 100, purchases: 5},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 78849, impressions: 20278, clicks: 77, purchases: 4},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 78455, impressions: 5398, clicks: 113, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱9)", cost: 74591, impressions: 7277, clicks: 107, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 66627, impressions: 6032, clicks: 100, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱5)", cost: 66316, impressions: 4335, clicks: 92, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱6)", cost: 65736, impressions: 8452, clicks: 100, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 58688, impressions: 3570, clicks: 83, purchases: 1}
+    ],
+    "2026-04-22": [
+      {campaign: "PM_NDA(수동2)", cost: 103381, impressions: 18330, clicks: 125, purchases: 5},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 79423, impressions: 28162, clicks: 76, purchases: 5},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 62220, impressions: 10922, clicks: 101, purchases: 2},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 49553, impressions: 2986, clicks: 43, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 40626, impressions: 3469, clicks: 70, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱5)", cost: 37506, impressions: 3794, clicks: 67, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 37425, impressions: 3473, clicks: 52, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 30074, impressions: 3929, clicks: 54, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 29897, impressions: 1138, clicks: 28, purchases: 1},
+      {campaign: "PM_영상", cost: 27451, impressions: 471, clicks: 9, purchases: 0}
+    ],
+    "2026-04-23": [
+      {campaign: "PM_NDA(수동2)", cost: 113026, impressions: 15348, clicks: 134, purchases: 6},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 72883, impressions: 28038, clicks: 71, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 49154, impressions: 5162, clicks: 87, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 47039, impressions: 2911, clicks: 41, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 39855, impressions: 7981, clicks: 67, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 31403, impressions: 1830, clicks: 44, purchases: 0},
+      {campaign: "PM_영상", cost: 24588, impressions: 405, clicks: 11, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 20949, impressions: 2451, clicks: 37, purchases: 3},
+      {campaign: "PM_NDA(수동)", cost: 11896, impressions: 1468, clicks: 15, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱5)", cost: 4848, impressions: 381, clicks: 11, purchases: 0}
+    ],
+    "2026-04-24": [
+      {campaign: "PM_NDA(수동2)", cost: 83777, impressions: 11474, clicks: 102, purchases: 0},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 71189, impressions: 15559, clicks: 62, purchases: 1},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 45722, impressions: 1529, clicks: 40, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 39452, impressions: 4781, clicks: 73, purchases: 4},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 36088, impressions: 6231, clicks: 58, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 31673, impressions: 2153, clicks: 42, purchases: 0},
+      {campaign: "PM_영상", cost: 23915, impressions: 377, clicks: 4, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 22475, impressions: 2252, clicks: 38, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 22321, impressions: 3662, clicks: 29, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 11709, impressions: 787, clicks: 19, purchases: 0}
+    ],
+    "2026-04-25": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 136987, impressions: 14804, clicks: 141, purchases: 2},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 70600, impressions: 20905, clicks: 69, purchases: 5},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 67882, impressions: 9965, clicks: 107, purchases: 3},
+      {campaign: "PM_NDA(수동)", cost: 48855, impressions: 8725, clicks: 67, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 40446, impressions: 2242, clicks: 60, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 34868, impressions: 3648, clicks: 64, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 33223, impressions: 7181, clicks: 50, purchases: 4},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 31267, impressions: 2408, clicks: 53, purchases: 0},
+      {campaign: "PM_영상", cost: 25108, impressions: 489, clicks: 4, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 17470, impressions: 996, clicks: 30, purchases: 1}
+    ],
+    "2026-04-26": [
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 83857, impressions: 11654, clicks: 130, purchases: 2},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 64006, impressions: 17560, clicks: 57, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 45750, impressions: 6407, clicks: 80, purchases: 3},
+      {campaign: "PM_NDA(수동2)", cost: 45724, impressions: 8266, clicks: 70, purchases: 4},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 44815, impressions: 3900, clicks: 77, purchases: 0},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 43515, impressions: 3262, clicks: 47, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 27430, impressions: 1470, clicks: 45, purchases: 2},
+      {campaign: "PM_영상", cost: 24049, impressions: 385, clicks: 6, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 23202, impressions: 1871, clicks: 42, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 22459, impressions: 5510, clicks: 34, purchases: 1}
+    ],
+    "2026-04-27": [
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 66615, impressions: 18877, clicks: 62, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 49130, impressions: 5031, clicks: 86, purchases: 2},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 47454, impressions: 3426, clicks: 48, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 46527, impressions: 7221, clicks: 77, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 46525, impressions: 9416, clicks: 71, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 34410, impressions: 6040, clicks: 53, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 31266, impressions: 6414, clicks: 46, purchases: 4},
+      {campaign: "PM_영상", cost: 27751, impressions: 591, clicks: 5, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 22868, impressions: 1454, clicks: 37, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 12970, impressions: 1913, clicks: 20, purchases: 2}
+    ],
+    "2026-04-28": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 50731, impressions: 2672, clicks: 48, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 48019, impressions: 3564, clicks: 80, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 47972, impressions: 5030, clicks: 86, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 40516, impressions: 7862, clicks: 61, purchases: 4},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 39242, impressions: 9751, clicks: 35, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 28172, impressions: 2957, clicks: 47, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 27706, impressions: 5571, clicks: 45, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 24921, impressions: 5079, clicks: 37, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 14744, impressions: 1140, clicks: 25, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 5275, impressions: 338, clicks: 9, purchases: 2}
+    ],
+    "2026-04-29": [
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 49244, impressions: 5812, clicks: 87, purchases: 0},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 49111, impressions: 4463, clicks: 55, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 43022, impressions: 7373, clicks: 68, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱1)", cost: 37231, impressions: 2084, clicks: 66, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 36598, impressions: 6341, clicks: 55, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 30347, impressions: 5241, clicks: 50, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 26321, impressions: 3712, clicks: 45, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 18284, impressions: 2796, clicks: 31, purchases: 0},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 17499, impressions: 3098, clicks: 20, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 15652, impressions: 772, clicks: 25, purchases: 0}
+    ],
+    "2026-04-30": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 114307, impressions: 16885, clicks: 123, purchases: 6},
+      {campaign: "PM_NDA(수동2)", cost: 57314, impressions: 11312, clicks: 89, purchases: 8},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 50813, impressions: 9402, clicks: 50, purchases: 11},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 48627, impressions: 6087, clicks: 81, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 48018, impressions: 3798, clicks: 73, purchases: 2},
+      {campaign: "PM_NDA(수동)", cost: 24192, impressions: 4974, clicks: 34, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 20563, impressions: 3309, clicks: 32, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 17265, impressions: 1053, clicks: 27, purchases: 1},
+      {campaign: "PM_영상", cost: 2833, impressions: 43, clicks: 2, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N1)", cost: 1655, impressions: 438, clicks: 3, purchases: 0}
+    ],
+    "2026-05-01": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 128878, impressions: 8986, clicks: 140, purchases: 3},
+      {campaign: "PM_NDA(수동2)", cost: 57391, impressions: 10728, clicks: 87, purchases: 6},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 49899, impressions: 6638, clicks: 52, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 47657, impressions: 4888, clicks: 79, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 47543, impressions: 3760, clicks: 79, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 28865, impressions: 2488, clicks: 45, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N2)", cost: 26781, impressions: 3865, clicks: 42, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N3)", cost: 26362, impressions: 3260, clicks: 42, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 23475, impressions: 6282, clicks: 34, purchases: 2},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 19962, impressions: 1086, clicks: 32, purchases: 1}
+    ],
+    "2026-05-02": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 128524, impressions: 12354, clicks: 153, purchases: 2},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 67155, impressions: 12355, clicks: 72, purchases: 4},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 48505, impressions: 5016, clicks: 81, purchases: 1},
+      {campaign: "PM_NDA(수동2)", cost: 46558, impressions: 9366, clicks: 73, purchases: 3},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 46030, impressions: 3676, clicks: 84, purchases: 2},
+      {campaign: "PM_NDA(수동)", cost: 38997, impressions: 11683, clicks: 58, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N1)", cost: 29013, impressions: 3126, clicks: 42, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 28757, impressions: 4044, clicks: 47, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N2)", cost: 26973, impressions: 4239, clicks: 43, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N3)", cost: 24164, impressions: 2037, clicks: 37, purchases: 0}
+    ],
+    "2026-05-03": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 123700, impressions: 10350, clicks: 165, purchases: 4},
+      {campaign: "PM_NDA(수동2)", cost: 67630, impressions: 13478, clicks: 107, purchases: 7},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 63101, impressions: 11027, clicks: 66, purchases: 5},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 48320, impressions: 4831, clicks: 103, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N1)", cost: 28253, impressions: 2748, clicks: 44, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 25014, impressions: 2338, clicks: 45, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 24690, impressions: 4512, clicks: 37, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 24258, impressions: 3365, clicks: 40, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 22348, impressions: 1435, clicks: 36, purchases: 2},
+      {campaign: "PM_영상", cost: 3527, impressions: 70, clicks: 0, purchases: 0}
+    ],
+    "2026-05-04": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 125035, impressions: 12052, clicks: 153, purchases: 5},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 64142, impressions: 11012, clicks: 67, purchases: 5},
+      {campaign: "PM_NDA(수동2)", cost: 55392, impressions: 13026, clicks: 90, purchases: 3},
+      {campaign: "PM_NDA(수동)", cost: 34760, impressions: 7082, clicks: 53, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 28875, impressions: 4969, clicks: 50, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 28756, impressions: 2975, clicks: 60, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 26353, impressions: 4002, clicks: 43, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 17018, impressions: 1312, clicks: 27, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱N1)", cost: 10250, impressions: 969, clicks: 17, purchases: 0},
+      {campaign: "PM_영상", cost: 4236, impressions: 113, clicks: 0, purchases: 0}
+    ],
+    "2026-05-05": [
+      {campaign: "PM_홈피드_자사 프로모션", cost: 68471, impressions: 5453, clicks: 90, purchases: 2},
+      {campaign: "PM_NDA(수동2)", cost: 67654, impressions: 11514, clicks: 105, purchases: 8},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 53873, impressions: 10562, clicks: 59, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 44330, impressions: 8282, clicks: 65, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 37022, impressions: 2306, clicks: 58, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 31216, impressions: 4095, clicks: 57, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 28893, impressions: 2365, clicks: 47, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 28869, impressions: 1879, clicks: 63, purchases: 0},
+      {campaign: "PM_영상", cost: 3891, impressions: 75, clicks: 0, purchases: 0},
+      {campaign: "PM_상시_홈피드(자동 릴렉스틱2)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-06": [
+      {campaign: "PM_NDA(수동2)", cost: 70094, impressions: 11221, clicks: 114, purchases: 7},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 66291, impressions: 7046, clicks: 82, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 29570, impressions: 1558, clicks: 48, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 29189, impressions: 2372, clicks: 53, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 27763, impressions: 5549, clicks: 42, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 27507, impressions: 5971, clicks: 44, purchases: 1},
+      {campaign: "PM_NDA(수동)", cost: 15744, impressions: 2942, clicks: 24, purchases: 0},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 10672, impressions: 1856, clicks: 10, purchases: 7},
+      {campaign: "PM_영상", cost: 4061, impressions: 62, clicks: 1, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱10)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-07": [
+      {campaign: "PM_NDA(수동2)", cost: 97893, impressions: 13885, clicks: 153, purchases: 12},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 55061, impressions: 5288, clicks: 68, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 28345, impressions: 4491, clicks: 41, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 25575, impressions: 4636, clicks: 38, purchases: 0},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 25154, impressions: 3390, clicks: 23, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 23140, impressions: 2337, clicks: 40, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 21571, impressions: 1709, clicks: 34, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 11857, impressions: 2643, clicks: 17, purchases: 0},
+      {campaign: "PM_영상", cost: 5296, impressions: 101, clicks: 0, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱2/여)", cost: 0, impressions: 34, clicks: 0, purchases: 0}
+    ],
+    "2026-05-08": [
+      {campaign: "PM_NDA(수동2)", cost: 70125, impressions: 13443, clicks: 111, purchases: 3},
+      {campaign: "PM_홈피드_자사 프로모션", cost: 49409, impressions: 3909, clicks: 54, purchases: 1},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 29259, impressions: 2931, clicks: 41, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 29110, impressions: 4089, clicks: 44, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 25987, impressions: 3115, clicks: 41, purchases: 1},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 22693, impressions: 2946, clicks: 22, purchases: 3},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱01)", cost: 13570, impressions: 2451, clicks: 19, purchases: 0},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 10114, impressions: 895, clicks: 17, purchases: 2},
+      {campaign: "PM_NDA(수동)", cost: 9672, impressions: 1834, clicks: 14, purchases: 1},
+      {campaign: "PM_영상", cost: 5765, impressions: 70, clicks: 2, purchases: 0}
+    ],
+    "2026-05-09": [
+      {campaign: "PM_NDA(수동2)", cost: 104324, impressions: 21205, clicks: 165, purchases: 6},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 67495, impressions: 16104, clicks: 74, purchases: 4},
+      {campaign: "PM_상시_홈피드(릴렉스틱2/여)", cost: 29777, impressions: 1788, clicks: 28, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 29326, impressions: 3332, clicks: 50, purchases: 1},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 28961, impressions: 3683, clicks: 53, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱01)", cost: 28224, impressions: 3801, clicks: 42, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 28220, impressions: 2984, clicks: 43, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱02)", cost: 26769, impressions: 4008, clicks: 41, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 10895, impressions: 2031, clicks: 17, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 9763, impressions: 798, clicks: 16, purchases: 0}
+    ],
+    "2026-05-10": [
+      {campaign: "PM_NDA(수동2)", cost: 79625, impressions: 15697, clicks: 126, purchases: 2},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱3)", cost: 47704, impressions: 4025, clicks: 90, purchases: 2},
+      {campaign: "PM_스마트채널(릴렉스틱)", cost: 45150, impressions: 11085, clicks: 52, purchases: 4},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱8)", cost: 28323, impressions: 4015, clicks: 45, purchases: 0},
+      {campaign: "PM_상시_홈피드(수동 릴렉스틱2)", cost: 27522, impressions: 2505, clicks: 46, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱2/여)", cost: 27187, impressions: 1641, clicks: 25, purchases: 0},
+      {campaign: "PM_상시_홈피드(릴렉스틱/여)", cost: 25203, impressions: 3822, clicks: 44, purchases: 1},
+      {campaign: "PM_RE 홈피드(릴렉스틱)", cost: 11937, impressions: 1112, clicks: 19, purchases: 0},
+      {campaign: "PM_NDA(수동)", cost: 11304, impressions: 1587, clicks: 17, purchases: 0},
+      {campaign: "PM_영상", cost: 7436, impressions: 125, clicks: 1, purchases: 0}
+    ]
+  },
+  advoost: {
+    "2026-04-01": [
+      {campaign: "ADVoost 서브_2", cost: 440398, impressions: 109799, clicks: 1261, purchases: 68},
+      {campaign: "PM_애드부스트(서브)", cost: 354301, impressions: 78828, clicks: 1009, purchases: 55},
+      {campaign: "PM_애드부스트(메인)", cost: 278546, impressions: 71287, clicks: 700, purchases: 52},
+      {campaign: "ADVoost 쇼핑_1", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-02": [
+      {campaign: "PM_애드부스트(서브)", cost: 336709, impressions: 80434, clicks: 740, purchases: 51},
+      {campaign: "ADVoost 서브_2", cost: 284713, impressions: 81373, clicks: 645, purchases: 41},
+      {campaign: "PM_애드부스트(메인)", cost: 267546, impressions: 64640, clicks: 546, purchases: 30},
+      {campaign: "ADVoost 쇼핑_1", cost: 0, impressions: 0, clicks: 0, purchases: 2}
+    ],
+    "2026-04-03": [
+      {campaign: "PM_애드부스트(서브)", cost: 466786, impressions: 91401, clicks: 1152, purchases: 31},
+      {campaign: "PM_애드부스트(메인)", cost: 402511, impressions: 110092, clicks: 880, purchases: 27},
+      {campaign: "ADVoost 서브_2", cost: 308456, impressions: 66044, clicks: 765, purchases: 16}
+    ],
+    "2026-04-04": [
+      {campaign: "ADVoost 서브_2", cost: 304203, impressions: 61232, clicks: 391, purchases: 34},
+      {campaign: "PM_애드부스트(서브)", cost: 256962, impressions: 46497, clicks: 326, purchases: 42},
+      {campaign: "PM_애드부스트(메인)", cost: 168298, impressions: 37365, clicks: 272, purchases: 22},
+      {campaign: "(삭제) ADVoost 서브_1", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-05": [
+      {campaign: "ADVoost 서브_2", cost: 499742, impressions: 85360, clicks: 1348, purchases: 33},
+      {campaign: "PM_애드부스트(서브)", cost: 450314, impressions: 80278, clicks: 1155, purchases: 21},
+      {campaign: "PM_애드부스트(메인)", cost: 306264, impressions: 82438, clicks: 699, purchases: 16}
+    ],
+    "2026-04-06": [
+      {campaign: "PM_애드부스트(서브)", cost: 371280, impressions: 73225, clicks: 828, purchases: 69},
+      {campaign: "ADVoost 서브_2", cost: 363341, impressions: 71627, clicks: 827, purchases: 98},
+      {campaign: "PM_애드부스트(메인)", cost: 301452, impressions: 71713, clicks: 709, purchases: 52},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 43539, impressions: 4368, clicks: 38, purchases: 3}
+    ],
+    "2026-04-07": [
+      {campaign: "PM_애드부스트(메인)", cost: 228656, impressions: 53473, clicks: 400, purchases: 37},
+      {campaign: "ADVoost 서브_2", cost: 184121, impressions: 43497, clicks: 345, purchases: 55},
+      {campaign: "PM_애드부스트(서브)", cost: 183409, impressions: 42069, clicks: 330, purchases: 34},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 174265, impressions: 10463, clicks: 79, purchases: 8}
+    ],
+    "2026-04-08": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 181397, impressions: 8953, clicks: 99, purchases: 12},
+      {campaign: "PM_애드부스트(메인)", cost: 139014, impressions: 24534, clicks: 95, purchases: 16},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 4},
+      {campaign: "(삭제) ADVoost 쇼핑_1", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 3}
+    ],
+    "2026-04-09": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 103261, impressions: 4883, clicks: 62, purchases: 7},
+      {campaign: "PM_애드부스트(메인)", cost: 59433, impressions: 10399, clicks: 47, purchases: 7},
+      {campaign: "PM_애드부스트(메인2)", cost: 33248, impressions: 4110, clicks: 34, purchases: 4},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 3}
+    ],
+    "2026-04-10": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 193601, impressions: 5729, clicks: 58, purchases: 5},
+      {campaign: "PM_애드부스트(메인2)", cost: 56200, impressions: 6897, clicks: 37, purchases: 2},
+      {campaign: "PM_애드부스트(메인)", cost: 44944, impressions: 6151, clicks: 36, purchases: 4},
+      {campaign: "PM_애드부스트(메인5)", cost: 275, impressions: 332, clicks: 4, purchases: 0},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 2},
+      {campaign: "(삭제) ADVoost 쇼핑_1", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-11": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 71477, impressions: 3294, clicks: 27, purchases: 2},
+      {campaign: "PM_애드부스트(메인2)", cost: 45111, impressions: 3845, clicks: 25, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 34561, impressions: 2448, clicks: 18, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 22768, impressions: 3286, clicks: 25, purchases: 5},
+      {campaign: "PM_애드부스트(메인5)", cost: 20622, impressions: 3606, clicks: 13, purchases: 0},
+      {campaign: "PM_애드부스트(메인3)", cost: 18381, impressions: 2688, clicks: 14, purchases: 1},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-12": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 89002, impressions: 3257, clicks: 37, purchases: 7},
+      {campaign: "PM_애드부스트(메인4)", cost: 47454, impressions: 3688, clicks: 27, purchases: 1},
+      {campaign: "PM_애드부스트(메인5)", cost: 42555, impressions: 3638, clicks: 31, purchases: 2},
+      {campaign: "PM_애드부스트(메인2)", cost: 35018, impressions: 3166, clicks: 32, purchases: 10},
+      {campaign: "PM_애드부스트(메인3)", cost: 34421, impressions: 3788, clicks: 28, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 30274, impressions: 3081, clicks: 28, purchases: 5},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 2},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-13": [
+      {campaign: "PM_애드부스트(메인5)", cost: 209949, impressions: 39372, clicks: 527, purchases: 11},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 69552, impressions: 2860, clicks: 28, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 34165, impressions: 2669, clicks: 27, purchases: 2},
+      {campaign: "PM_애드부스트(메인3)", cost: 27002, impressions: 2652, clicks: 16, purchases: 7},
+      {campaign: "PM_애드부스트(메인)", cost: 17461, impressions: 2095, clicks: 18, purchases: 4},
+      {campaign: "PM_애드부스트(메인2)", cost: 16738, impressions: 2749, clicks: 17, purchases: 1},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-14": [
+      {campaign: "PM_애드부스트(메인3)", cost: 330689, impressions: 79402, clicks: 736, purchases: 28},
+      {campaign: "PM_애드부스트(메인5)", cost: 240932, impressions: 34826, clicks: 506, purchases: 21},
+      {campaign: "PM_애드부스트(메인4)", cost: 217389, impressions: 36776, clicks: 481, purchases: 11},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 63791, impressions: 3427, clicks: 25, purchases: 3},
+      {campaign: "PM_애드부스트(메인2)", cost: 34930, impressions: 3635, clicks: 23, purchases: 2},
+      {campaign: "PM_애드부스트(메인)", cost: 31825, impressions: 3636, clicks: 28, purchases: 1},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-15": [
+      {campaign: "PM_애드부스트(메인5)", cost: 142954, impressions: 17217, clicks: 288, purchases: 50},
+      {campaign: "PM_애드부스트(메인4)", cost: 141734, impressions: 47583, clicks: 271, purchases: 21},
+      {campaign: "PM_애드부스트(메인3)", cost: 130814, impressions: 31376, clicks: 319, purchases: 40},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 115160, impressions: 3396, clicks: 45, purchases: 8},
+      {campaign: "PM_애드부스트(메인)", cost: 35273, impressions: 3699, clicks: 24, purchases: 3},
+      {campaign: "PM_애드부스트(메인2)", cost: 22357, impressions: 3615, clicks: 20, purchases: 2},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-16": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 91241, impressions: 3545, clicks: 38, purchases: 6},
+      {campaign: "PM_애드부스트(메인4)", cost: 51691, impressions: 4150, clicks: 34, purchases: 5},
+      {campaign: "PM_애드부스트(메인2)", cost: 41851, impressions: 4117, clicks: 21, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 38752, impressions: 4079, clicks: 30, purchases: 6},
+      {campaign: "PM_애드부스트(메인3)", cost: 30240, impressions: 4047, clicks: 18, purchases: 3},
+      {campaign: "PM_애드부스트(메인5)", cost: 29387, impressions: 4182, clicks: 28, purchases: 11},
+      {campaign: "(삭제) ADVoost 서브_1", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-17": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 160579, impressions: 4264, clicks: 65, purchases: 4},
+      {campaign: "PM_애드부스트(메인)", cost: 74251, impressions: 4890, clicks: 36, purchases: 3},
+      {campaign: "PM_애드부스트(메인3)", cost: 58445, impressions: 4754, clicks: 35, purchases: 3},
+      {campaign: "PM_애드부스트(메인5)", cost: 51296, impressions: 4464, clicks: 33, purchases: 3},
+      {campaign: "PM_애드부스트(메인2)", cost: 43402, impressions: 4935, clicks: 33, purchases: 5},
+      {campaign: "PM_애드부스트(메인4)", cost: 37844, impressions: 4819, clicks: 24, purchases: 3},
+      {campaign: "(삭제) ADVoost 쇼핑_1", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 2}
+    ],
+    "2026-04-18": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 76765, impressions: 3939, clicks: 40, purchases: 3},
+      {campaign: "PM_애드부스트(메인)", cost: 44247, impressions: 5428, clicks: 34, purchases: 1},
+      {campaign: "PM_애드부스트(메인5)", cost: 33211, impressions: 4995, clicks: 28, purchases: 2},
+      {campaign: "PM_애드부스트(메인2)", cost: 32127, impressions: 5441, clicks: 26, purchases: 1},
+      {campaign: "PM_애드부스트(메인4)", cost: 30625, impressions: 5337, clicks: 22, purchases: 2},
+      {campaign: "PM_애드부스트(메인3)", cost: 28442, impressions: 5419, clicks: 23, purchases: 5},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-19": [
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 114726, impressions: 4747, clicks: 50, purchases: 9},
+      {campaign: "PM_애드부스트(메인)", cost: 76583, impressions: 6504, clicks: 47, purchases: 3},
+      {campaign: "PM_애드부스트(메인2)", cost: 55567, impressions: 6111, clicks: 40, purchases: 2},
+      {campaign: "PM_애드부스트(메인3)", cost: 54983, impressions: 5957, clicks: 35, purchases: 1},
+      {campaign: "PM_애드부스트(메인5)", cost: 52701, impressions: 6564, clicks: 31, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 50319, impressions: 6712, clicks: 40, purchases: 2},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-20": [
+      {campaign: "PM_애드부스트(메인3)", cost: 109749, impressions: 8277, clicks: 61, purchases: 7},
+      {campaign: "PM_애드부스트(메인2)", cost: 72131, impressions: 6997, clicks: 42, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 62524, impressions: 9211, clicks: 41, purchases: 5},
+      {campaign: "PM_애드부스트(메인5)", cost: 61039, impressions: 8688, clicks: 61, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 60328, impressions: 8771, clicks: 43, purchases: 8},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 1, clicks: 0, purchases: 1},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-21": [
+      {campaign: "PM_애드부스트(메인2)", cost: 111873, impressions: 13969, clicks: 54, purchases: 4},
+      {campaign: "PM_애드부스트(메인)", cost: 109506, impressions: 14610, clicks: 54, purchases: 10},
+      {campaign: "PM_애드부스트(메인5)", cost: 101651, impressions: 14658, clicks: 64, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 98481, impressions: 14336, clicks: 61, purchases: 4},
+      {campaign: "PM_애드부스트(메인3)", cost: 85447, impressions: 13925, clicks: 49, purchases: 3},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 2}
+    ],
+    "2026-04-22": [
+      {campaign: "PM_애드부스트(메인3)", cost: 122869, impressions: 16986, clicks: 62, purchases: 8},
+      {campaign: "PM_애드부스트(메인)", cost: 122832, impressions: 16957, clicks: 59, purchases: 2},
+      {campaign: "PM_애드부스트(메인5)", cost: 111562, impressions: 16681, clicks: 49, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 84822, impressions: 16698, clicks: 52, purchases: 6},
+      {campaign: "PM_애드부스트(메인2)", cost: 84341, impressions: 16504, clicks: 38, purchases: 2},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 2},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-23": [
+      {campaign: "PM_애드부스트(메인4)", cost: 99216, impressions: 14334, clicks: 63, purchases: 7},
+      {campaign: "PM_애드부스트(메인3)", cost: 97460, impressions: 15541, clicks: 63, purchases: 8},
+      {campaign: "PM_애드부스트(메인2)", cost: 94848, impressions: 15023, clicks: 65, purchases: 7},
+      {campaign: "PM_애드부스트(메인5)", cost: 82555, impressions: 14481, clicks: 57, purchases: 3},
+      {campaign: "PM_애드부스트(메인)", cost: 68945, impressions: 14428, clicks: 44, purchases: 6}
+    ],
+    "2026-04-24": [
+      {campaign: "PM_애드부스트(메인2)", cost: 179853, impressions: 12663, clicks: 107, purchases: 10},
+      {campaign: "PM_애드부스트(메인5)", cost: 124680, impressions: 13063, clicks: 97, purchases: 11},
+      {campaign: "PM_애드부스트(메인3)", cost: 122048, impressions: 12390, clicks: 95, purchases: 10},
+      {campaign: "PM_애드부스트(메인4)", cost: 119471, impressions: 13238, clicks: 82, purchases: 2},
+      {campaign: "PM_애드부스트(메인)", cost: 113890, impressions: 12881, clicks: 87, purchases: 5},
+      {campaign: "PM_애드부스트(서브)", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-25": [
+      {campaign: "PM_애드부스트(메인2)", cost: 115493, impressions: 7690, clicks: 78, purchases: 1},
+      {campaign: "PM_애드부스트(메인4)", cost: 111462, impressions: 7413, clicks: 77, purchases: 9},
+      {campaign: "PM_애드부스트(메인)", cost: 109900, impressions: 7265, clicks: 85, purchases: 1},
+      {campaign: "PM_애드부스트(메인3)", cost: 102450, impressions: 7839, clicks: 63, purchases: 2},
+      {campaign: "PM_애드부스트(메인5)", cost: 87595, impressions: 7266, clicks: 61, purchases: 9},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-26": [
+      {campaign: "PM_애드부스트(메인3)", cost: 176758, impressions: 9825, clicks: 109, purchases: 8},
+      {campaign: "PM_애드부스트(메인5)", cost: 154308, impressions: 9775, clicks: 95, purchases: 5},
+      {campaign: "PM_애드부스트(메인)", cost: 140829, impressions: 10380, clicks: 89, purchases: 7},
+      {campaign: "PM_애드부스트(메인4)", cost: 136873, impressions: 9625, clicks: 95, purchases: 13},
+      {campaign: "PM_애드부스트(메인2)", cost: 125839, impressions: 9418, clicks: 85, purchases: 12},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-27": [
+      {campaign: "PM_애드부스트(메인2)", cost: 212736, impressions: 12353, clicks: 88, purchases: 9},
+      {campaign: "PM_애드부스트(메인5)", cost: 140345, impressions: 10152, clicks: 71, purchases: 5},
+      {campaign: "PM_애드부스트(메인3)", cost: 106850, impressions: 10986, clicks: 68, purchases: 9},
+      {campaign: "PM_애드부스트(메인)", cost: 106513, impressions: 10609, clicks: 58, purchases: 10},
+      {campaign: "PM_애드부스트(메인4)", cost: 106054, impressions: 10142, clicks: 62, purchases: 6},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-28": [
+      {campaign: "PM_애드부스트(메인2)", cost: 123811, impressions: 9232, clicks: 72, purchases: 6},
+      {campaign: "PM_애드부스트(메인4)", cost: 122561, impressions: 9624, clicks: 67, purchases: 7},
+      {campaign: "PM_애드부스트(메인5)", cost: 111364, impressions: 9294, clicks: 53, purchases: 2},
+      {campaign: "PM_애드부스트(메인)", cost: 93357, impressions: 9175, clicks: 57, purchases: 5},
+      {campaign: "PM_애드부스트(메인3)", cost: 72787, impressions: 9171, clicks: 53, purchases: 10},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-29": [
+      {campaign: "PM_애드부스트(메인5)", cost: 106823, impressions: 8665, clicks: 57, purchases: 9},
+      {campaign: "PM_애드부스트(메인)", cost: 83183, impressions: 7479, clicks: 43, purchases: 3},
+      {campaign: "PM_애드부스트(메인2)", cost: 69417, impressions: 8521, clicks: 46, purchases: 2},
+      {campaign: "PM_애드부스트(메인3)", cost: 66653, impressions: 8889, clicks: 44, purchases: 9},
+      {campaign: "PM_애드부스트(메인4)", cost: 58928, impressions: 8791, clicks: 42, purchases: 1},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-30": [
+      {campaign: "PM_애드부스트(메인5)", cost: 102484, impressions: 9997, clicks: 56, purchases: 13},
+      {campaign: "PM_애드부스트(메인)", cost: 76845, impressions: 10004, clicks: 45, purchases: 8},
+      {campaign: "PM_애드부스트(메인2)", cost: 76651, impressions: 9744, clicks: 40, purchases: 9},
+      {campaign: "PM_애드부스트(메인3)", cost: 76245, impressions: 9863, clicks: 42, purchases: 10},
+      {campaign: "PM_애드부스트(메인4)", cost: 76211, impressions: 9817, clicks: 37, purchases: 4}
+    ],
+    "2026-05-01": [
+      {campaign: "PM_애드부스트(메인)", cost: 153480, impressions: 11020, clicks: 76, purchases: 6},
+      {campaign: "PM_애드부스트(메인2)", cost: 152488, impressions: 12058, clicks: 75, purchases: 5},
+      {campaign: "PM_애드부스트(메인4)", cost: 148407, impressions: 10795, clicks: 61, purchases: 3},
+      {campaign: "PM_애드부스트(메인5)", cost: 145552, impressions: 11272, clicks: 64, purchases: 4},
+      {campaign: "PM_애드부스트(메인3)", cost: 124617, impressions: 11204, clicks: 66, purchases: 1},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-02": [
+      {campaign: "PM_애드부스트(메인5)", cost: 216307, impressions: 13121, clicks: 85, purchases: 4},
+      {campaign: "PM_애드부스트(메인4)", cost: 207631, impressions: 14645, clicks: 79, purchases: 14},
+      {campaign: "PM_애드부스트(메인2)", cost: 204054, impressions: 13077, clicks: 78, purchases: 7},
+      {campaign: "PM_애드부스트(메인)", cost: 197869, impressions: 12786, clicks: 81, purchases: 5},
+      {campaign: "PM_애드부스트(메인3)", cost: 142606, impressions: 14935, clicks: 65, purchases: 5},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-03": [
+      {campaign: "PM_애드부스트(메인4)", cost: 236172, impressions: 15944, clicks: 99, purchases: 14},
+      {campaign: "PM_애드부스트(메인2)", cost: 214334, impressions: 12288, clicks: 93, purchases: 5},
+      {campaign: "PM_애드부스트(메인)", cost: 184552, impressions: 15879, clicks: 80, purchases: 5},
+      {campaign: "PM_애드부스트(메인3)", cost: 181813, impressions: 12962, clicks: 83, purchases: 9},
+      {campaign: "PM_애드부스트(메인5)", cost: 163442, impressions: 15138, clicks: 83, purchases: 5},
+      {campaign: "(삭제) ADVoost 서브_2", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-04": [
+      {campaign: "PM_애드부스트(메인4)", cost: 218068, impressions: 20141, clicks: 80, purchases: 16},
+      {campaign: "PM_애드부스트(메인3)", cost: 214541, impressions: 18496, clicks: 76, purchases: 7},
+      {campaign: "PM_애드부스트(메인5)", cost: 199754, impressions: 20053, clicks: 70, purchases: 11},
+      {campaign: "PM_애드부스트(메인2)", cost: 197705, impressions: 18083, clicks: 74, purchases: 4},
+      {campaign: "PM_애드부스트(메인)", cost: 73632, impressions: 6221, clicks: 30, purchases: 4},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-05": [
+      {campaign: "PM_애드부스트(메인2)", cost: 280286, impressions: 18254, clicks: 116, purchases: 13},
+      {campaign: "PM_애드부스트(메인5)", cost: 237432, impressions: 18147, clicks: 103, purchases: 11},
+      {campaign: "PM_애드부스트(메인4)", cost: 229537, impressions: 18096, clicks: 93, purchases: 6},
+      {campaign: "PM_애드부스트(메인3)", cost: 211160, impressions: 17996, clicks: 86, purchases: 9},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-06": [
+      {campaign: "PM_애드부스트(메인4)", cost: 263521, impressions: 25711, clicks: 88, purchases: 8},
+      {campaign: "PM_애드부스트(메인2)", cost: 249523, impressions: 24764, clicks: 91, purchases: 11},
+      {campaign: "PM_애드부스트(메인3)", cost: 242449, impressions: 25449, clicks: 97, purchases: 6},
+      {campaign: "PM_애드부스트(메인5)", cost: 227248, impressions: 24525, clicks: 90, purchases: 10},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-07": [
+      {campaign: "PM_애드부스트(메인5)", cost: 276067, impressions: 26585, clicks: 104, purchases: 6},
+      {campaign: "PM_애드부스트(메인3)", cost: 248717, impressions: 24976, clicks: 96, purchases: 10},
+      {campaign: "PM_애드부스트(메인4)", cost: 237671, impressions: 26332, clicks: 96, purchases: 7},
+      {campaign: "PM_애드부스트(메인2)", cost: 178538, impressions: 22820, clicks: 88, purchases: 11},
+      {campaign: "ADVoost 쇼핑_Target ROAS", cost: 0, impressions: 0, clicks: 0, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-08": [
+      {campaign: "PM_애드부스트(메인4)", cost: 215930, impressions: 19698, clicks: 88, purchases: 3},
+      {campaign: "PM_애드부스트(메인5)", cost: 194910, impressions: 19480, clicks: 81, purchases: 4},
+      {campaign: "PM_애드부스트(메인2)", cost: 178862, impressions: 17377, clicks: 84, purchases: 6},
+      {campaign: "PM_애드부스트(메인3)", cost: 144082, impressions: 18340, clicks: 70, purchases: 1},
+      {campaign: "PM_애드부스트(메인)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-09": [
+      {campaign: "PM_애드부스트(메인3)", cost: 195182, impressions: 14241, clicks: 88, purchases: 3},
+      {campaign: "PM_애드부스트(메인5)", cost: 181149, impressions: 14066, clicks: 80, purchases: 7},
+      {campaign: "PM_애드부스트(메인4)", cost: 149131, impressions: 13617, clicks: 79, purchases: 3},
+      {campaign: "PM_애드부스트(메인2)", cost: 127432, impressions: 11129, clicks: 73, purchases: 5},
+      {campaign: "PM_애드부스트(메인)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-10": [
+      {campaign: "PM_애드부스트(메인4)", cost: 237041, impressions: 17919, clicks: 114, purchases: 4},
+      {campaign: "PM_애드부스트(메인3)", cost: 211742, impressions: 17834, clicks: 98, purchases: 6},
+      {campaign: "PM_애드부스트(메인5)", cost: 206931, impressions: 19097, clicks: 101, purchases: 9},
+      {campaign: "PM_애드부스트(메인2)", cost: 137971, impressions: 16156, clicks: 80, purchases: 5},
+      {campaign: "PM_애드부스트(메인)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ]
+  },
+  searchad: {
+    "2026-04-01": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 309335, impressions: 8828, clicks: 89, purchases: 29},
+      {campaign: "#P3_파워링크_일반_MO", cost: 205407, impressions: 2897, clicks: 113, purchases: 31},
+      {campaign: "#S5_손목 마사지기_MO", cost: 168709, impressions: 23981, clicks: 50, purchases: 6},
+      {campaign: "#S4_릴렉스틱_PC", cost: 58871, impressions: 11010, clicks: 21, purchases: 6},
+      {campaign: "#P4_파워링크_일반_PC", cost: 33255, impressions: 1816, clicks: 29, purchases: 7},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 18774, impressions: 301, clicks: 19, purchases: 6},
+      {campaign: "#S5_손목 마사지기_PC", cost: 13619, impressions: 65219, clicks: 6, purchases: 2},
+      {campaign: "#S00_벌크", cost: 5655, impressions: 44864, clicks: 21, purchases: 1},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 5583, impressions: 237, clicks: 2, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1451, impressions: 103, clicks: 5, purchases: 0}
+    ],
+    "2026-04-02": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 307015, impressions: 11079, clicks: 94, purchases: 44},
+      {campaign: "#P3_파워링크_일반_MO", cost: 202141, impressions: 2806, clicks: 111, purchases: 22},
+      {campaign: "#S5_손목 마사지기_MO", cost: 145743, impressions: 26605, clicks: 37, purchases: 4},
+      {campaign: "#S4_릴렉스틱_PC", cost: 79184, impressions: 11565, clicks: 27, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 37689, impressions: 2037, clicks: 28, purchases: 5},
+      {campaign: "#S5_손목 마사지기_PC", cost: 23884, impressions: 83242, clicks: 10, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 10940, impressions: 343, clicks: 16, purchases: 5},
+      {campaign: "#S00_벌크", cost: 5331, impressions: 33136, clicks: 23, purchases: 5},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1314, impressions: 92, clicks: 4, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-03": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 297858, impressions: 11654, clicks: 93, purchases: 33},
+      {campaign: "#P3_파워링크_일반_MO", cost: 202117, impressions: 2777, clicks: 111, purchases: 14},
+      {campaign: "#S5_손목 마사지기_MO", cost: 94145, impressions: 20514, clicks: 28, purchases: 3},
+      {campaign: "#S4_릴렉스틱_PC", cost: 77414, impressions: 21108, clicks: 30, purchases: 1},
+      {campaign: "#P4_파워링크_일반_PC", cost: 29719, impressions: 1989, clicks: 23, purchases: 3},
+      {campaign: "#S5_손목 마사지기_PC", cost: 24821, impressions: 39297, clicks: 10, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 15839, impressions: 341, clicks: 17, purchases: 6},
+      {campaign: "#S00_벌크", cost: 7390, impressions: 36854, clicks: 23, purchases: 3},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 2323, impressions: 91, clicks: 5, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-04": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 300105, impressions: 8775, clicks: 94, purchases: 31},
+      {campaign: "#P3_파워링크_일반_MO", cost: 197230, impressions: 2299, clicks: 100, purchases: 19},
+      {campaign: "#S5_손목 마사지기_MO", cost: 183461, impressions: 25383, clicks: 52, purchases: 5},
+      {campaign: "#S6_허리마사지기_MO", cost: 82429, impressions: 3631, clicks: 27, purchases: 1},
+      {campaign: "#S5_손목 마사지기_PC", cost: 19981, impressions: 40783, clicks: 7, purchases: 2},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 19829, impressions: 113, clicks: 6, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 15552, impressions: 995, clicks: 8, purchases: 1},
+      {campaign: "#S4_릴렉스틱_PC", cost: 14503, impressions: 3995, clicks: 6, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 12930, impressions: 517, clicks: 29, purchases: 9},
+      {campaign: "#S6_허리마사지기_PC", cost: 8270, impressions: 333, clicks: 4, purchases: 0}
+    ],
+    "2026-04-05": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 305240, impressions: 7344, clicks: 93, purchases: 21},
+      {campaign: "#S5_손목 마사지기_MO", cost: 200540, impressions: 27570, clicks: 59, purchases: 6},
+      {campaign: "#P3_파워링크_일반_MO", cost: 199948, impressions: 3076, clicks: 102, purchases: 7},
+      {campaign: "#S6_허리마사지기_MO", cost: 81025, impressions: 5403, clicks: 27, purchases: 3},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 26236, impressions: 804, clicks: 9, purchases: 1},
+      {campaign: "#S4_릴렉스틱_PC", cost: 25492, impressions: 2331, clicks: 8, purchases: 2},
+      {campaign: "#S5_손목 마사지기_PC", cost: 21920, impressions: 37722, clicks: 7, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 13558, impressions: 1011, clicks: 8, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 12456, impressions: 483, clicks: 28, purchases: 4},
+      {campaign: "#S00_벌크", cost: 5742, impressions: 31568, clicks: 18, purchases: 1}
+    ],
+    "2026-04-06": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 302099, impressions: 10196, clicks: 94, purchases: 37},
+      {campaign: "#P3_파워링크_일반_MO", cost: 207193, impressions: 3257, clicks: 114, purchases: 18},
+      {campaign: "#S5_손목 마사지기_MO", cost: 129385, impressions: 23820, clicks: 38, purchases: 4},
+      {campaign: "#S6_허리마사지기_MO", cost: 93997, impressions: 12051, clicks: 39, purchases: 1},
+      {campaign: "#S07_올인원_MO", cost: 81787, impressions: 1521, clicks: 19, purchases: 0},
+      {campaign: "#S4_릴렉스틱_PC", cost: 65370, impressions: 25191, clicks: 28, purchases: 6},
+      {campaign: "#S5_손목 마사지기_PC", cost: 49370, impressions: 70323, clicks: 17, purchases: 3},
+      {campaign: "#P4_파워링크_일반_PC", cost: 48949, impressions: 2268, clicks: 35, purchases: 1},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 37721, impressions: 601, clicks: 9, purchases: 3},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 16964, impressions: 499, clicks: 31, purchases: 5}
+    ],
+    "2026-04-07": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 304191, impressions: 9402, clicks: 97, purchases: 38},
+      {campaign: "#P3_파워링크_일반_MO", cost: 205223, impressions: 3288, clicks: 115, purchases: 11},
+      {campaign: "#S07_올인원_MO", cost: 202088, impressions: 5097, clicks: 40, purchases: 2},
+      {campaign: "#S5_손목 마사지기_MO", cost: 168146, impressions: 18490, clicks: 45, purchases: 4},
+      {campaign: "#S6_허리마사지기_MO", cost: 98380, impressions: 10286, clicks: 31, purchases: 3},
+      {campaign: "#S4_릴렉스틱_PC", cost: 81099, impressions: 17289, clicks: 27, purchases: 3},
+      {campaign: "#S5_손목 마사지기_PC", cost: 42169, impressions: 68602, clicks: 16, purchases: 2},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 35360, impressions: 139, clicks: 5, purchases: 3},
+      {campaign: "#P4_파워링크_일반_PC", cost: 31414, impressions: 2391, clicks: 29, purchases: 7},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 16366, impressions: 539, clicks: 29, purchases: 14}
+    ],
+    "2026-04-08": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 277216, impressions: 9289, clicks: 89, purchases: 25},
+      {campaign: "#P3_파워링크_일반_MO", cost: 201715, impressions: 2852, clicks: 123, purchases: 24},
+      {campaign: "#S5_손목 마사지기_MO", cost: 135110, impressions: 18353, clicks: 32, purchases: 7},
+      {campaign: "#S07_올인원_MO", cost: 94684, impressions: 2731, clicks: 22, purchases: 4},
+      {campaign: "#S4_릴렉스틱_PC", cost: 48362, impressions: 6906, clicks: 15, purchases: 6},
+      {campaign: "#P4_파워링크_일반_PC", cost: 38925, impressions: 1834, clicks: 38, purchases: 4},
+      {campaign: "#S6_허리마사지기_MO", cost: 32802, impressions: 4106, clicks: 11, purchases: 1},
+      {campaign: "#S5_손목 마사지기_PC", cost: 22768, impressions: 21183, clicks: 10, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 20802, impressions: 181, clicks: 4, purchases: 4},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 11185, impressions: 629, clicks: 18, purchases: 3}
+    ],
+    "2026-04-09": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 299574, impressions: 12791, clicks: 101, purchases: 38},
+      {campaign: "#S5_손목 마사지기_MO", cost: 213844, impressions: 21819, clicks: 53, purchases: 12},
+      {campaign: "#P3_파워링크_일반_MO", cost: 208389, impressions: 2083, clicks: 134, purchases: 41},
+      {campaign: "#S4_릴렉스틱_PC", cost: 55783, impressions: 17928, clicks: 24, purchases: 0},
+      {campaign: "#S5_손목 마사지기_PC", cost: 47836, impressions: 63269, clicks: 19, purchases: 1},
+      {campaign: "#P4_파워링크_일반_PC", cost: 34760, impressions: 1182, clicks: 32, purchases: 2},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 17587, impressions: 556, clicks: 28, purchases: 11},
+      {campaign: "#S00_벌크", cost: 6347, impressions: 36964, clicks: 24, purchases: 2},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 4217, impressions: 257, clicks: 1, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 3040, impressions: 135, clicks: 9, purchases: 1}
+    ],
+    "2026-04-10": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 247334, impressions: 5507, clicks: 71, purchases: 31},
+      {campaign: "#P3_파워링크_일반_MO", cost: 172751, impressions: 1824, clicks: 118, purchases: 28},
+      {campaign: "#S5_손목 마사지기_MO", cost: 157173, impressions: 23245, clicks: 47, purchases: 3},
+      {campaign: "#S4_릴렉스틱_PC", cost: 54551, impressions: 13493, clicks: 21, purchases: 6},
+      {campaign: "#P4_파워링크_일반_PC", cost: 49975, impressions: 981, clicks: 38, purchases: 2},
+      {campaign: "#S5_손목 마사지기_PC", cost: 36688, impressions: 48955, clicks: 15, purchases: 1},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 29370, impressions: 331, clicks: 5, purchases: 2},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 7744, impressions: 562, clicks: 16, purchases: 8},
+      {campaign: "#S00_벌크", cost: 5054, impressions: 25383, clicks: 21, purchases: 6},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 3002, impressions: 87, clicks: 10, purchases: 3}
+    ],
+    "2026-04-11": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 304560, impressions: 5737, clicks: 93, purchases: 31},
+      {campaign: "#P3_파워링크_일반_MO", cost: 173880, impressions: 1939, clicks: 132, purchases: 32},
+      {campaign: "#S5_손목 마사지기_MO", cost: 127402, impressions: 18379, clicks: 35, purchases: 2},
+      {campaign: "#S4_릴렉스틱_PC", cost: 32447, impressions: 6174, clicks: 11, purchases: 2},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 26480, impressions: 610, clicks: 7, purchases: 4},
+      {campaign: "#P4_파워링크_일반_PC", cost: 12744, impressions: 440, clicks: 8, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 11463, impressions: 623, clicks: 24, purchases: 14},
+      {campaign: "#S5_손목 마사지기_PC", cost: 9548, impressions: 22535, clicks: 5, purchases: 0},
+      {campaign: "#S00_벌크", cost: 4863, impressions: 28007, clicks: 18, purchases: 2},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 926, impressions: 48, clicks: 5, purchases: 2}
+    ],
+    "2026-04-12": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 301904, impressions: 6766, clicks: 94, purchases: 38},
+      {campaign: "#P3_파워링크_일반_MO", cost: 202055, impressions: 2109, clicks: 150, purchases: 30},
+      {campaign: "#S5_손목 마사지기_MO", cost: 201804, impressions: 23663, clicks: 56, purchases: 5},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 25421, impressions: 318, clicks: 2, purchases: 1},
+      {campaign: "#S4_릴렉스틱_PC", cost: 19577, impressions: 3964, clicks: 7, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 15007, impressions: 743, clicks: 34, purchases: 11},
+      {campaign: "#S5_손목 마사지기_PC", cost: 13276, impressions: 4980, clicks: 5, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 7876, impressions: 415, clicks: 6, purchases: 0},
+      {campaign: "#S00_벌크", cost: 6329, impressions: 23660, clicks: 26, purchases: 9},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 338, impressions: 27, clicks: 1, purchases: 0}
+    ],
+    "2026-04-13": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 300026, impressions: 8852, clicks: 104, purchases: 43},
+      {campaign: "#S5_손목 마사지기_MO", cost: 174037, impressions: 33875, clicks: 55, purchases: 4},
+      {campaign: "#P3_파워링크_일반_MO", cost: 155750, impressions: 1986, clicks: 104, purchases: 11},
+      {campaign: "#S4_릴렉스틱_PC", cost: 82837, impressions: 11101, clicks: 33, purchases: 6},
+      {campaign: "#S5_손목 마사지기_PC", cost: 40330, impressions: 44526, clicks: 20, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 36537, impressions: 1168, clicks: 29, purchases: 2},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 31071, impressions: 273, clicks: 9, purchases: 3},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 8748, impressions: 573, clicks: 18, purchases: 5},
+      {campaign: "#S00_벌크", cost: 3940, impressions: 22059, clicks: 18, purchases: 4},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 2161, impressions: 135, clicks: 8, purchases: 3}
+    ],
+    "2026-04-14": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 307285, impressions: 6985, clicks: 95, purchases: 22},
+      {campaign: "#S5_손목 마사지기_MO", cost: 176036, impressions: 30116, clicks: 49, purchases: 3},
+      {campaign: "#P3_파워링크_일반_MO", cost: 158237, impressions: 2112, clicks: 114, purchases: 24},
+      {campaign: "#S4_릴렉스틱_PC", cost: 62783, impressions: 17450, clicks: 23, purchases: 4},
+      {campaign: "#P4_파워링크_일반_PC", cost: 34420, impressions: 1120, clicks: 33, purchases: 4},
+      {campaign: "#S5_손목 마사지기_PC", cost: 29085, impressions: 31612, clicks: 13, purchases: 2},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 25413, impressions: 767, clicks: 8, purchases: 6},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 19275, impressions: 752, clicks: 43, purchases: 18},
+      {campaign: "#S00_벌크", cost: 5391, impressions: 37581, clicks: 26, purchases: 2},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 2581, impressions: 125, clicks: 6, purchases: 0}
+    ],
+    "2026-04-15": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 310218, impressions: 6762, clicks: 96, purchases: 30},
+      {campaign: "#S5_손목 마사지기_MO", cost: 201719, impressions: 31375, clicks: 62, purchases: 2},
+      {campaign: "#P3_파워링크_일반_MO", cost: 184342, impressions: 2107, clicks: 137, purchases: 27},
+      {campaign: "#S4_릴렉스틱_PC", cost: 67484, impressions: 12783, clicks: 28, purchases: 6},
+      {campaign: "#S5_손목 마사지기_PC", cost: 48882, impressions: 30039, clicks: 20, purchases: 4},
+      {campaign: "#P4_파워링크_일반_PC", cost: 32934, impressions: 1281, clicks: 30, purchases: 7},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 31895, impressions: 443, clicks: 7, purchases: 5},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 13402, impressions: 647, clicks: 24, purchases: 11},
+      {campaign: "#S00_벌크", cost: 5454, impressions: 24440, clicks: 28, purchases: 10},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1686, impressions: 134, clicks: 6, purchases: 9}
+    ],
+    "2026-04-16": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 300367, impressions: 6551, clicks: 99, purchases: 36},
+      {campaign: "#P3_파워링크_일반_MO", cost: 120130, impressions: 1548, clicks: 112, purchases: 30},
+      {campaign: "#S5_손목 마사지기_MO", cost: 107612, impressions: 17175, clicks: 36, purchases: 2},
+      {campaign: "#S4_릴렉스틱_PC", cost: 72832, impressions: 14215, clicks: 29, purchases: 6},
+      {campaign: "#P4_파워링크_일반_PC", cost: 40637, impressions: 1291, clicks: 37, purchases: 7},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 26436, impressions: 662, clicks: 44, purchases: 11},
+      {campaign: "#S5_손목 마사지기_PC", cost: 20486, impressions: 26244, clicks: 8, purchases: 0},
+      {campaign: "#S00_벌크", cost: 9446, impressions: 28394, clicks: 31, purchases: 1},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 9008, impressions: 197, clicks: 4, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1867, impressions: 102, clicks: 6, purchases: 0}
+    ],
+    "2026-04-17": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 301590, impressions: 5436, clicks: 93, purchases: 33},
+      {campaign: "#P3_파워링크_일반_MO", cost: 109778, impressions: 1264, clicks: 98, purchases: 28},
+      {campaign: "#S5_손목 마사지기_MO", cost: 98032, impressions: 9976, clicks: 28, purchases: 2},
+      {campaign: "#S4_릴렉스틱_PC", cost: 71049, impressions: 16734, clicks: 32, purchases: 11},
+      {campaign: "#P4_파워링크_일반_PC", cost: 31011, impressions: 1185, clicks: 30, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 30648, impressions: 1165, clicks: 45, purchases: 15},
+      {campaign: "#S00_벌크", cost: 5657, impressions: 49019, clicks: 28, purchases: 14},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1896, impressions: 112, clicks: 6, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-18": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 298259, impressions: 8105, clicks: 91, purchases: 23},
+      {campaign: "#P3_파워링크_일반_MO", cost: 114898, impressions: 1242, clicks: 108, purchases: 34},
+      {campaign: "#S4_릴렉스틱_PC", cost: 31163, impressions: 7555, clicks: 13, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 19054, impressions: 870, clicks: 46, purchases: 10},
+      {campaign: "#P4_파워링크_일반_PC", cost: 12362, impressions: 553, clicks: 11, purchases: 1},
+      {campaign: "#S00_벌크", cost: 4801, impressions: 18750, clicks: 19, purchases: 2},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1116, impressions: 41, clicks: 4, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-19": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 303907, impressions: 10114, clicks: 108, purchases: 28},
+      {campaign: "#P3_파워링크_일반_MO", cost: 151033, impressions: 1298, clicks: 117, purchases: 24},
+      {campaign: "#S4_릴렉스틱_PC", cost: 36784, impressions: 6307, clicks: 13, purchases: 5},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 14567, impressions: 843, clicks: 39, purchases: 14},
+      {campaign: "#P4_파워링크_일반_PC", cost: 12948, impressions: 433, clicks: 10, purchases: 1},
+      {campaign: "#S00_벌크", cost: 5737, impressions: 19978, clicks: 23, purchases: 2},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 0, impressions: 35, clicks: 0, purchases: 3},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-20": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 306015, impressions: 7399, clicks: 100, purchases: 34},
+      {campaign: "#P3_파워링크_일반_MO", cost: 131704, impressions: 1198, clicks: 87, purchases: 31},
+      {campaign: "#S4_릴렉스틱_PC", cost: 83904, impressions: 18365, clicks: 37, purchases: 11},
+      {campaign: "#P4_파워링크_일반_PC", cost: 30498, impressions: 1296, clicks: 29, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 26761, impressions: 1019, clicks: 58, purchases: 12},
+      {campaign: "#S00_벌크", cost: 6638, impressions: 26649, clicks: 30, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 836, impressions: 97, clicks: 3, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-21": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 302002, impressions: 8435, clicks: 95, purchases: 37},
+      {campaign: "#P3_파워링크_일반_MO", cost: 109132, impressions: 1173, clicks: 89, purchases: 31},
+      {campaign: "#S4_릴렉스틱_PC", cost: 81546, impressions: 11005, clicks: 32, purchases: 5},
+      {campaign: "#P4_파워링크_일반_PC", cost: 32779, impressions: 1141, clicks: 32, purchases: 2},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 22472, impressions: 714, clicks: 49, purchases: 12},
+      {campaign: "#S00_벌크", cost: 4136, impressions: 19851, clicks: 15, purchases: 4},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1606, impressions: 143, clicks: 6, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-04-22": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 301700, impressions: 7221, clicks: 94, purchases: 27},
+      {campaign: "#P3_파워링크_일반_MO", cost: 112986, impressions: 1170, clicks: 80, purchases: 23},
+      {campaign: "#S4_릴렉스틱_PC", cost: 68370, impressions: 4163, clicks: 21, purchases: 12},
+      {campaign: "#P4_파워링크_일반_PC", cost: 21206, impressions: 918, clicks: 19, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 14752, impressions: 603, clicks: 36, purchases: 15},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1759, impressions: 133, clicks: 13, purchases: 1},
+      {campaign: "#S00_벌크", cost: 1448, impressions: 7027, clicks: 5, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-23": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 306665, impressions: 11280, clicks: 98, purchases: 23},
+      {campaign: "#P3_파워링크_일반_MO", cost: 151620, impressions: 1123, clicks: 91, purchases: 23},
+      {campaign: "#S4_릴렉스틱_PC", cost: 80613, impressions: 3272, clicks: 25, purchases: 6},
+      {campaign: "#P4_파워링크_일반_PC", cost: 16412, impressions: 291, clicks: 19, purchases: 2},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 15849, impressions: 585, clicks: 34, purchases: 14},
+      {campaign: "#S00_벌크", cost: 2845, impressions: 6587, clicks: 10, purchases: 6},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 546, impressions: 101, clicks: 3, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-24": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 327161, impressions: 7348, clicks: 99, purchases: 34},
+      {campaign: "#P3_파워링크_일반_MO", cost: 130753, impressions: 1100, clicks: 104, purchases: 24},
+      {campaign: "#S4_릴렉스틱_PC", cost: 74034, impressions: 10342, clicks: 20, purchases: 11},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 17303, impressions: 714, clicks: 41, purchases: 15},
+      {campaign: "#P4_파워링크_일반_PC", cost: 11844, impressions: 245, clicks: 15, purchases: 1},
+      {campaign: "#S00_벌크", cost: 1441, impressions: 6146, clicks: 6, purchases: 3},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1268, impressions: 178, clicks: 7, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-25": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 512066, impressions: 13666, clicks: 156, purchases: 64},
+      {campaign: "#P3_파워링크_일반_MO", cost: 142939, impressions: 1176, clicks: 99, purchases: 21},
+      {campaign: "#S4_릴렉스틱_PC", cost: 80676, impressions: 9742, clicks: 22, purchases: 12},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 21299, impressions: 812, clicks: 51, purchases: 8},
+      {campaign: "#P4_파워링크_일반_PC", cost: 2567, impressions: 96, clicks: 3, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1443, impressions: 49, clicks: 6, purchases: 2},
+      {campaign: "#S00_벌크", cost: 1375, impressions: 7146, clicks: 4, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-26": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 518475, impressions: 11699, clicks: 158, purchases: 43},
+      {campaign: "#P3_파워링크_일반_MO", cost: 147517, impressions: 1405, clicks: 137, purchases: 39},
+      {campaign: "#S4_릴렉스틱_PC", cost: 78800, impressions: 4083, clicks: 21, purchases: 3},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 22361, impressions: 936, clicks: 54, purchases: 25},
+      {campaign: "#P4_파워링크_일반_PC", cost: 3851, impressions: 126, clicks: 6, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 784, impressions: 73, clicks: 2, purchases: 0},
+      {campaign: "#S00_벌크", cost: 495, impressions: 7720, clicks: 2, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-27": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 688242, impressions: 24714, clicks: 213, purchases: 62},
+      {campaign: "#P3_파워링크_일반_MO", cost: 122914, impressions: 1101, clicks: 92, purchases: 17},
+      {campaign: "#S4_릴렉스틱_PC", cost: 81480, impressions: 10149, clicks: 29, purchases: 6},
+      {campaign: "#P4_파워링크_일반_PC", cost: 19395, impressions: 329, clicks: 21, purchases: 2},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 18825, impressions: 663, clicks: 42, purchases: 14},
+      {campaign: "#S00_벌크", cost: 2420, impressions: 6163, clicks: 12, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 726, impressions: 117, clicks: 4, purchases: 2},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-28": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 618292, impressions: 24909, clicks: 195, purchases: 62},
+      {campaign: "#P3_파워링크_일반_MO", cost: 128873, impressions: 1039, clicks: 80, purchases: 22},
+      {campaign: "#S5_손목 마사지기_MO", cost: 89969, impressions: 2621, clicks: 20, purchases: 1},
+      {campaign: "#S4_릴렉스틱_PC", cost: 79357, impressions: 13672, clicks: 27, purchases: 3},
+      {campaign: "#S5_손목 마사지기_PC", cost: 16572, impressions: 522, clicks: 5, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 13352, impressions: 282, clicks: 18, purchases: 3},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 11112, impressions: 617, clicks: 26, purchases: 5},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 2047, impressions: 149, clicks: 9, purchases: 5},
+      {campaign: "#S00_벌크", cost: 211, impressions: 7291, clicks: 1, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-29": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 667700, impressions: 25495, clicks: 205, purchases: 63},
+      {campaign: "#P3_파워링크_일반_MO", cost: 102556, impressions: 1114, clicks: 75, purchases: 13},
+      {campaign: "#S5_손목 마사지기_MO", cost: 85130, impressions: 2828, clicks: 21, purchases: 0},
+      {campaign: "#S4_릴렉스틱_PC", cost: 66800, impressions: 17633, clicks: 28, purchases: 3},
+      {campaign: "#S5_손목 마사지기_PC", cost: 17448, impressions: 1407, clicks: 6, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 12883, impressions: 559, clicks: 35, purchases: 19},
+      {campaign: "#P4_파워링크_일반_PC", cost: 8646, impressions: 293, clicks: 17, purchases: 6},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 526, impressions: 126, clicks: 2, purchases: 0},
+      {campaign: "#S00_벌크", cost: 473, impressions: 8151, clicks: 2, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-04-30": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 683916, impressions: 21607, clicks: 217, purchases: 103},
+      {campaign: "#P3_파워링크_일반_MO", cost: 139066, impressions: 1207, clicks: 82, purchases: 31},
+      {campaign: "#S5_손목 마사지기_MO", cost: 95250, impressions: 2202, clicks: 23, purchases: 7},
+      {campaign: "#S4_릴렉스틱_PC", cost: 56822, impressions: 9814, clicks: 20, purchases: 2},
+      {campaign: "#S5_손목 마사지기_PC", cost: 23565, impressions: 1102, clicks: 8, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 11284, impressions: 549, clicks: 24, purchases: 20},
+      {campaign: "#P4_파워링크_일반_PC", cost: 9759, impressions: 241, clicks: 15, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1408, impressions: 115, clicks: 6, purchases: 1},
+      {campaign: "#S00_벌크", cost: 723, impressions: 7549, clicks: 5, purchases: 3},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-01": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 598613, impressions: 22900, clicks: 193, purchases: 50},
+      {campaign: "#P3_파워링크_일반_MO", cost: 184218, impressions: 1103, clicks: 108, purchases: 33},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 12992, impressions: 705, clicks: 27, purchases: 11},
+      {campaign: "#S4_릴렉스틱_PC", cost: 6328, impressions: 1046, clicks: 2, purchases: 0},
+      {campaign: "#S00_벌크", cost: 1375, impressions: 7544, clicks: 5, purchases: 1},
+      {campaign: "#P4_파워링크_일반_PC", cost: 1347, impressions: 102, clicks: 2, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 819, impressions: 40, clicks: 2, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 1}
+    ],
+    "2026-05-02": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 565445, impressions: 24391, clicks: 182, purchases: 56},
+      {campaign: "#P3_파워링크_일반_MO", cost: 203106, impressions: 944, clicks: 96, purchases: 27},
+      {campaign: "#S4_릴렉스틱_PC", cost: 22304, impressions: 3159, clicks: 7, purchases: 1},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 17492, impressions: 675, clicks: 53, purchases: 13},
+      {campaign: "#P4_파워링크_일반_PC", cost: 1323, impressions: 74, clicks: 2, purchases: 1},
+      {campaign: "#S00_벌크", cost: 925, impressions: 8698, clicks: 4, purchases: 3},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 206, impressions: 26, clicks: 1, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-03": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 713345, impressions: 24621, clicks: 219, purchases: 93},
+      {campaign: "#P3_파워링크_일반_MO", cost: 196166, impressions: 956, clicks: 84, purchases: 23},
+      {campaign: "#S4_릴렉스틱_PC", cost: 27899, impressions: 6110, clicks: 9, purchases: 8},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 21218, impressions: 816, clicks: 57, purchases: 22},
+      {campaign: "#S00_벌크", cost: 2168, impressions: 10082, clicks: 8, purchases: 2},
+      {campaign: "#P4_파워링크_일반_PC", cost: 1356, impressions: 89, clicks: 3, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 408, impressions: 28, clicks: 1, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-04": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 529455, impressions: 21099, clicks: 157, purchases: 53},
+      {campaign: "#P3_파워링크_일반_MO", cost: 121864, impressions: 987, clicks: 69, purchases: 15},
+      {campaign: "#S4_릴렉스틱_PC", cost: 49929, impressions: 15178, clicks: 15, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 16383, impressions: 665, clicks: 48, purchases: 17},
+      {campaign: "#P4_파워링크_일반_PC", cost: 8134, impressions: 202, clicks: 13, purchases: 3},
+      {campaign: "#S00_벌크", cost: 1580, impressions: 7128, clicks: 8, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 468, impressions: 75, clicks: 3, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-05": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 708803, impressions: 21487, clicks: 219, purchases: 65},
+      {campaign: "#P3_파워링크_일반_MO", cost: 205849, impressions: 1022, clicks: 96, purchases: 19},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 24940, impressions: 830, clicks: 52, purchases: 15},
+      {campaign: "#S4_릴렉스틱_PC", cost: 21733, impressions: 7009, clicks: 7, purchases: 3},
+      {campaign: "#S00_벌크", cost: 1530, impressions: 7326, clicks: 6, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1352, impressions: 32, clicks: 4, purchases: 2},
+      {campaign: "#P4_파워링크_일반_PC", cost: 895, impressions: 81, clicks: 1, purchases: 3},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-06": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 585669, impressions: 21883, clicks: 169, purchases: 60},
+      {campaign: "#P3_파워링크_일반_MO", cost: 184819, impressions: 1108, clicks: 101, purchases: 28},
+      {campaign: "#S4_릴렉스틱_PC", cost: 73087, impressions: 14120, clicks: 28, purchases: 4},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 15190, impressions: 742, clicks: 41, purchases: 13},
+      {campaign: "#P4_파워링크_일반_PC", cost: 8616, impressions: 255, clicks: 16, purchases: 0},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1815, impressions: 144, clicks: 6, purchases: 0},
+      {campaign: "#S00_벌크", cost: 1121, impressions: 7830, clicks: 4, purchases: 2},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-07": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 709357, impressions: 22232, clicks: 208, purchases: 67},
+      {campaign: "#P3_파워링크_일반_MO", cost: 199792, impressions: 1114, clicks: 96, purchases: 16},
+      {campaign: "#S4_릴렉스틱_PC", cost: 82081, impressions: 11746, clicks: 25, purchases: 3},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 17244, impressions: 755, clicks: 44, purchases: 11},
+      {campaign: "#P4_파워링크_일반_PC", cost: 14598, impressions: 336, clicks: 18, purchases: 0},
+      {campaign: "#S00_벌크", cost: 353, impressions: 8145, clicks: 2, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 132, impressions: 137, clicks: 1, purchases: 2},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-08": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 486082, impressions: 23992, clicks: 158, purchases: 54},
+      {campaign: "#P3_파워링크_일반_MO", cost: 177871, impressions: 1193, clicks: 104, purchases: 25},
+      {campaign: "#S4_릴렉스틱_PC", cost: 79025, impressions: 18553, clicks: 28, purchases: 5},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 21640, impressions: 751, clicks: 46, purchases: 15},
+      {campaign: "#P4_파워링크_일반_PC", cost: 7010, impressions: 280, clicks: 9, purchases: 4},
+      {campaign: "#S00_벌크", cost: 1651, impressions: 6609, clicks: 4, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1401, impressions: 123, clicks: 5, purchases: 1},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-09": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 627437, impressions: 27639, clicks: 195, purchases: 49},
+      {campaign: "#P3_파워링크_일반_MO", cost: 206854, impressions: 1051, clicks: 123, purchases: 15},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 18350, impressions: 876, clicks: 44, purchases: 10},
+      {campaign: "#S4_릴렉스틱_PC", cost: 8386, impressions: 6182, clicks: 4, purchases: 0},
+      {campaign: "#P4_파워링크_일반_PC", cost: 4844, impressions: 97, clicks: 6, purchases: 3},
+      {campaign: "#S00_벌크", cost: 1626, impressions: 7260, clicks: 8, purchases: 1},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 530, impressions: 43, clicks: 1, purchases: 0},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ],
+    "2026-05-10": [
+      {campaign: "#S4_릴렉스틱_MO", cost: 699985, impressions: 32358, clicks: 232, purchases: 67},
+      {campaign: "#P3_파워링크_일반_MO", cost: 197054, impressions: 1272, clicks: 108, purchases: 25},
+      {campaign: "#S4_릴렉스틱_PC", cost: 40655, impressions: 6812, clicks: 15, purchases: 0},
+      {campaign: "#P1_파워링크_브랜드_MO", cost: 18837, impressions: 951, clicks: 47, purchases: 21},
+      {campaign: "#P4_파워링크_일반_PC", cost: 4865, impressions: 104, clicks: 4, purchases: 2},
+      {campaign: "#P2_파워링크_브랜드_PC", cost: 1904, impressions: 31, clicks: 6, purchases: 0},
+      {campaign: "#S00_벌크", cost: 1634, impressions: 8929, clicks: 8, purchases: 2},
+      {campaign: "--01_쇼핑검색(메인/통검)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--02_쇼핑검색(추천 및 컨텐츠)", cost: 0, impressions: 0, clicks: 0, purchases: 0},
+      {campaign: "--03_쇼핑검색(플러스스토어)", cost: 0, impressions: 0, clicks: 0, purchases: 0}
+    ]
+  }
+};
+
 
   // ========== 가설 1 퍼포먼스 차트 ==========
   const perfDates = ["4/1","4/2","4/3","4/4","4/5","4/6","4/7","4/8","4/9","4/10","4/11","4/12","4/13","4/14","4/15","4/16","4/17","4/18","4/19","4/20","4/21","4/22","4/23","4/24","4/25","4/26","4/27","4/28","4/29","4/30","5/1","5/2","5/3","5/4","5/5","5/6","5/7","5/8","5/9","5/10"];
@@ -653,6 +2525,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.getElementById('tableLabel').textContent = {meta:'메타',gfa:'GFA',advoost:'Advoost',searchad:'검색광고',total:'합계(4채널)'}[ch];
     renderTable(ch);
+    // 캠페인 날짜바 초기화 (lazy)
+    if (['meta','gfa','advoost','searchad'].includes(ch)) {
+      setTimeout(() => initDateBar(ch), 20);
+    }
     // 처음 클릭 시 해당 차트 초기화 (lazy init)
     if (!perfCharts[ch]) {
       const canvasMap = { meta:'chartMeta', gfa:'chartGfa', advoost:'chartAdvoost', searchad:'chartSearchad', total:'chartTotal' };
@@ -1385,6 +3261,63 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+
+  // ===== 캠페인 Top10 날짜바 + 테이블 =====
+  const campDates = ["2026-04-01","2026-04-02","2026-04-03","2026-04-04","2026-04-05","2026-04-06","2026-04-07","2026-04-08","2026-04-09","2026-04-10","2026-04-11","2026-04-12","2026-04-13","2026-04-14","2026-04-15","2026-04-16","2026-04-17","2026-04-18","2026-04-19","2026-04-20","2026-04-21","2026-04-22","2026-04-23","2026-04-24","2026-04-25","2026-04-26","2026-04-27","2026-04-28","2026-04-29","2026-04-30","2026-05-01","2026-05-02","2026-05-03","2026-05-04","2026-05-05","2026-05-06","2026-05-07","2026-05-08","2026-05-09","2026-05-10"];
+  const campDateLabels = ["4/1","4/2","4/3","4/4","4/5","4/6","4/7","4/8","4/9","4/10","4/11","4/12","4/13","4/14","4/15","4/16","4/17","4/18","4/19","4/20","4/21","4/22","4/23","4/24","4/25","4/26","4/27","4/28","4/29","4/30","5/1","5/2","5/3","5/4","5/5","5/6","5/7","5/8","5/9","5/10"];
+  const campSelectedDate = { meta: null, gfa: null, advoost: null, searchad: null };
+
+  function initDateBar(ch) {
+    const bar = document.getElementById('dateBar-' + ch);
+    if (!bar || bar.children.length > 0) return;
+    campDates.forEach((d, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = campDateLabels[i];
+      btn.dataset.date = d;
+      btn.style.cssText = 'padding:4px 8px;border-radius:4px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;font-size:0.75rem;';
+      btn.onclick = () => selectCampDate(ch, d, btn);
+      bar.appendChild(btn);
+    });
+    // 첫 번째 날짜 자동 선택
+    selectCampDate(ch, campDates[0], bar.children[0]);
+  }
+
+  function selectCampDate(ch, date, btn) {
+    campSelectedDate[ch] = date;
+    // 버튼 스타일 초기화
+    const bar = document.getElementById('dateBar-' + ch);
+    Array.from(bar.children).forEach(b => {
+      b.style.background = '#fff';
+      b.style.color = '#555';
+      b.style.borderColor = '#ccc';
+    });
+    btn.style.background = '#1976d2';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#1976d2';
+    renderCampTable(ch, date);
+  }
+
+  function renderCampTable(ch, date) {
+    const tbody = document.getElementById('campBody-' + ch);
+    const rows = (campaignData[ch] && campaignData[ch][date]) ? campaignData[ch][date] : [];
+    if (rows.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#888;padding:16px;">데이터 없음</td></tr>';
+      return;
+    }
+    tbody.innerHTML = rows.map((r, i) => {
+      const ctr = r.impressions > 0 ? (r.clicks / r.impressions * 100).toFixed(2) + '%' : '-';
+      return `<tr>
+        <td style="text-align:center;">${i+1}</td>
+        <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${r.campaign}">${r.campaign}</td>
+        <td style="text-align:right;">${r.cost.toLocaleString()}</td>
+        <td style="text-align:right;">${r.impressions.toLocaleString()}</td>
+        <td style="text-align:right;">${r.clicks.toLocaleString()}</td>
+        <td style="text-align:right;">${ctr}</td>
+        <td style="text-align:right;">${r.purchases}</td>
+      </tr>`;
+    }).join('');
+  }
 
 });
 
